@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hi Xin Chào Mọi Người 👋
 
 <!--
 **TranMyNhi/TranMyNhi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
