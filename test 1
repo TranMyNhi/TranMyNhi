@@ -11,7 +11,7 @@ _G.autoMoney - true
 function autoMoney()
        while _G.autoMoney --true do
         local args = {
-    [1] = 7
+    [1] = 1
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("SessionReward"):InvokeServer(unpack(args)) 
