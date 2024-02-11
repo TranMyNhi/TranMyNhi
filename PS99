@@ -1,0 +1,395 @@
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/Extras/Global"))() -- Regular Globals
+VG.DisableConnection(Error)
+VG.DisableConnection(Idled)
+ 
+ 
+local Hehe = {}
+local Zones = {}
+local Script = {}
+local Things = Workspace:WaitForChild("__THINGS")
+local Active = Things.__INSTANCE_CONTAINER.Active
+local FishingGame = Player.PlayerGui._INSTANCES:WaitForChild("FishingGame")
+local Network = ReplicatedStorage:WaitForChild("Network")
+local Things = Workspace:WaitForChild("__THINGS")
+local Active = Things.__INSTANCE_CONTAINER:WaitForChild("Active")
+local I = Network:WaitForChild("Instancing_FireCustomFromClient")
+local I2 = Network:WaitForChild("Instancing_InvokeCustomFromClient")
+
+function GetRod()
+    return Player.Character:FindFirstChild("Rod", true)
+end
+
+function RequestCast()
+    if Method == "Fishing" and not GetRod():FindFirstChild("FishingLine") and wait(5) then
+        I:FireServer("Fishing","RequestCast",Vector3.new(1139, 75, -3445))
+    elseif Method == "AdvancedFishing"  and not GetRod():FindFirstChild("FishingLine") and wait(5) then
+        I:FireServer("AdvancedFishing","RequestCast",Vector3.new(1460, 61, -4442))
+    end
+end
+
+function RequestReel()
+    local Nothing = nil
+    if Method == "Fishing" and GetRod():FindFirstChild("FishingLine") then
+        Nothing = GetRod().FishingLine.Attachment1.Parent
+    elseif Method == "AdvancedFishing" and GetRod():FindFirstChild("FishingLine") then
+        Nothing = GetRod().FishingLine.Attachment0.Parent
+    end
+    if Nothing then
+        local Height = tonumber(Nothing.Position.Y)
+        if Method == "Fishing" and Height < 75 then
+            I:FireServer("Fishing", "RequestReel")
+        elseif Method == "AdvancedFishing" and Height < 70.5 then
+            I:FireServer("AdvancedFishing","RequestReel")
+        end
+    end
+end
+
+function Wait()
+    if Method == "Fishing" and FishingGame.Enabled and wait(.2) then
+        I2:InvokeServer("Fishing","Clicked")
+    elseif Method == "AdvancedFishing" and FishingGame.Enabled and wait(.2) then
+        I2:InvokeServer("AdvancedFishing","Clicked")
+    end
+end
+
+function Walk()
+    if Method == "Fishing" then
+        VG.GetHumanoid():MoveTo(Vector3.new(1113 + math.random(10), 80, -3444 + math.random(10)))
+    elseif Method == "AdvancedFishing" then
+        VG.GetHumanoid():MoveTo(Vector3.new(1440 + math.random(10), 66, -4445 + math.random(10)))
+    end
+end
+
+function GoTo()
+    if Method == "Fishing" and not Active:FindFirstChild("Fishing") then
+        VG.Teleport(Things.Instances.Fishing.Teleports.Enter.Position)
+    elseif Method == "AdvancedFishing" and not Active:FindFirstChild("AdvancedFishing") then
+        VG.Teleport(Things.Instances.AdvancedFishing.Teleports.Enter.Position)
+    end
+end
+
+function Activated()
+    GoTo()
+    RequestCast()
+    RequestReel()
+    Walk()
+    Wait()
+end
+
+local CurrentActive = function()
+    return Active:GetChildren()[1] -- idk how else to get a unnamed object feel free to teach me
+end
+
+local GetBlock = function()
+    local IHateMakingNamesFortables = CurrentActive()
+    local Distance = math.huge
+    local Block = nil
+    for i,v in next, IHateMakingNamesFortables.Important.ActiveBlocks:GetChildren() do
+        if v:IsA("BasePart") then
+            local Mag = VG.Mag(Player.Character.HumanoidRootPart, v)
+            if Mag <=  Distance then
+                Distance = Mag
+                Block = v
+            end
+        end
+    end
+    return Block -- I Hate this part
+end
+ 
+local GetChest = function()
+    local Table = CurrentActive()
+    local Distance = math.huge -- KYS
+    local Chest = nil
+    for i,v in next, Table.Important.ActiveChests:GetChildren() do
+        if v:IsA("Model") then
+            local NewMag = VG.Mag(Player.Character.HumanoidRootPart, v:GetModelCFrame())
+            if NewMag <= Distance then
+                Distance = NewMag
+                Chest = v
+            end
+        end
+    end
+    return Chest
+end
+local Obby = function(Obby)
+    local No = VG.FFD(Workspace.__THINGS.__INSTANCE_CONTAINER.Active[Obby], "Goal")
+    local Yes = VG.FFD(Workspace.__THINGS.__INSTANCE_CONTAINER.Active[Obby], "StartLine")
+    if VG.FFD(Workspace.__THINGS.Instances[Obby].Teleports.Billboard.BillboardGui, "TextLabel").Text == "Complete for Reward!" then
+        VG.Teleport(Workspace.__THINGS.Instances[Obby].Teleports.Enter.Position + Vector3.new(0,5,0))
+        wait(5)
+        if Yes and VG.IsA(Yes, "Model") then
+            VG.Teleport(Yes:GetModelCFrame().Position)
+        else
+            VG.Teleport(Yes.Position)
+        end
+        wait(.5)
+        if No and VG.IsA(No, "Model") then
+            VG.Teleport(Yes:GetModelCFrame().Position)
+        else
+            VG.Teleport(Yes.Position)
+        end
+    end
+end
+ 
+local Dig = function () -- yes Dig my ass out pls mmm daddy
+    if GetChest() then
+        VG.Tween(Player.Character.HumanoidRootPart, GetChest():FindFirstChildWhichIsA("BasePart"), 50, Vector3.new(0,0,2), true)
+        ReplicatedStorage:WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer(CurrentActive().Name, "DigChest", GetChest():GetAttribute('Coord'))
+        wait(2)
+    else
+        VG.Tween(Player.Character.HumanoidRootPart, GetBlock(), 50, Vector3.new(0,0,1), true)
+        ReplicatedStorage:WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer(CurrentActive().Name, "DigBlock", GetBlock():GetAttribute('Coord'))
+        wait(.3)
+    end
+end
+local DigAura = function() -- just Dig() without tweening
+    if GetChest() then
+        ReplicatedStorage:WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer(CurrentActive().Name, "DigChest", GetChest():GetAttribute('Coord'))
+    else
+        ReplicatedStorage:WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer(CurrentActive().Name, "DigBlock", GetBlock():GetAttribute('Coord'))
+    end
+end
+ 
+local GetRod = function()
+    if Player.Character then
+        return VG.FFD(Player.Character, "Rod")
+    end
+end
+ 
+local IsInFishingGame = function()
+    return Player.PlayerGui._INSTANCES.FishingGame.Enabled
+end
+ 
+ 
+local GetCoinInZone = function()
+    local Target = nil
+    local MaxDistance = math.huge
+    for i,v in next, Workspace.__THINGS.Breakables:GetChildren() do
+        if v:IsA("Model") and (v:GetAttribute("ParentID") == PickedZone) then
+            local Mag = VG.Mag(v:GetModelCFrame(), Player.Character:GetModelCFrame())
+            if Mag <= MaxDistance then
+                MaxDistance = Mag
+                Target = v 
+            end
+        end
+    end
+    return Target
+end
+ 
+local GetNearestCoin = function()
+    local Target = nil
+    local MaxDistance = math.huge
+    for i,v in next, workspace.__THINGS.Breakables:GetChildren() do
+        if v:IsA("Model") then
+            local Mag = VG.Mag(v:GetModelCFrame(), Player.Character:GetModelCFrame())
+            if Mag <= MaxDistance then
+                MaxDistance = Mag
+                Target = v 
+            end
+        end
+    end
+    return Target
+end
+ 
+for i,v in next, game:GetService("ReplicatedStorage").__DIRECTORY.Zones:GetChildren() do
+    for i,v in next, v:GetChildren() do
+        if v:IsA("ModuleScript") then
+            local String = string.split(v.Name, "| ", "")[2]
+            table.insert(Zones, String)
+        end
+    end
+end
+ 
+for i,v in next, game:GetService("ReplicatedStorage").Assets.Instancing:GetChildren() do
+    if v.Name:find("Obby") then
+        table.insert(Hehe, v.Name)
+    end
+end
+ 
+ 
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+ 
+local Window = Fluent:CreateWindow({
+    Title = "V.G Hub: Game " .. MarketplaceService:GetProductInfo(game.PlaceId).Name,
+    SubTitle = "by 💜❤️Trần Mỹ Nhi❤️💜",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Cyan",
+    MinimizeKey = Enum.KeyCode.Delete -- Used when theres no MinimizeKeybind
+})
+ 
+ 
+local Tabs = {
+    AutoFarm = Window:AddTab({ Title = "AutoFarm", Icon = "" }),
+    Obbys = Window:AddTab({ Title = "Obbys etc", Icon = "" }),
+    AutoMinigame = Window:AddTab({ Title = "AutoMinigames", Icon = "" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+ 
+}
+ 
+local Options = Fluent.Options
+ 
+do
+    Fluent:Notify({
+        Title = "V.G Hub Loaded",
+        Content = "Congrats your using V.G Hub " .. Verison,
+        SubContent = "", -- Optional
+        Duration = 10 -- Set to nil to make the notification not disappear
+    })
+    local Toggle = Tabs.AutoFarm:AddToggle("PetCoin", {Title = "Auto Break Nearest Coin", Default = false})
+    Toggle:OnChanged(function()
+        AutoFarm = Options.PetCoin.Value
+        spawn(function()
+            while wait() and AutoFarm do
+                pcall(function()
+                    ReplicatedStorage:WaitForChild("Network"):WaitForChild("Breakables_PlayerDealDamage"):FireServer(GetNearestCoin().Name)
+                end)
+            end
+        end)
+    end)
+ 
+    local Toggle = Tabs.AutoFarm:AddToggle("PetCoin1", {Title = "Auto Break In Selected Zone", Default = false})
+    Toggle:OnChanged(function()
+        AutoFarm1 = Options.PetCoin1.Value
+        spawn(function()
+            while wait(1) and AutoFarm1 do
+                pcall(function()
+                    if GetCoinInZone() == nil then
+                        ReplicatedStorage:WaitForChild("Network"):WaitForChild("Teleports_RequestTeleport"):InvokeServer(PickedZone)
+                        wait(10)
+                        for i,v in next, Workspace.Map:GetChildren() do
+                            if v.Name:find(PickedZone) then
+                                VG.Teleport(v.INTERACT.BREAK_ZONES.BREAK_ZONE.Position)
+                                break
+                            end
+                        end
+                    end
+                    VG.Teleport(GetCoinInZone():GetModelCFrame().Position + Vector3.new(0,6,0))
+                    ReplicatedStorage:WaitForChild("Network"):WaitForChild("Breakables_PlayerDealDamage"):FireServer(GetCoinInZone().Name)
+                end)
+            end
+        end)
+    end)
+    local Dropdown = Tabs.AutoFarm:AddDropdown("Ds", {
+        Title = "Zones",
+        Values = Zones,
+        Multi = false,
+        Default = 1,
+    })
+ 
+    Dropdown:SetValue("nil")
+ 
+    Dropdown:OnChanged(function(Value)
+        PickedZone = Value
+    end)
+ 
+    Tabs.Obbys:AddButton({Title = "Auto Grab All ShinyRelics",Description = "Grabs all relics",Callback = function()
+        for i,v in next, Workspace.__THINGS.ShinyRelics:GetChildren() do
+            if v:IsA("BasePart") and v.Transparency == 0 then
+                VG.Teleport(v.Position)
+                wait(.5)
+                game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Relic_Found"):InvokeServer(i)
+            end
+        end
+    end})
+    local Toggle = Tabs.AutoMinigame:AddToggle("Đào Xung Quanh", {Title = "Auto DigSites", Default = false})
+    Toggle:OnChanged(function()
+        Toggle = Options.DigSite.Value
+        Stepped:Connect(function()
+            if Toggle then
+                VG.NoClip()
+            end
+        end)
+        spawn(function()
+            while Toggle and wait() do
+                pcall(function()
+                    Dig()
+                end)
+            end
+        end)
+    end)
+    local Toggle = Tabs.AutoMinigame:AddToggle("Đào Sâu Xuống", {Title = "Dig Aura", Default = false})
+    Toggle:OnChanged(function()
+        Digaura = Options.DigSiteAura.Value
+        spawn(function()
+            while wait(.2) and Digaura do
+                pcall(function()
+                    DigAura()
+                end)
+            end
+        end)
+    end)
+    local Toggle = Tabs.AutoMinigame:AddToggle("Fih", {Title = "Auto Fishing", Default = false})
+    Toggle:OnChanged(function()
+        Fishe = Options.Fih.Value
+        spawn(function()
+            while wait() and Fishe do
+                pcall(function()
+                    Activated()
+                end)
+            end
+        end)
+        spawn(function()
+            while Fishe and wait(300) do
+                pcall(function()
+                    User:SendMouseButtonEvent(0,0, 0, true, game, 0)
+                    User:SendMouseButtonEvent(0,0, 1, true, game, 0)
+                    wait(1)
+                    User:SendMouseButtonEvent(0,0, 0, false, game, 0)
+                    User:SendMouseButtonEvent(0,0, 1, false, game, 0)
+                end)
+            end
+        end)
+    end)
+
+    local Dropdown = Tabs.AutoMinigame:AddDropdown("e34", {
+        Title = "Khu Vực Câu",
+        Values = {"AdvancedFishing", "Fishing"},
+        Multi = false,
+        Default = 1,
+    })
+ 
+    Dropdown:SetValue("")
+    Dropdown:OnChanged(function(Value)
+        Method = Value
+    end)
+    Tabs.Obbys:AddButton({Title = "Auto Selected Obby",Description = "Automaticly does the Jungle Obby",Callback = function()
+        Obby(SObby)
+    end})
+    local Dropdown = Tabs.Obbys:AddDropdown("D", {
+        Title = "Obbys",
+        Values = Hehe,
+        Multi = false,
+        Default = 1,
+    })
+ 
+    Dropdown:SetValue("")
+ 
+    Dropdown:OnChanged(function(Value)
+        SObby = Value
+    end)
+end
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+ 
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+ 
+ 
+Window:SelectTab(1)
+ 
+Fluent:Notify({
+    Title = "ASTRAL TEAM",
+    Content = "Kịch bản đã được tải .",
+    Duration = 8
+})
+ 
+SaveManager:LoadAutoloadConfig()
