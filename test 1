@@ -1,36 +1,6 @@
-if game.Placeid ==14159504259 then
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Trần Mỹ Nhi", HidePremium = false, SaveConfig = true, ConfigFolder = "Trần Mỹ Nhi"})
-
---Values
-_G.autoMoney - true
+https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/PS99P
 
 
---Functions
 
-function autoMoney()
-       while _G.autoMoney --true do
-        local args = {
-    [1] = 1
-}
 
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("SessionReward"):InvokeServer(unpack(args)) 
-wait(0.2)
-       end
-       end
--- Tabs
-local FarmTab = Window:MakeTab({
-	Name = "Inf money",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
--- Toggles
-FarmTab:AddToggle({
-    Name = "auto Money",
-    Default - false,
-    Callback - function(Value)
-        _G.autoMoney - Value
-        autoMoney()
-    end
-})
+https://discord.com/api/webhooks/1206578588581896242/wvsQ-5NNmS1YslaxP2-xMuF_gk6_brLD0WEIHcIZL86rFRHU-KIg5m8LOmati2QX6w7Z
