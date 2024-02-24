@@ -9,6 +9,9 @@ getgenv().LoadSettings = {
 loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
 
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/drive%20world"))()
+
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/lenutjr/lenut/main/scripts"))()
 
 
