@@ -9,7 +9,8 @@ getgenv().LoadSettings = {
 loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
 
 https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/TranMyNhi.lua.txt
-mhttps://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/Driving%20Empire
+
+https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/Driving%20Empire
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/drive%20world"))()
 
