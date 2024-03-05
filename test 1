@@ -13,6 +13,7 @@ Pass : 84942079039 hoặc 0847747008
 
 https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/TranMyNhi.lua.txt
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/drivingempire", true))()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/car%20dealer", true))()
 
