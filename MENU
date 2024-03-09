@@ -45,7 +45,7 @@
    
    
     local defaults = {
-        txtcolor = Color3.fromRGB(255, 255, 255),
+        txtcolor = Color3.fromRGB(232, 205, 72),
         underline = Color3.fromRGB(160, 6, 249),
         barcolor = Color3.fromRGB(40, 40, 40),
         bgcolor = Color3.fromRGB(30, 30, 30),
