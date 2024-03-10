@@ -201,7 +201,7 @@
                 Size = UDim2.new(1, -10, 0, 20);
                 --Position = UDim2.new(0, 5, 0, ((20 * self.count) - 20) + 5),
                 BackgroundTransparency = 1;
-                TextColor3 = Color3.fromRGB(255, 255, 255);
+                TextColor3 = Color3.fromRGB(245, 101, 197);
                 TextXAlignment = Enum.TextXAlignment.Left;
                 LayoutOrder = self.Count;
                 TextSize = 14,
