@@ -19,7 +19,7 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
 Frame.AnchorPoint = Vector2.new(0.200000003, 0.200000003)
-Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 153, 204)
 Frame.BackgroundTransparency = 0.250
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
