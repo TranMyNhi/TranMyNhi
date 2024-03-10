@@ -134,7 +134,7 @@ end)
 local example = library:CreateWindow({
    text = "Giao Hàng💼"
  })
- example:AddBox("Chọn Đơn Vị Giao[KM]", function(object, focus)
+ example:AddBox("Chọn Đơn Vị Giao[Meter]", function(object, focus)
 	if focus then
 		getfenv().mdistance = tonumber(object.Text)
 	end
