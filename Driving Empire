@@ -19,7 +19,7 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
 Frame.AnchorPoint = Vector2.new(0.200000003, 0.200000003)
-Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 153, 204)
 Frame.BackgroundTransparency = 0.250
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
@@ -36,8 +36,8 @@ TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
 TextLabel.Size = UDim2.new(0, 400, 0, 50)
 TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "Cảnh Báo"
-TextLabel.TextColor3 = Color3.fromRGB(0,255,255)
+TextLabel.Text = "Cân Nhắc"
+TextLabel.TextColor3 = Color3.fromRGB(155,8,209)
 TextLabel.TextSize = 43.000
 TextLabel.TextWrapped = true
 
@@ -50,22 +50,22 @@ TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.Position = UDim2.new(0.147499993, 0, 0.250965238, 0)
 TextLabel_2.Size = UDim2.new(0, 282, 0, 109)
 TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "<Lưu ý> [Khi Sử Dụng Tập Lệnh Này, Bạn Chắc Rằng Trong Sever Riêng Tránh Bị Ban Hoặc Bị Kick] <TranMyNhi>"
+TextLabel_2.Text = "Fix Tự Cày-Fix Cày Vận Tốc🔥"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 20.000
 TextLabel_2.TextWrapped = true
 TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 
 TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 153, 204)
 TextButton.BackgroundTransparency = 0.550
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderColor3 = Color3.fromRGB(255, 153, 204)
 TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.282499999, 0, 0.745173752, 0)
 TextButton.Size = UDim2.new(0, 157, 0, 43)
 TextButton.Font = Enum.Font.FredokaOne
-TextButton.Text = "Chấp Nhận✅️"
-TextButton.TextColor3 = Color3.fromRGB(153, 153, 0)
+TextButton.Text = "Yêu Nhi👀❤️"
+TextButton.TextColor3 = Color3.fromRGB(153, 153, 255)
 TextButton.TextSize = 22.000
 
 UICorner_3.Parent = TextButton
