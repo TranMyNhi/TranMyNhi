@@ -210,7 +210,7 @@
             })
    
             local button = library:Create("TextButton", {
-                Text = "OFF",
+                Text = "Tắt",
                 TextColor3 = Color3.fromRGB(255, 25, 25),
                 BackgroundTransparency = 1;
                 Position = UDim2.new(1, -25, 0, 0),
@@ -223,7 +223,7 @@
             button.MouseButton1Click:connect(function()
                 self.toggles[text] = (not self.toggles[text])
                 button.TextColor3 = (self.toggles[text] and Color3.fromRGB(0, 255, 140) or Color3.fromRGB(255, 25, 25))
-                button.Text =(self.toggles[text] and "ON" or "OFF")
+                button.Text =(self.toggles[text] and "Mở" or "Tắt")
    
                 callback(self.toggles[text])
             end)
@@ -242,7 +242,7 @@
                 --Position = UDim2.new(0, 5, 0, ((20 * self.count) - 20) + 5),
                 BackgroundTransparency = 0.75;
                 BackgroundColor3 = options.boxcolor,
-                TextColor3 = Color3.fromRGB(255, 255, 255);
+                TextColor3 = Color3.fromRGB(245, 101, 197);
                 TextXAlignment = Enum.TextXAlignment.Center;
                 TextSize = 14,
                 Text = "",
@@ -269,7 +269,7 @@
                 Size = UDim2.new(1, -10, 0, 20);
                 --Position = UDim2.new(0, 5, 0, ((20 * self.count) - 20) + 5),
                 BackgroundTransparency = 1;
-                TextColor3 = Color3.fromRGB(255, 255, 255);
+                TextColor3 = Color3.fromRGB(245, 101, 197);
                 TextXAlignment = Enum.TextXAlignment.Left;
                 TextSize = 14,
                 Font = Enum.Font.FredokaOne,
