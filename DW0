@@ -22,7 +22,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranM
 local example = library:CreateWindow({
   text = "💜❤️TrầnMỹNhi❤️💜"
 })
-example:AddToggle("Auto Farm [Drive]", function(state)
+example:AddToggle("Tự Cày [Drive]", function(state)
    getfenv().drive = (state and true or false)
    while getfenv().drive do
       local plr = game.Players.LocalPlayer
@@ -46,7 +46,7 @@ example:AddToggle("Auto Farm [Drive]", function(state)
    carp.Velocity = carp.CFrame.LookVector*600
    end
    end)
-   example:AddToggle("Auto Farm [Air]", function(state)
+   example:AddToggle("Tự Cày [Air]", function(state)
       getfenv().air = (state and true or false)
       while getfenv().air do
          while getfenv().air do
@@ -91,7 +91,7 @@ example:AddToggle("Auto Farm [Drive]", function(state)
            
       end
       end)
-example:AddToggle("Auto Farm [Drift]", function(state)
+example:AddToggle("Tự Cày [Drift]", function(state)
    getfenv().autodrift = (state and true or false)
 while getfenv().autodrift do
    task.wait()
@@ -132,14 +132,14 @@ task.wait(0.1)
 end
 end)
 local example = library:CreateWindow({
-   text = "Delivery"
+   text = "Giao Hàng💼"
  })
- example:AddBox("Enter Minimum Distance", function(object, focus)
+ example:AddBox("Chọn Đơn Vị Giao[KM]", function(object, focus)
 	if focus then
 		getfenv().mdistance = tonumber(object.Text)
 	end
 end)
-example:AddToggle("Auto Delivery[Trailer]", function(state)
+example:AddToggle("Tự Giao[Trailer]", function(state)
    getfenv().test = (state and true or false)
 while getfenv().test do
    wait()
@@ -228,7 +228,7 @@ end
 end
 end
 end)
-example:AddToggle("Auto Delivery[Trucking]", function(state)
+example:AddToggle("Tự Giao[Trucking]", function(state)
 getfenv().test2 = (state and true or false)
 while getfenv().test2 do
    if game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == false then
@@ -320,15 +320,15 @@ end
 end
 end)
 local example = library:CreateWindow({
-   text = "Race Stuff"
+   text = "Race🏁"
  })
- example:AddBox("Enter Race Time", function(object, focus)
+ example:AddBox("Chọn Thời Gian Win", function(object, focus)
 	if focus then
    
 		getfenv().speed = tonumber(object.Text)
 	end
 end)
- example:AddToggle("Auto Farm [Race XP]", function(state)
+ example:AddToggle("Tự Đua [Hút Vòng]", function(state)
    getfenv().xprace = (state and true or false)
    while getfenv().xprace do
       wait()
@@ -346,7 +346,7 @@ game:GetService("ReplicatedStorage").Systems.Races.StartTaskChallengeRace:FireSe
    until game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Race.Visible == false or getfenv().xprace == false
    end
 end)
-example:AddToggle("Auto Finish Race", function(state)
+example:AddToggle("Tự Động [Đua]", function(state)
    getfenv().urace = (state and true or false)
    while getfenv().urace do
       wait()
