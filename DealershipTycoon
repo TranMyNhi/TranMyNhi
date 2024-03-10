@@ -64,7 +64,7 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.282499999, 0, 0.745173752, 0)
 TextButton.Size = UDim2.new(0, 157, 0, 43)
 TextButton.Font = Enum.Font.FredokaOne
-TextButton.Text = "Chấp Nhận✅️"
+TextButton.Text = "Yêu Nhi👀❤️"
 TextButton.TextColor3 = Color3.fromRGB(153, 153, 0)
 TextButton.TextSize = 22.000
 
