@@ -57,7 +57,7 @@ TextLabel_2.TextWrapped = true
 TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 
 TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 153, 204)
 TextButton.BackgroundTransparency = 0.550
 TextButton.BorderColor3 = Color3.fromRGB(255, 153, 204)
 TextButton.BorderSizePixel = 0
