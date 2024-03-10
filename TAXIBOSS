@@ -36,8 +36,8 @@ TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
 TextLabel.Size = UDim2.new(0, 400, 0, 50)
 TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "Đã Đọc"
-TextLabel.TextColor3 = Color3.fromRGB(0,255,255)
+TextLabel.Text = "Cân Nhắc"
+TextLabel.TextColor3 = Color3.fromRGB(155,8,209)
 TextLabel.TextSize = 43.000
 TextLabel.TextWrapped = true
 
@@ -64,7 +64,7 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.282499999, 0, 0.745173752, 0)
 TextButton.Size = UDim2.new(0, 157, 0, 43)
 TextButton.Font = Enum.Font.FredokaOne
-TextButton.Text = "Chấp Nhận✅️"
+TextButton.Text = "Yêu Nhi👀❤️"
 TextButton.TextColor3 = Color3.fromRGB(153, 153, 0)
 TextButton.TextSize = 22.000
 
