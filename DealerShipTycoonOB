@@ -9,13 +9,13 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranM
 local example = library:CreateWindow({
   text = "💜❤️TrầnMỹNhi❤️💜"
 })
-example:AddToggle("Auto Farm[Freeze]", function(state)
+example:AddToggle("Tự Cày[Đóng Băng🧊]", function(state)
 getfenv().auto = (state and true or false)
 if game.Players.LocalPlayer:GetAttribute("InCustomSeat") == true then
     game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = getfenv().auto
     end
 end)
-example:AddToggle("Auto Upgrade Plot", function(state)
+example:AddToggle("Tự Nâng Plot", function(state)
 getfenv().buttons = (state and true or false)
 local function plot()
     local plot = nil
@@ -39,14 +39,14 @@ end
 end)
 
 local example = library:CreateWindow({
-    text = "Racing"
+    text = "Race🏁"
   })
-  example:AddBox("Race Speed Value", function(object, focus)
+  example:AddBox("Tốc Độ Tùy Chỉnh", function(object, focus)
     if focus then
    getfenv().speed = tonumber(object.Text)
     end
 end)
-  example:AddToggle("Auto Race", function(state)
+  example:AddToggle("Auto Race🏁", function(state)
  getfenv().race = (state and true or false)
 while getfenv().race do
     wait()
