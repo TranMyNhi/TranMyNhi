@@ -4,7 +4,7 @@ local GUI = Library:Create{
     Name = "Mercury",
     Size = UDim2.fromOffset(600, 400),
     Theme = Library.Themes.Serika,
-    Link = "https://github.com/deeeity/mercury-lib"
+    Link = "https://github.com/TranMyNhi/TranMyNhi/blob/main/MENUPre"
 }
 
 local Main = GUI:tab{
