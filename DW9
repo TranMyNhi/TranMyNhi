@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/x3fall3nangel/mercury-lib-edit/master/src.lua"))()
 
 local GUI = Library:Create{
-    Name = "Mercury",
+    Name = "Lồn Nhi Hồng",
     Size = UDim2.fromOffset(600, 400),
     Theme = Library.Themes.Serika,
     Link = "https://github.com/TranMyNhi/TranMyNhi/blob/main/MENUPre"
