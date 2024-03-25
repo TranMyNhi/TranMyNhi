@@ -2,9 +2,9 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/x3fal
 
 local GUI = Library:Create{
     Name = "Lồn Nhi Hồng",
-    Size = UDim2.fromOffset(600, 400),
+    Size = UDim2.fromOffset(480, 250),
     Theme = Library.Themes.Aqua,
-    Link = "https://github.com/TranMyNhi/TranMyNhi/blob/main/MENUPre"
+    Link = "Kekma.net Truy Cập Để Nhận robux GiveAway"
 }
 
 local Main = GUI:tab{
