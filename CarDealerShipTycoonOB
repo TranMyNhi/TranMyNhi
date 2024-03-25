@@ -30,7 +30,7 @@ local chr = game.Players.LocalPlayer.Character
 local car = chr.Humanoid.SeatPart.Parent.Parent
 dist = (chr.HumanoidRootPart.Position-car.Engine.CFrame.LookVector*1000).Magnitude
 local TweenService = game:GetService("TweenService")
-local TweenInfoToUse = TweenInfo.new(dist/400, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, true, 0)
+local TweenInfoToUse = TweenInfo.new(dist/1000, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, true, 0)
 
 local TweenValue = Instance.new("CFrameValue")
 TweenValue.Value = car:GetPrimaryPartCFrame()
@@ -38,7 +38,7 @@ TweenValue.Value = car:GetPrimaryPartCFrame()
 TweenValue.Changed:Connect(function()
 car:SetPrimaryPartCFrame(TweenValue.Value)
 end)
-local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=car.Engine.CFrame+car.Engine.CFrame.LookVector*4000})
+local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=car.Engine.CFrame+car.Engine.CFrame.LookVector*3000})
 OnTween:Play(16)
 OnTween.Completed:Wait(16)
 workspace.Gravity = 100
@@ -94,7 +94,7 @@ until tonumber(text) == nil
     game:GetService("ReplicatedStorage").Remotes.DealershipCustomerController.NPCHandler:FireServer({["Action"] = "CollectReward",["OrderId"] = customer:GetAttribute("OrderId")})
     repeat wait()
     until customer.Parent == nil or  getfenv().Customer == false
-    wait(5)
+    wait(2)
     end)
     end
 end)
@@ -140,7 +140,7 @@ end
         game:GetService("ReplicatedStorage").Remotes.DealershipCustomerController.JobRemoteHandler:FireServer(_G.remotetable)
         workspace.Gravity = 196
         getfenv().spawned = true
-    wait(0.1)
+    wait(2)
     end
     end)
     end
