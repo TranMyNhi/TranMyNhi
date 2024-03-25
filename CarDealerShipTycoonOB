@@ -39,9 +39,9 @@ TweenValue.Changed:Connect(function()
 car:SetPrimaryPartCFrame(TweenValue.Value)
 end)
 local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=car.Engine.CFrame+car.Engine.CFrame.LookVector*4000})
-OnTween:Play(0.5)
+OnTween:Play(16)
 OnTween.Completed:Wait(16)
-workspace.Gravity = 196
+workspace.Gravity = 100
 end
 end)
 
