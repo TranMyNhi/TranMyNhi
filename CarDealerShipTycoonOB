@@ -30,7 +30,7 @@ local chr = game.Players.LocalPlayer.Character
 local car = chr.Humanoid.SeatPart.Parent.Parent
 dist = (chr.HumanoidRootPart.Position-car.Engine.CFrame.LookVector*1000).Magnitude
 local TweenService = game:GetService("TweenService")
-local TweenInfoToUse = TweenInfo.new(dist/3000, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, true, 0)
+local TweenInfoToUse = TweenInfo.new(dist/800, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, true, 0)
 
 local TweenValue = Instance.new("CFrameValue")
 TweenValue.Value = car:GetPrimaryPartCFrame()
@@ -38,9 +38,9 @@ TweenValue.Value = car:GetPrimaryPartCFrame()
 TweenValue.Changed:Connect(function()
 car:SetPrimaryPartCFrame(TweenValue.Value)
 end)
-local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=car.Engine.CFrame+car.Engine.CFrame.LookVector*800})
+local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=car.Engine.CFrame+car.Engine.CFrame.LookVector*4000})
 OnTween:Play(0.5)
-OnTween.Completed:Wait(4)
+OnTween.Completed:Wait(8)
 workspace.Gravity = 196
 end
 end)
