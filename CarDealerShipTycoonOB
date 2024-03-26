@@ -94,7 +94,7 @@ until tonumber(text) == nil
     game:GetService("ReplicatedStorage").Remotes.DealershipCustomerController.NPCHandler:FireServer({["Action"] = "CollectReward",["OrderId"] = customer:GetAttribute("OrderId")})
     repeat wait()
     until customer.Parent == nil or  getfenv().Customer == false
-    wait(2)
+    wait()
     end)
     end
 end)
