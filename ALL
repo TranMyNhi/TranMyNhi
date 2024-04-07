@@ -11,3 +11,11 @@ local example = library:CreateWindow({
 })
 example:AddToggle("Vô Hạn Tiền", function(state)
 getfenv().auto = (state and true or false)
+while task.wait(0.1) do
+local args = {
+    [1] = 50
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("quest"):FireServer(unpack(args))
+end
+end
