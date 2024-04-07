@@ -1,0 +1,13 @@
+print("TranMyNhi")
+warn("Anti afk running")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+warn("Anti afk ran")
+game:GetService("VirtualUser"):CaptureController()
+game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU"))()
+local example = library:CreateWindow({
+  text = "💜❤️TrầnMỹNhi❤️💜"
+})
+example:AddToggle("Vô Hạn Tiền", function(state)
+getfenv().auto = (state and true or false)
