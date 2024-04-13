@@ -20,9 +20,85 @@ print(Args)
 end)
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU", true))()
 local example = library:CreateWindow({
-  text = "💜❤️Trần Mỹ Nhi❤️💜"
+  text = "💜❤️TrầnMỹNhi❤️💜"
 })
-example:AddToggle("Tự Động Cày", function(state)
+example:AddToggle("Auto Extinguish Fire", function(state)
+    getfenv().fireman = (state and true or false)
+    workspace.Gravity = 196
+    while getfenv().fireman do
+        wait()
+        workspace.Gravity = 196
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+        if not game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") and not game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+        game:GetService("ReplicatedStorage").Remotes.Switch:FireServer("FireDealership")
+        wait(10)
+        elseif game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") then
+            game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool"))
+            wait(1)
+        elseif game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+        if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("FireGuide") then
+        local test = nil
+        for i,v in pairs(workspace:GetDescendants()) do
+            if v.Name == "FirePart" then
+            test = v
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame 
+            end
+        end
+    if test == nil then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=game:GetService("Players").LocalPlayer.PlayerGui.FireGuide.Adornee.CFrame
+    elseif test ~= nil then
+        pcall(function()
+          for i,v in pairs(test.Parent:GetDescendants()) do
+            if v.ClassName == "Part" and v.CanCollide == true or  v.ClassName == "MeshPart" and v.CanCollide == true then
+                v.CanCollide = false
+            end
+        end
+        workspace.Gravity = 0
+        repeat task.wait()
+        game:GetService("ReplicatedStorage").Remotes.TaskController.ActionGameDataReplication:FireServer("TryInteractWithItem", {["GameName"] = "FirefighterGame",["Action"] = "UpdatePlayerToolState",["Data"] = {["IsActive"] = true,["ToolName"] = "Extinguisher"}})
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=test.CFrame*CFrame.new(0,10,0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.Angles(math.rad(-90),0,0)
+        until not game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("FireGuide")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+    end)
+        end
+    end
+    end
+    end
+    end)
+    example:AddToggle("Auto Find Easter Eggs", function(state)
+        getfenv().autoextfind = (state and true or false)
+        while getfenv().autoextfind do
+            task.wait()
+            local function eggfinder(egg)
+                local isegg = nil
+                for i,v in pairs(egg:GetChildren()) do
+                    if v.ClassName == "Part" and v:GetAttribute("Collection") == "Egg" then
+                        isegg = v.Parent:FindFirstChildOfClass("MeshPart")
+                    end
+                end
+                return isegg
+            end
+        for i,v in pairs(workspace:GetChildren()) do
+            if v.Name == "Model" and eggfinder(v) ~= nil and eggfinder(v).Transparency == 0 or v.ClassName == "Model" and #v:GetChildren() == 0 then
+                local timeout = 0
+                repeat task.wait()
+                    timeout = timeout + 1
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =v.WorldPivot
+                until #v:GetChildren() > 0  or timeout > 10 or getfenv().autoextfind == false
+                if eggfinder(v) then
+                    repeat task.wait()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =v.WorldPivot
+
+        game:GetService("ReplicatedStorage").Remotes.Collectibles.TryToCollect:FireServer(v.Part)
+                    until eggfinder(v).Transparency == 1 or getfenv().autoextfind == false
+                end
+                print(v)
+            end
+        end
+    end
+    end)
+example:AddToggle("Auto Farm", function(state)
 getfenv().auto = (state and true or false)
 while getfenv().auto do
 workspace.Gravity = 0
@@ -30,7 +106,7 @@ local chr = game.Players.LocalPlayer.Character
 local car = chr.Humanoid.SeatPart.Parent.Parent
 dist = (chr.HumanoidRootPart.Position-car.Engine.CFrame.LookVector*1000).Magnitude
 local TweenService = game:GetService("TweenService")
-local TweenInfoToUse = TweenInfo.new(dist/1000, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, true, 0)
+local TweenInfoToUse = TweenInfo.new(dist/800, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, true, 0)
 
 local TweenValue = Instance.new("CFrameValue")
 TweenValue.Value = car:GetPrimaryPartCFrame()
@@ -39,13 +115,13 @@ TweenValue.Changed:Connect(function()
 car:SetPrimaryPartCFrame(TweenValue.Value)
 end)
 local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=car.Engine.CFrame+car.Engine.CFrame.LookVector*3000})
-OnTween:Play(16)
-OnTween.Completed:Wait(16)
-workspace.Gravity = 100
+OnTween:Play()
+OnTween.Completed:Wait()
+workspace.Gravity = 196
 end
 end)
 
-example:AddToggle("Tự Động Bán Xe",function(state)
+example:AddToggle("Auto Sell Cars",function(state)
     getfenv().Customer = (state and true or false)
     while getfenv().Customer do
         task.wait()
@@ -94,12 +170,14 @@ until tonumber(text) == nil
     game:GetService("ReplicatedStorage").Remotes.DealershipCustomerController.NPCHandler:FireServer({["Action"] = "CollectReward",["OrderId"] = customer:GetAttribute("OrderId")})
     repeat wait()
     until customer.Parent == nil or  getfenv().Customer == false
-    wait()
+    wait(7)
     end)
     end
 end)
-example:AddToggle(" Tự Động Giao Xe",function(state)
+example:AddToggle("Auto Delivery",function(state)
     getfenv().deliver = (state and true or false)
+    resetcharactervalue1=0
+    devpart2 = 1
     spawn(function()
         while getfenv().deliver do
             task.wait()
@@ -111,14 +189,28 @@ example:AddToggle(" Tự Động Giao Xe",function(state)
         end)
         end
         end)
-
+        spawn(function()
+            while getfenv().deliver do
+                task.wait()
+           if devpart2 ~= nil then
+            print(resetcharactervalue1)
+            resetcharactervalue1=0
+            elseif devpart2 == nil and resetcharactervalue1 >= 20 then
+                resetcharactervalue1=0
+                game.Players.LocalPlayer.Character:BreakJoints()
+wait(1)
+            end
+        end
+                end)
     while getfenv().deliver do
         wait()
         pcall(function()
-    if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
-        task.wait(0.1)
+    if game.Players.LocalPlayer.Character.Humanoid.SeatPart ~= nil then
+        task.wait(1)
+        devpart2 = nil
     for i,v in pairs(workspace.ActionTasksGames.Jobs:GetDescendants()) do
     if v.Name == "DeliveryPart" and v.Transparency ~= 1 then
+        devpart2 =v
         workspace.Gravity = 0
         getfenv().spawned = false
         game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent.Parent:PivotTo(v.CFrame)
@@ -136,16 +228,19 @@ example:AddToggle(" Tự Động Giao Xe",function(state)
     end
 end
     end
+    if devpart2 == nil then
+        resetcharactervalue1=resetcharactervalue1+1
+    end
     elseif game.Players.LocalPlayer.Character.Humanoid.Sit == false and getfenv().spawned ~= true then
         game:GetService("ReplicatedStorage").Remotes.DealershipCustomerController.JobRemoteHandler:FireServer(_G.remotetable)
         workspace.Gravity = 196
         getfenv().spawned = true
-    wait(2)
+    wait(2.5)
     end
     end)
     end
 end)
-example:AddToggle("Tự Động Nâng Cấp Nhà",function(state)
+example:AddToggle("Auto Upgrade Plot",function(state)
     getfenv().buyer = (state and true or false )
 while getfenv().buyer do
 task.wait()
@@ -169,7 +264,7 @@ end
 end)
 end
 end)
-example:AddToggle("vô hiệu hóa cửa sổ bật",function(state)
+example:AddToggle("Annoying Popup Disabler",function(state)
     getfenv().annoy = (state and true or false )
 if getfenv().annoy == true then
 -- annoying popup remover
@@ -183,31 +278,33 @@ getfenv().fun:Disconnect()
 end
 end)
     local example = library:CreateWindow({
-        text = "Chỉnh Sửa"
+        text = "Delivery Options"
       })
-      example:AddLabel("☆ Giao Xe",function()
+      example:AddLabel("Minimum Stars",function()
       end)
-      example:AddBox("Điền Vào Đây 1-5☆", function(object, focus)
+      example:AddBox("Enter Star Amount", function(object, focus)
         if focus then
        getfenv().stars = tonumber(object.Text)
         end
     end)
-    example:AddLabel("Mục Tiêu Số Tiền",function()
+    example:AddLabel("Minimum Reward Money",function()
     end)
-    example:AddBox("Điền Vào Đây", function(object, focus)
+    example:AddBox("Enter Minimum Reward", function(object, focus)
         if focus then
        getfenv().smaller = tonumber(object.Text)
         end
     end)
-    example:AddLabel("Số Tiền Tối Đa Bạn Muốn Nhận",function()
+    example:AddLabel("Maximum Reward Money",function()
     end)
-    example:AddBox("Điền Vào Đây", function(object, focus)
+    example:AddBox("Enter Maximum Reward", function(object, focus)
         if focus then
        getfenv().bigger = tonumber(object.Text)
         end
     end)
-        example:AddToggle("Tự Động Giao Xe",function(state)
+        example:AddToggle("Auto Delivery",function(state)
             getfenv().deliver2 = (state and true or false)
+            resetcharactervalue = 0
+            devpart = 1
             game.Players.LocalPlayer.Character.Head.Anchored = false
             spawn(function()
                 while getfenv().deliver2 do
@@ -219,6 +316,19 @@ end)
                 end
                 end)
                 end
+                end)
+
+                spawn(function()
+            while getfenv().deliver2 do
+                task.wait()
+           if devpart ~= nil then
+                resetcharactervalue=0
+            elseif devpart == nil and resetcharactervalue >= 20 then
+                resetcharactervalue=0
+                game.Players.LocalPlayer.Character:BreakJoints()
+wait(1)
+            end
+        end
                 end)
                 local function gettruck()
                     local truck = nil
@@ -262,12 +372,13 @@ end)
                           getfenv().checkif = nil
             while getfenv().deliver2 do
                 wait()
-          
+          local p,call = pcall(function()
             if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
                 task.wait(0.1)
-    
+     devpart = nil
             for i,v in pairs(workspace.ActionTasksGames.Jobs:GetDescendants()) do
             if v.Name == "DeliveryPart" and v.Transparency ~= 1 and game.Players.LocalPlayer.Character.Humanoid.SeatPart ~= nil then
+                devpart = v
                 workspace.Gravity = 0
                 game.Players.LocalPlayer.Character.Head.Anchored = false
                 tppart = v
@@ -284,7 +395,7 @@ end)
                                 game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent.Parent:PivotTo(tppart.CFrame*CFrame.Angles(0,math.rad(90),0))
                                 end)
                     game:GetService("ReplicatedStorage").Remotes.DealershipCustomerController.JobRemoteHandler:FireServer({["Action"] = "TryToCompleteJob",["JobId"] = v.Name})
-                            until game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("MissionRewardStars").Enabled == true or game.Players.LocalPlayer.Character.Humanoid.SeatPart == nil or getfenv().deliver2 == false
+                            until game.Players.LocalPlayer.Character.Humanoid.SeatPart == nil or devpart.Transparency == 1 or getfenv().deliver2 == false
                             game.Players.LocalPlayer.Character.Head.Anchored = false
                             game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
                             local function getstars()
@@ -331,6 +442,7 @@ end)
                         end
                         end
                         end
+                 
                         wait()
                     if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("MissionRewardStars") then
                         game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("MissionRewardStars").Enabled = false
@@ -341,6 +453,11 @@ end)
                 end 
             end
         end
+        pcall(function()
+        if devpart == nil  then
+            resetcharactervalue=resetcharactervalue+1
+        end
+    end)
             elseif game.Players.LocalPlayer.Character.Humanoid.Sit == false and gettruck() == "no truck found" then
                 print(gettruck())
                 if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("MissionRewardStars") then
@@ -359,12 +476,16 @@ end)
             workspace.Gravity = 196
             game.Players.LocalPlayer.Character.Head.Anchored = false
             end
+        end)
+        if p == false then
+        warn(p,call)
+        end
             end
         end)
         local example = library:CreateWindow({
-            text = "Cuộc Đua"
+            text = "Races"
           })
-            example:AddToggle("Tự Động Đua OVAL",function(state)
+            example:AddToggle("Auto OVAL Race",function(state)
                 _G.racetest = (state and true or false)
                 while _G.racetest do
                     wait()
@@ -460,56 +581,75 @@ end)
                 end
                 end
             end)
-            example:AddToggle("Tự Động Đua Mùa 9",function(state)
+            example:AddToggle("Auto Season 10 Race",function(state)
                 _G.racetest2 = (state and true or false)
                 while _G.racetest2 do
                     wait()
                 if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == false then
+                    getfenv().firsttime = true
                     local chr = game.Players.LocalPlayer.Character
                 local car = chr.Humanoid.SeatPart.Parent.Parent
-                 car:PivotTo(CFrame.new(-2270.044189453125, 603.0210571289062, 413.31793212890625))
+                 car:PivotTo(CFrame.new(-2780.792236328125, 602.1199340820312, 4493.97021484375))
                 chr.Head.Anchored = true
                 wait(1)
                 chr.Head.Anchored = false
                 wait(1)
                 workspace.Races.RaceHandler.StartLobby:FireServer("Season")
-                task.wait(15)
+                task.wait(5)
                 workspace.Races.Season.Script.Vote:FireServer("5", "Vote")
                 repeat wait()
                 until game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true or _G.racetest2 == false
                 elseif game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true then
+                    repeat task.wait()
+                    until game:GetService("Players").LocalPlayer.PlayerGui.RaceStart.GO.ImageTransparency ~= 1 or getfenv().firsttime == false or _G.racetest2 == false
+                    getfenv().firsttime = false
                         repeat wait()
                             local test = nil
                         for i,v in pairs(game.Workspace.Races:GetDescendants()) do
-                        if v.Name == "Checkpoint" and v.ClassName == "MeshPart" and v.Transparency ~= 1 then
+                        if v.Name == "Checkpoint" and _G.racetest2 and v.ClassName == "MeshPart" and v.Transparency ~= 1 then
                             test = v
                             workspace.Gravity = 0
                             local chr = game.Players.LocalPlayer.Character
                             local car = chr.Humanoid.SeatPart.Parent.Parent
                             dist = (chr.HumanoidRootPart.Position-v.Position).Magnitude
                             local TweenService = game:GetService("TweenService")
-                            local TweenInfoToUse = TweenInfo.new(dist/140, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+                            local TweenInfoToUse = TweenInfo.new(dist/250, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
                             local TweenValue = Instance.new("CFrameValue")
                             TweenValue.Value = car:GetPrimaryPartCFrame()     
                             TweenValue.Changed:Connect(function()
-                            car:SetPrimaryPartCFrame(TweenValue.Value)
+                            car:PivotTo(TweenValue.Value)
                             end)
                             local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=v.CFrame+Vector3.new(0,5,0)})
                             OnTween:Play()
                             OnTween.Completed:Wait()
+                            local chr = game.Players.LocalPlayer.Character
+                            local car = chr.Humanoid.SeatPart.Parent.Parent
+                            local cpos = v.Parent.TurnSign.CFrame*CFrame.new(0,0,200)
+                            local location = Vector3.new(cpos.X,cpos.Y,cpos.Z)
+                            dist = (chr.HumanoidRootPart.Position-location).Magnitude
+                            local TweenService = game:GetService("TweenService")
+                            local TweenInfoToUse = TweenInfo.new(dist/250, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+                            local TweenValue = Instance.new("CFrameValue")
+                            TweenValue.Value = car:GetPrimaryPartCFrame()     
+                            TweenValue.Changed:Connect(function()
+                            car:PivotTo(TweenValue.Value)
+                            end)
+                            local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=v.Parent.TurnSign.CFrame*CFrame.new(0,0,200)})
+                            OnTween:Play()
+                            OnTween.Completed:Wait()
+                            wait()
                         end
                     end
                 until test == nil or _G.racetest2 == false
-                print("race done")
                 local chr = game.Players.LocalPlayer.Character
                 local car = chr.Humanoid.SeatPart.Parent.Parent
                 dist = (chr.HumanoidRootPart.Position-workspace.Races.Season.GoalPart.Position).Magnitude
                 local TweenService = game:GetService("TweenService")
-                local TweenInfoToUse = TweenInfo.new(dist/200, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+                local TweenInfoToUse = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, true, 0)
                 local TweenValue = Instance.new("CFrameValue")
                 TweenValue.Value = car:GetPrimaryPartCFrame()     
                 TweenValue.Changed:Connect(function()
-                car:SetPrimaryPartCFrame(TweenValue.Value)
+                car:PivotTo(TweenValue.Value)
                 end)
                 local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=workspace.Races.Season.GoalPart.CFrame})
                 OnTween:Play()
@@ -517,8 +657,9 @@ end)
                 workspace.Gravity = 196
                 end
                 end
+                
             end)
-            example:AddToggle("Tự Động Đua Driff",function(state)
+            example:AddToggle("Auto Drift Race",function(state)
             _G.racetest3 = (state and true or false)
             if _G.racetest3 == false then
             local distance = math.huge
