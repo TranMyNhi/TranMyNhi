@@ -14,9 +14,9 @@ CodeServer = 'game:GetService("TeleportService"):TeleportToPlaceInstance(game.Pl
 
 local Embed = {
 
-    ["username"] = "Webhook | Mirage Island",
+    ["username"] = "Nhi Nè",
 
-    ["avatar_url"] = "Link Ảnh",
+    ["avatar_url"] = "https://www.facebook.com/share/p/WFVJFLaTXuQMXTyf/?mibextid=qi2Omg",
 
     ["embeds"] = {
 
@@ -32,7 +32,7 @@ local Embed = {
 
                {
 
-                   ["name"] = "Mirage Spam :",
+                   ["name"] = "Đảo Bí Ẩn:",
 
                    ["value"] = '🟢',
 
