@@ -1,4 +1,4 @@
-LinkHook = "https://discord.com/api/webhooks/1206578588581896242/wvsQ-5NNmS1YslaxP2-xMuF_gk6_brLD0WEIHcIZL86rFRHU-KIg5m8LOmati2QX6w7Z"
+LinkHook = "https://discord.com/api/webhooks/1230017198408466432/gm92rBF-WVbha_BD-AIow0Y39II5RagY7NASpeJ01RxzwDVdPoxI-VsLcIHqqh1WzrlH"
 
 for i,v in pairs(game.Players:GetPlayers()) do
 
@@ -22,7 +22,7 @@ local Embed = {
 
        {
 
-           ["title"] = "**Mirage Island Notify 🏝️ !!**",
+           ["title"] = "**Thông Báo Đảo Bí Ẩn? 🏝️ !!**",
 
            ["color"] = tonumber(00000000),
 
@@ -42,7 +42,7 @@ local Embed = {
 
                {
 
-                   ["name"] = "Players",
+                   ["name"] = "Người Chơi 🧸",
 
                    ["value"] = '```'..tostring(PlayersMin)..'/12```',
 
