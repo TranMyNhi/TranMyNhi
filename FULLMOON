@@ -1,0 +1,317 @@
+LinkHook = "Link Webhook"
+
+ 
+
+local Moon = {
+
+['8'] = "http://www.roblox.com/asset/?id=9709149431", -- 🌕
+
+['7'] = "http://www.roblox.com/asset/?id=9709149052", -- 🌖
+
+['6'] = "http://www.roblox.com/asset/?id=9709143733", -- 🌗
+
+['5'] = "http://www.roblox.com/asset/?id=9709150401", -- 🌘
+
+['4'] = "http://www.roblox.com/asset/?id=9709135895", -- 🌑
+
+['3'] = "http://www.roblox.com/asset/?id=9709139597", -- 🌒
+
+['2'] = "http://www.roblox.com/asset/?id=9709150086", -- 🌓
+
+['1'] = "http://www.roblox.com/asset/?id=9709149680", -- 🌔
+
+};
+
+ 
+
+    if game:GetService("Lighting").Sky.MoonTextureId == Moon['1'] then
+
+        MoonIcon = '🌔'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['2'] then
+
+        MoonIcon = '🌓'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['3'] then
+
+        MoonIcon = '🌒'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['4'] then
+
+        MoonIcon = '🌑'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['5'] then
+
+        MoonIcon = '🌘'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['6'] then
+
+        MoonIcon = '🌗'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['7'] then
+
+        MoonIcon = '🌖'
+
+    elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['8'] then
+
+        MoonIcon = '🌕'
+
+    end
+
+ 
+
+    for i,v in pairs(Moon) do
+
+        if game:GetService("Lighting").Sky.MoonTextureId == v then
+
+            MoonPercent = i / 8 * 100
+
+        end
+
+    end
+
+    
+
+    for i,v in pairs(game.Players:GetPlayers()) do
+
+        PlayersMin = i
+
+    end
+
+ 
+
+    MoonMessage = '```'..tostring(MoonPercent..'%'..' : '..MoonIcon)..'```'
+
+    CodeServer = 'game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,'..'\''..tostring(game.JobId)..'\''..')'
+
+ 
+
+  local Embed = {
+
+    ["username"] = "ASTRAL",
+
+    ["avatar_url"] = "https://www.facebook.com/share/p/WFVJFLaTXuQMXTyf/?mibextid=qi2Omg",
+
+    ["embeds"] = {
+
+    {
+
+     ["title"] = "Webhook Notify Full Moon",
+
+     ["color"] = tonumber(00000000),
+
+     ["type"] = "rich",
+
+     ["fields"] = {
+
+                        {
+
+       ["name"] = "Moon :",
+
+       ["value"] = ''..MoonMessage..'',
+
+       ["inline"] = true
+
+                        },     
+
+      {
+
+       ["name"] = "Players :",
+
+       ["value"] = '```'..tostring(PlayersMin)..'/12```',
+
+       ["inline"] = false
+
+      },
+
+                        {
+
+       ["name"] = "Job-Id :",
+
+       ["value"] = '```'..tostring(game.JobId)..'```',
+
+       ["inline"] = false
+
+                        },
+
+                        {
+
+       ["name"] = "Scripts :",
+
+       ["value"] = '```'..CodeServer..'```',
+
+       ["inline"] = true
+
+                        }
+
+     },
+
+                    ["thumbnail"] = {
+
+                    ["url"] = "https://www.facebook.com/share/D3h9JhQHUDGc4JZ1/?mibextid=xfxF2i",
+
+                    },
+
+     ["footer"] = {
+
+      ["text"] = os.date("%A".." | ".."%d".." ".."%B".." ".."%Y".." | ".."%X").." | Tên",
+
+                        ["icon_url"] = "https://cdn.britannica.com/89/145489-050-4E9609BA/moon-return-journey-Apollo-11-July-21-1969.jpg"
+
+                    }
+
+    }
+
+   },
+
+  }
+
+        local Data = game:GetService("HttpService"):JSONEncode(Embed)
+
+  local Head = {["content-type"] = "application/json"}
+
+  Send = http_request or request or HttpPost or syn.request
+
+  local sendhook = {Url = LinkHook, Body = Data, Method = "POST", Headers = Head}
+
+  Send(sendhook)
+
+ 
+
+        function Hop()
+
+            local PlaceID = game.PlaceId
+
+            local AllIDs = {}
+
+            local foundAnything = ""
+
+            local actualHour = os.date("!*t").hour
+
+            local Deleted = false
+
+            function TPReturner()
+
+                local Site;
+
+                if foundAnything == "" then
+
+                    Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+
+                else
+
+                    Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+
+                end
+
+                local ID = ""
+
+                if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+
+                    foundAnything = Site.nextPageCursor
+
+                end
+
+                local num = 0;
+
+                for i,v in pairs(Site.data) do
+
+                    local Possible = true
+
+                    ID = tostring(v.id)
+
+                    if tonumber(v.maxPlayers) > tonumber(v.playing) then
+
+                        for _,Existing in pairs(AllIDs) do
+
+                            if num ~= 0 then
+
+                                if ID == tostring(Existing) then
+
+                                    Possible = false
+
+                                end
+
+                            else
+
+                                if tonumber(actualHour) ~= tonumber(Existing) then
+
+                                    local delFile = pcall(function()
+
+                                        AllIDs = {}
+
+                                        table.insert(AllIDs, actualHour)
+
+                                    end)
+
+                                end
+
+                            end
+
+                            num = num + 1
+
+                        end
+
+                        if Possible == true then
+
+                            table.insert(AllIDs, ID)
+
+                            wait()
+
+                            pcall(function()
+
+                                wait()
+
+                                game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+
+                            end)
+
+                            wait(4)
+
+                        end
+
+                    end
+
+                end
+
+            end
+
+            function Teleport() 
+
+                while wait() do
+
+                    pcall(function()
+
+                        TPReturner()
+
+                        if foundAnything ~= "" then
+
+                            TPReturner()
+
+                        end
+
+                    end)
+
+                end
+
+            end
+
+            Teleport()
+
+        end
+
+        
+
+        
+
+        _G.ServerHop = true
+
+        
+
+        while _G.ServerHop do
+
+            wait(0.05)
+
+            Hop()
+
+        end
