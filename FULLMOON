@@ -90,13 +90,13 @@ local Moon = {
 
     ["username"] = "ASTRAL",
 
-    ["avatar_url"] = "https://www.facebook.com/share/p/WFVJFLaTXuQMXTyf/?mibextid=qi2Omg",
+    ["avatar_url"] = "https://discord.com/channels/945081136915292160/1095221340023296050/1230014567158120488",
 
     ["embeds"] = {
 
     {
 
-     ["title"] = "Webhook Notify Full Moon",
+     ["title"] = "Thông Báo Full Moon",
 
      ["color"] = tonumber(00000000),
 
@@ -106,7 +106,7 @@ local Moon = {
 
                         {
 
-       ["name"] = "Moon :",
+       ["name"] = "Chỉ Số Moon :",
 
        ["value"] = ''..MoonMessage..'',
 
@@ -116,7 +116,7 @@ local Moon = {
 
       {
 
-       ["name"] = "Players :",
+       ["name"] = "Người Chơi 🧸 :",
 
        ["value"] = '```'..tostring(PlayersMin)..'/12```',
 
@@ -148,7 +148,7 @@ local Moon = {
 
                     ["thumbnail"] = {
 
-                    ["url"] = "https://www.facebook.com/share/D3h9JhQHUDGc4JZ1/?mibextid=xfxF2i",
+                    ["url"] = "https://discord.com/channels/945081136915292160/1095221340023296050/1230014919919796254",
 
                     },
 
