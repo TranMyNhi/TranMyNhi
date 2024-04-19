@@ -22,7 +22,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranM
 local example = library:CreateWindow({
   text = "💜❤️TrầnMỹNhi❤️💜"
 })
-example:AddToggle("Auto Extinguish Fire", function(state)
+example:AddToggle("Tự Chữa Cháy🔥", function(state)
     getfenv().fireman = (state and true or false)
     workspace.Gravity = 196
     while getfenv().fireman do
@@ -66,7 +66,7 @@ example:AddToggle("Auto Extinguish Fire", function(state)
     end
     end
     end)
-    example:AddToggle("Auto Find Easter Eggs", function(state)
+    example:AddToggle("Auto Event [Chưa Cập Nhật]", function(state)
         getfenv().autoextfind = (state and true or false)
         while getfenv().autoextfind do
             task.wait()
@@ -98,7 +98,7 @@ example:AddToggle("Auto Extinguish Fire", function(state)
         end
     end
     end)
-example:AddToggle("Auto Farm", function(state)
+example:AddToggle("Tự Cày❤️", function(state)
 getfenv().auto = (state and true or false)
 while getfenv().auto do
 workspace.Gravity = 0
@@ -121,7 +121,7 @@ workspace.Gravity = 196
 end
 end)
 
-example:AddToggle("Auto Sell Cars",function(state)
+example:AddToggle("Tự Bán Xe",function(state)
     getfenv().Customer = (state and true or false)
     while getfenv().Customer do
         task.wait()
@@ -174,7 +174,7 @@ until tonumber(text) == nil
     end)
     end
 end)
-example:AddToggle("Auto Delivery",function(state)
+example:AddToggle("Tự Giao Xe",function(state)
     getfenv().deliver = (state and true or false)
     resetcharactervalue1=0
     devpart2 = 1
@@ -240,7 +240,7 @@ end
     end)
     end
 end)
-example:AddToggle("Auto Upgrade Plot",function(state)
+example:AddToggle("Tự Nâng Plot",function(state)
     getfenv().buyer = (state and true or false )
 while getfenv().buyer do
 task.wait()
@@ -264,7 +264,7 @@ end
 end)
 end
 end)
-example:AddToggle("Annoying Popup Disabler",function(state)
+example:AddToggle("Xóa Hiệu Ứng",function(state)
     getfenv().annoy = (state and true or false )
 if getfenv().annoy == true then
 -- annoying popup remover
@@ -278,7 +278,7 @@ getfenv().fun:Disconnect()
 end
 end)
     local example = library:CreateWindow({
-        text = "Delivery Options"
+        text = "Cài Đặt Giao Xe"
       })
       example:AddLabel("Minimum Stars",function()
       end)
@@ -301,7 +301,7 @@ end)
        getfenv().bigger = tonumber(object.Text)
         end
     end)
-        example:AddToggle("Auto Delivery",function(state)
+        example:AddToggle("[Tự] Giao Xe",function(state)
             getfenv().deliver2 = (state and true or false)
             resetcharactervalue = 0
             devpart = 1
@@ -483,9 +483,9 @@ wait(1)
             end
         end)
         local example = library:CreateWindow({
-            text = "Races"
+            text = "Đua Xe hua húa🇻🇳"
           })
-            example:AddToggle("Auto OVAL Race",function(state)
+            example:AddToggle("Đua OVAL Race",function(state)
                 _G.racetest = (state and true or false)
                 while _G.racetest do
                     wait()
@@ -581,7 +581,7 @@ wait(1)
                 end
                 end
             end)
-            example:AddToggle("Auto Season 10 Race",function(state)
+            example:AddToggle("Đua Season 10 Race",function(state)
                 _G.racetest2 = (state and true or false)
                 while _G.racetest2 do
                     wait()
@@ -659,7 +659,7 @@ wait(1)
                 end
                 
             end)
-            example:AddToggle("Auto Drift Race",function(state)
+            example:AddToggle("Tự Động Drift",function(state)
             _G.racetest3 = (state and true or false)
             if _G.racetest3 == false then
             local distance = math.huge
@@ -721,3 +721,6 @@ task.wait()
 end
 end
 end)
+local example = library:CreateWindow({
+  text = "Cần Card 50k👉👈🤧"
+})
