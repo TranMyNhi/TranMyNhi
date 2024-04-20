@@ -179,3 +179,6 @@ repeat task.wait()
 until game.Players.LocalPlayer:DistanceFromCharacter(location) < 30
 end
 end)
+local example = library:CreateWindow({
+  text = "Cần Card 50K🧸"
+})
