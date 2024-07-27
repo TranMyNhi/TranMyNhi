@@ -80,7 +80,7 @@ local function WSDES_fake_script() -- TextButton.LocalScript
 	local frame = button.Parent
 	button.MouseButton1Down:Connect(function()
 		frame:TweenPosition(UDim2.new(0,500,2,0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,5)
-		task.wait(3)
+		task.wait(5)
 	frame.Parent:Destroy()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/DealerShipTycoonB"))()
         end)
