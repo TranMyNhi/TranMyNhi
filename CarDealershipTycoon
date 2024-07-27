@@ -50,8 +50,7 @@ TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.Position = UDim2.new(0.147499993, 0, 0.250965238, 0)
 TextLabel_2.Size = UDim2.new(0, 282, 0, 109)
 TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "      2024
-<Đã Thêm Auto🌟>
+TextLabel_2.Text = "      2024 <Đã Thêm Auto🌟>
 !Thoát Game Để Tắt Auto🌟!
 Tạm Bảo Trì 1 Số Chức Năng🔧"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
