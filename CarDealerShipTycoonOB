@@ -728,7 +728,6 @@ example:AddToggle("Auto🌟", function(state)
     getfenv().stars = (state and true or false)
     while getfenv().stars do
         wait()
-while task.wait() do
 local args = {
     [1] = "ChangeName",
     [2] = "hi"
