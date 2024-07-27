@@ -50,9 +50,9 @@ TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.Position = UDim2.new(0.147499993, 0, 0.250965238, 0)
 TextLabel_2.Size = UDim2.new(0, 282, 0, 109)
 TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "<Đã Thêm Auto🌟> Thoát Game Để Tắt Auto🌟"
+TextLabel_2.Text = "<Đã Thêm Auto🌟> Tắt=Out"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 20.000
+TextLabel_2.TextSize = 22.000
 TextLabel_2.TextWrapped = true
 TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -66,7 +66,7 @@ TextButton.Size = UDim2.new(0, 157, 0, 43)
 TextButton.Font = Enum.Font.FredokaOne
 TextButton.Text = "Yêu Nhi👀❤️"
 TextButton.TextColor3 = Color3.fromRGB(153, 153, 255)
-TextButton.TextSize = 22.000
+TextButton.TextSize = 25.000
 
 UICorner_3.Parent = TextButton
 
