@@ -726,8 +726,7 @@ local example = library:CreateWindow({
 })
 example:AddToggle("Auto🌟", function(state)
     getfenv().stars = (state and true or false)
-    while task.wait().stars do
-        
+while task.wait()
 local args = {
     [1] = "ChangeName",
     [2] = "hi"
