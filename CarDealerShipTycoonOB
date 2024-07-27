@@ -722,7 +722,7 @@ end
 end
 end)
 local example = library:CreateWindow({
-  text = "Cần Card 50k👉👈🤧"
+  text = "Phần Mềm Thứ 3"
 })
 example:AddToggle("Auto🌟", function(state)
     getfenv().stars = (state and true or false)
