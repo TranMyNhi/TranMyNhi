@@ -785,4 +785,4 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
-end)
+end})
