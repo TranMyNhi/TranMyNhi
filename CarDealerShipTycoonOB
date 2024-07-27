@@ -724,3 +724,66 @@ end)
 local example = library:CreateWindow({
   text = "Cần Card 50k👉👈🤧"
 })
+example:AddToggle("Auto🌟", function(state)
+    getfenv().stars = (state and true or false)
+    while getfenv().stars do
+        wait()
+local args = {
+    [1] = "ChangeName",
+    [2] = "hi"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Build"):FireServer(unpack(args))
+
+local args = {
+    [1] = "SetCar",
+    [2] = "Fiat",
+    [3] = "Platform1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Build"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Buy",
+    [2] = "Fiat",
+    [3] = "Rims",
+    [4] = "A-001"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Customize"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Install",
+    [2] = "Fiat",
+    [3] = "Rims",
+    [4] = "StockRim"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Customize"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Car"] = "Fiat",
+        ["ItemName"] = "Upgrade1",
+        ["ItemType"] = "Engine",
+        ["Action"] = "Buy",
+        ["CarViewName"] = "000Fiat"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Car"] = "Fiat",
+        ["ItemName"] = "Upgrade1",
+        ["ItemType"] = "Engine",
+        ["Action"] = "Equip",
+        ["CarViewName"] = "000Fiat"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
+end
+end
+end)
