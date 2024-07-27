@@ -726,7 +726,7 @@ local example = library:CreateWindow({
 })
 example:AddToggle("Auto🌟", function(state)
     getfenv().stars = (state and true or false)
-while task.wait()
+while task.wait() do
 local args = {
     [1] = "ChangeName",
     [2] = "hi"
@@ -784,3 +784,4 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
 end
+end)
