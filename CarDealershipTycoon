@@ -36,7 +36,7 @@ TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
 TextLabel.Size = UDim2.new(0, 400, 0, 50)
 TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "UPDATE"
+TextLabel.Text = "💜❤️TrầnMỹNhi❤️💜"
 TextLabel.TextColor3 = Color3.fromRGB(155,8,209)
 TextLabel.TextSize = 43.000
 TextLabel.TextWrapped = true
@@ -52,7 +52,7 @@ TextLabel_2.Size = UDim2.new(0, 282, 0, 109)
 TextLabel_2.Font = Enum.Font.FredokaOne
 TextLabel_2.Text = "<Đã Thêm Auto🌟> Tắt=Out"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 2.000
+TextLabel_2.TextSize = 22.000
 TextLabel_2.TextWrapped = true
 TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 
