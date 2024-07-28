@@ -1,0 +1,74 @@
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU", true))()
+local example = library:CreateWindow({
+  text = "💜❤️TrầnMỹNhi❤️💜"
+})
+local example = library:CreateWindow({
+  text = "Phần Mềm Thứ 3"
+})
+example:AddToggle("Auto🌟", function(state)
+    getfenv().stars = (state and true or false)
+while task.wait() do
+local args = {
+    [1] = "ChangeName",
+    [2] = "hi"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Build"):FireServer(unpack(args))
+
+local args = {
+    [1] = "SetCar",
+    [2] = "Fiat",
+    [3] = "Platform1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Build"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Buy",
+    [2] = "Fiat",
+    [3] = "Rims",
+    [4] = "A-001"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Customize"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Install",
+    [2] = "Fiat",
+    [3] = "Rims",
+    [4] = "StockRim"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Customize"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Car"] = "Fiat",
+        ["ItemName"] = "Upgrade1",
+        ["ItemType"] = "Engine",
+        ["Action"] = "Buy",
+        ["CarViewName"] = "000Fiat"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["Car"] = "Fiat",
+        ["ItemName"] = "Upgrade1",
+        ["ItemType"] = "Engine",
+        ["Action"] = "Equip",
+        ["CarViewName"] = "000Fiat"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
+end
+end)
