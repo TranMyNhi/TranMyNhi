@@ -36,7 +36,7 @@ TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
 TextLabel.Size = UDim2.new(0, 400, 0, 50)
 TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "🌟Challenge🌟"
+TextLabel.Text = "🌟Menu🌟"
 TextLabel.TextColor3 = Color3.fromRGB(155,8,209)
 TextLabel.TextSize = 43.000
 TextLabel.TextWrapped = true
@@ -81,7 +81,7 @@ local function WSDES_fake_script() -- TextButton.LocalScript
 		frame:TweenPosition(UDim2.new(0,500,2,0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,5)
 		task.wait(5)
 	frame.Parent:Destroy()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/ChallengeOB"))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/GR"))()
         end)
 
 end
