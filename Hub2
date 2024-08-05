@@ -60,7 +60,7 @@ local nhilib = {
   Options = {},
   Flags = {},
   Tabs = {},
-  Icons = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Icons.Lua"))()
+  Icons = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/icon"))()
 }
 
 local ViewportSize = workspace.CurrentCamera.ViewportSize
@@ -124,7 +124,7 @@ local SetProps, SetChildren, InsertTheme, Create do
     end
   end
   
-  pcall(Save, "redz library V5.lua")
+  pcall(Save, "nhi lib.lua")
 end
 
 local ScreenGui = Create("ScreenGui", CoreGui, {
@@ -222,11 +222,11 @@ end
 local Theme = nhilib.Themes[nhilib.Save.Theme]
 
 local function AddEle(Name, Func)
-  redzlib.Elements[Name] = Func
+  nhilib.Elements[Name] = Func
 end
 
 local function Make(Ele, Instance, props, ...)
-  local Element = redzlib.Elements[Ele](Instance, props, ...)
+  local Element = nhilib.Elements[Ele](Instance, props, ...)
   return Element
 end
 
@@ -423,7 +423,7 @@ function nhilib:SetScale(NewScale)
   UIScale, ScreenGui.Scale.Scale = NewScale, NewScale
 end
 
-function redzlib:MakeWindow(Configs)
+function nhilib:MakeWindow(Configs)
   local WTitle = Configs[1] or Configs.Name or Configs.Title or "nhi hub"
   local WMiniText = Configs[2] or Configs.SubTitle or "by :™nhi"
   local SaveCfg = Configs[3] or Configs.SaveFolder or false
