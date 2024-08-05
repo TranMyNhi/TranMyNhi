@@ -1,6 +1,6 @@
 --[[
   Dev: ™nhi
-  Lib: nhi hub
+  Lib: nhihub
   github: TRANMYNHI
   
   Game: Roblox-MemeSea
