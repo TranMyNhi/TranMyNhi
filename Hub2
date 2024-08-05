@@ -377,7 +377,7 @@ function nhilib:GetIcon(IconName)
   if IconName:find("rbxassetid://") or IconName:len() < 1 then return IconName end
   IconName = IconName:lower():gsub("lucide", ""):gsub("-", "")
   
-  for Name, Icon in pairs(redzlib.Icons) do
+  for Name, Icon in pairs(nhilib.Icons) do
     Name = Name:gsub("lucide", ""):gsub("-", "")
     if Name == IconName then
       return Icon
@@ -396,10 +396,10 @@ function redzlib:SetTheme(NewTheme)
   if not VerifyTheme(NewTheme) then return end
   
   redzlib.Save.Theme = NewTheme
-  SaveJson("redz library V5.lua", redzlib.Save)
+  SaveJson("nhi hub.lua",nhilib.Save)
   Theme = redzlib.Themes[NewTheme]
   
-  table.foreach(redzlib.Instances, function(_,Val)
+  table.foreach(nhilib.Instances, function(_,Val)
     if Val.Type == "Gradient" then
       Val.Instance.Color = Theme["Color Hub 1"]
     elseif Val.Type == "Frame" then
@@ -418,16 +418,16 @@ function redzlib:SetTheme(NewTheme)
   end)
 end
 
-function redzlib:SetScale(NewScale)
+function nhilib:SetScale(NewScale)
   NewScale = ViewportSize.Y / math.clamp(NewScale, 300, 2000)
   UIScale, ScreenGui.Scale.Scale = NewScale, NewScale
 end
 
 function redzlib:MakeWindow(Configs)
-  local WTitle = Configs[1] or Configs.Name or Configs.Title or "redz Library V5"
-  local WMiniText = Configs[2] or Configs.SubTitle or "by : redz9999"
+  local WTitle = Configs[1] or Configs.Name or Configs.Title or "nhi hub"
+  local WMiniText = Configs[2] or Configs.SubTitle or "by :™nhi"
   local SaveCfg = Configs[3] or Configs.SaveFolder or false
-  local Flags = redzlib.Flags
+  local Flags = nhilib.Flags
   
   if type(SaveCfg) == "string" then SaveCfg = string.gsub(SaveCfg, "/", "|")end
   
@@ -462,7 +462,7 @@ function redzlib:MakeWindow(Configs)
     end
   end;LoadFile()
   
-  local UISizeX, UISizeY = unpack(redzlib.Save.UISize)
+  local UISizeX, UISizeY = unpack(nhilib.Save.UISize)
   local MainFrame = InsertTheme(Create("ImageButton", ScreenGui, {
     Size = UDim2.fromOffset(UISizeX, UISizeY),
     Position = UDim2.new(0.5, -UISizeX/2, 0.5, -UISizeY/2),
@@ -588,7 +588,7 @@ function redzlib:MakeWindow(Configs)
   
   ConnectSave(ControlSize2, function()
     redzlib.Save.TabSize = MainScroll.Size.X.Offset
-    SaveJson("redz library V5.lua", redzlib.Save)
+    SaveJson("nhi hub.lua", nhilib.Save)
   end)
   
   local ButtonsFolder = Create("Folder", TopBar, {
