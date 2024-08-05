@@ -1,6 +1,6 @@
 --[[
   Dev: ™Nhi
-  Lib: Nhi™
+  Lib: redzLibV5
   github: Tranmynhi
   
   Game: Roblox-MemeSea
@@ -403,9 +403,9 @@ if not _env.LoadedFarm then
 end
 
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
-local Window = redzlib:MakeWindow({ Title = "redz Hub : Meme Sea", SubTitle = "by ™Nhi", SaveFolder = "™Nhi-MemeSea.json" })
+local Window = redzlib:MakeWindow({ Title = "redz Hub : Meme Sea", SubTitle = "by ™Nhi", SaveFolder = "redzHub-MemeSea.json" })
 Window:AddMinimizeButton({
-  Button = { Image = "rbxassetid://15298567397", BackgroundTransparency = 0 },
+  Button = { Image = "rbxassetid://18808159889", BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
 })
 
@@ -431,10 +431,10 @@ end
 
 local _Discord = Tabs.Discord do
   _Discord:AddDiscordInvite({
-    Name = "™Nhi HUB | Community",
+    Name = "™Nhi Hub | Community",
     Description = "Join our discord community to receive information about the next update",
     Logo = "rbxassetid://18808159889",
-    Invite = "https://discord.com/invite/2vrryGB7"
+    Invite = "https://discord.com/2vrryGB7"
   })
 end
 
