@@ -1,6 +1,6 @@
 --[[
   Dev: ™nhi
-  Lib: nhihub
+  Lib: nhi hub
   github: TRANMYNHI
   
   Game: Roblox-MemeSea
@@ -402,8 +402,8 @@ if not _env.LoadedFarm then
   end)
 end
 
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
-local Window = redzlib:MakeWindow({ Title = "nhi hub : Meme Sea", SubTitle = "by ™nhi", SaveFolder = "nhihub-MemeSea.json" })
+local nhilib = https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/Hub2"))()
+local Window = nhilib:MakeWindow({ Title = "nhi hub : Meme Sea", SubTitle = "by ™nhi", SaveFolder = "nhihub-MemeSea.json" })
 Window:AddMinimizeButton({
   Button = { Image = "rbxassetid://18808159889", BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
