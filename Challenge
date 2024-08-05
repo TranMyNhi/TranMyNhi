@@ -50,7 +50,7 @@ TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.Position = UDim2.new(0.147499993, 0, 0.250965238, 0)
 TextLabel_2.Size = UDim2.new(0, 282, 0, 109)
 TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "<Auto🌟> Tắt=Out🐷"
+TextLabel_2.Text = "Bạn Dã Bị Khoá"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 22.000
 TextLabel_2.TextWrapped = true
@@ -81,7 +81,7 @@ local function WSDES_fake_script() -- TextButton.LocalScript
 		frame:TweenPosition(UDim2.new(0,500,2,0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,5)
 		task.wait(5)
 	frame.Parent:Destroy()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/ChallengeOB"))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/ChallengeO"))()
         end)
 
 end
