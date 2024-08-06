@@ -724,8 +724,8 @@ end)
 local example = library:CreateWindow({
   text = "Phần Mềm Thứ 3"
 })
-  example:AddButton("[Sao Vô Hạn]",function() 
-while task.wait(1.2) do
+  example:AddButton("10K🌟",function() 
+for i = 1, 210 do
 local args = {
     [1] = "ChangeName",
     [2] = "hi"
