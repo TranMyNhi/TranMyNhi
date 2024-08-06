@@ -1,4 +1,4 @@
-Xar Dealership Tycoon 
+Car Dealership Tycoon 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/CarDealershipTycoon"))()
 
 Dealership tycoon
