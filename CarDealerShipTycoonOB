@@ -724,9 +724,8 @@ end)
 local example = library:CreateWindow({
   text = "Phần Mềm Thứ 3"
 })
-example:AddToggle("Auto🌟", function(state)
-    getfenv().stars = (state and true or false)
-while task.wait(1.8) do
+  example:AddButton("[Sao Vô Hạn]",function() 
+while task.wait(1.2) do
 local args = {
     [1] = "ChangeName",
     [2] = "hi"
