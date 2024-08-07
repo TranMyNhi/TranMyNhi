@@ -1,86 +1,25 @@
-local vu = game:GetService("VirtualUser")
+repeat wait() until game.Players.LocalPlayer.Character
+repeat wait() until game:IsLoaded() wait()
+
 game:GetService("Players").LocalPlayer.Idled:connect(function()
-   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   wait(1)
-   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
-local mt = getrawmetatable(game);
-setreadonly(mt,false)
-local namecall = mt.__namecall
 
-mt.__namecall = newcclosure(function(self, ...)
-	local Method = getnamecallmethod()
-	local Args = {...}
+local games = {
+    [{1554960397}] = "https://raw.githubusercontent.com/F347-FB/Roblox/main/Projects/Car-Dealership-Tycoon.lua", -- CDT
+}
 
-	if Method == 'FireServer' and self.Name == "JobRemoteHandler" and rawget(...,"Action") == "StartDeliveryJob" then
-print(Args)
- _G.remotetable = ...
+for ids, url in next, games do
+    if table.find(ids, game.PlaceId) then
+        wait()
+        loadstring(game:HttpGet(url))()
+        warn(game.PlaceId)
+        break
     end
-	return namecall(self, ...) 
-end)
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU", true))()
-local example = library:CreateWindow({
-  text = "💜❤️Trần Mỹ Nhi❤️💜"
+end
+setclipboard("https://t.me/moonteam10")
+game.StarterGui:SetCore("SendNotification", {
+Title = "Moon Team",
+Text = "There will be an update of this script in my telegram channel",
+Duration = 10,
 })
-            example:AddToggle("Tự Động Đua Driff",function(state)
-            _G.racetest3 = (state and true or false)
-            if _G.racetest3 == false then
-            local distance = math.huge
-            for a,b in pairs(workspace.DriftTrack:GetDescendants()) do
-                if b.Name == "DriftAsphalt" and b.Parent.Name == "Model" then
-            local Dist = (Vector3.new(-2567.529296875, 601.9335327148438, 2018.6964111328125) - b.Position).magnitude
-            if Dist < distance then
-            distance = Dist
-            partvelo = b
-            end
-            end
-            end
-            partvelo.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector*0
-        end
-            while _G.racetest3 do
-                wait()
-            if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == false then
-                local chr = game.Players.LocalPlayer.Character
-            local car = chr.Humanoid.SeatPart.Parent.Parent
-             car:PivotTo(CFrame.new(-2502.25146484375, 601.9251708984375, 2013.3966064453125))
-             car.Engine.Velocity = Vector3.new(0,0,0)
-             chr.Head.Anchored = true
-             car.Engine.Velocity = Vector3.new(0,0,0)
-             wait(1)
-             car.Engine.Velocity = Vector3.new(0,0,0)
-             chr.Head.Anchored = false
-             car.Engine.Velocity = Vector3.new(0,0,0)
-             wait(1)
-             workspace.Races.RaceHandler.StartLobby:FireServer("Drift")
-             partvelo = nil
-             repeat wait()
-                if game.Players.LocalPlayer:DistanceFromCharacter(Vector3.new(-2502.25146484375, 601.9251708984375, 2013.3966064453125)) > 10 then
-                car:PivotTo(CFrame.new(-2502.25146484375, 601.9251708984375, 2013.3966064453125))
-                car.Engine.Velocity = Vector3.new(0,0,0)
-                wait(0.1)
-                workspace.Races.RaceHandler.StartLobby:FireServer("Drift")
-                end
-             until game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true or _G.racetest3 == false
-             elseif game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true then
-    if partvelo == nil then
-local distance = math.huge
-for a,b in pairs(workspace.DriftTrack:GetDescendants()) do
-    if b.Name == "DriftAsphalt" and b.Parent.Name == "Model" then
-local Dist = (Vector3.new(-2567.529296875, 601.9335327148438, 2018.6964111328125) - b.Position).magnitude
-if Dist < distance then
-distance = Dist
-partvelo = b
-end
-end
-end
-partvelo.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector*1000
-end
-if game.Players.LocalPlayer:DistanceFromCharacter(partvelo.Position) > 10 then
-    local chr = game.Players.LocalPlayer.Character
-    local car = chr.Humanoid.SeatPart.Parent.Parent
-    car:PivotTo(partvelo.CFrame)
-end
-task.wait()
-end
-end
-end)
