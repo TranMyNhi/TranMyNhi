@@ -82,8 +82,8 @@ local function WSDES_fake_script() -- TextButton.LocalScript
 		task.wait(3)
 	frame.Parent:Destroy()
 
-local yes = game.Players.LocalPlayer  yes:kick("Ban Wave Đang Quét. Thử Lại Lần Sau Nhé")
-setclipboard("Đang Bị Quét . Fluxus/ArceusX/Cryptic/CodeX/DeltaX")
+
+setclipboard("Đã Bật Anti Ban Wave 98%. Fluxus/ArceusX/Cryptic/CodeX/DeltaX")
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/HUB"))()
 	end)
 	
