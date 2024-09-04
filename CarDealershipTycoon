@@ -82,8 +82,6 @@ local function WSDES_fake_script() -- TextButton.LocalScript
 		task.wait(5)
 	frame.Parent:Destroy()
 
-local yes = game.Players.LocalPlayer  yes:kick("Ban Wave Đang Quét. Thử Lại Lần Sau Nhé")
-setclipboard("Đang Bị Quét . Fluxus/ArceusX/Cryptic/CodeX/DeltaX")
 	                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/CarDealerShipTycoonOB"))()
         end)
 
