@@ -66,38 +66,7 @@ example:AddToggle("Tự Chữa Cháy🔥", function(state)
     end
     end
     end)
-    example:AddToggle("Auto Event [Chưa Cập Nhật]", function(state)
-        getfenv().autoextfind = (state and true or false)
-        while getfenv().autoextfind do
-            task.wait()
-            local function eggfinder(egg)
-                local isegg = nil
-                for i,v in pairs(egg:GetChildren()) do
-                    if v.ClassName == "Part" and v:GetAttribute("Collection") == "Egg" then
-                        isegg = v.Parent:FindFirstChildOfClass("MeshPart")
-                    end
-                end
-                return isegg
-            end
-        for i,v in pairs(workspace:GetChildren()) do
-            if v.Name == "Model" and eggfinder(v) ~= nil and eggfinder(v).Transparency == 0 or v.ClassName == "Model" and #v:GetChildren() == 0 then
-                local timeout = 0
-                repeat task.wait()
-                    timeout = timeout + 1
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =v.WorldPivot
-                until #v:GetChildren() > 0  or timeout > 10 or getfenv().autoextfind == false
-                if eggfinder(v) then
-                    repeat task.wait()
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =v.WorldPivot
-
-        game:GetService("ReplicatedStorage").Remotes.Collectibles.TryToCollect:FireServer(v.Part)
-                    until eggfinder(v).Transparency == 1 or getfenv().autoextfind == false
-                end
-                print(v)
-            end
-        end
-    end
-    end)
+    
 example:AddToggle("Tự Cày❤️", function(state)
 getfenv().auto = (state and true or false)
 while getfenv().auto do
@@ -183,7 +152,7 @@ example:AddToggle("Tự Giao Xe",function(state)
             task.wait()
             pcall(function()
         if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
-            wait(5)
+            wait(3)
             getfenv().spawned = false
         end
         end)
@@ -206,7 +175,7 @@ wait(1)
         wait()
         pcall(function()
     if game.Players.LocalPlayer.Character.Humanoid.SeatPart ~= nil then
-        task.wait(1)
+        task.wait(0.8)
         devpart2 = nil
     for i,v in pairs(workspace.ActionTasksGames.Jobs:GetDescendants()) do
     if v.Name == "DeliveryPart" and v.Transparency ~= 1 then
