@@ -1,0 +1,65 @@
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame:FindFirstChild("Donate") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame.Donate:Destroy() end end
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame:FindFirstChild("NewBundle") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame.NewBundle:Destroy() end end
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("Invite") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.Invite:Destroy() end end
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("AutoF") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.AutoF:Destroy() end end
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("SlashClick") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.SlashClick:Destroy() end end
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("PlusFrame") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.PlusFrame:Destroy() end end
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("Shift") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.Shift:Destroy() end end
+
+local mt = getrawmetatable(game) make_writeable(mt)
+local nc = mt.__namecall
+
+mt.__namecall = newcclosure(function (self, ...)
+local method = getnamecallmethod()
+local args = {...}
+
+if method == "FireServer" and args[1] == "HackCheck" and tostring(self) == "MonsterEvent" then return end
+if method == "FireServer" and args[1] == "PlayServerAni" and tostring(self) == "MonsterEvent" then return end
+
+return nc(self, table.unpack(args))
+end)
+
+function C() spawn(function () while getgenv().C do
+    for i, v in pairs(workspace.ForScript.Monster:GetDescendants()) do
+        if v:FindFirstChild("Monster_") then
+            for i, v in pairs(v.Monster_:GetChildren()) do
+                if v then local args = {[1] = "DamToMonster",[2] = v,[3] = {["damtype"] = "normal"}}game:GetService("ReplicatedStorage").CurRemotes.MonsterEvent:FireServer(unpack(args)) end
+            end
+        end
+    end wait()
+        end
+    end)
+end
+
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("💜❤️TrầnMỹNhi❤️💜")
+
+local b = w:CreateFolder("Trang Chủ")
+
+b:Label("God Mode is Always On",{TextSize = 20; TextColor = Color3.fromRGB(255,255,255); BgColor = Color3.fromRGB(38, 38, 38);})
+
+b:Toggle("Giết Xung Quanh",function(val) getgenv().C = val C() end)
+
+b:Label("Made by ™Nhi",{TextSize = 22; TextColor = Color3.fromRGB(255,255,255); BgColor = Color3.fromRGB(38, 38, 38);})
+
+local w = library:CreateWindow("Cá Nhân")
+
+local b = w:CreateFolder("Tính Năng")
+
+b:DestroyGui()
+
+b:Button("Discord",function() setclipboard("workink.co/2GQ/LTD") end)
+b:Button("Full Version",function() loadstring(game:HttpGet("https://pastebin.com/raw/GphZf9Xe", true))() end)
+b:Button("Rejoin",function() loadstring(game:HttpGet("https://pastebin.com/raw/mM7JBG5h", true))() end)
+b:Button("Reset",function() loadstring(game:HttpGet("https://pastebin.com/raw/EEY6SATj", true))() end)
+
+b:Slider("Tốc Độ",{min = 0; max = 100000; precise = false;},function(val) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val end)
+b:Slider("Nhảy Cao",{min = 0; max = 100000; precise = false;},function(val) game.Players.LocalPlayer.Character.Humanoid.JumpPower = val end)
+b:Slider("Chiều Cao",{min = 0; max = 100000; precise = false;},function(val) game.Players.LocalPlayer.Character.Humanoid.HipHeight = val end)
+b:Slider("Trọng Lực",{min = 0; max = 360; precise = false;},function(val) game.workspace.Gravity = val end)
+b:Slider("FOV",{min = 0;max = 120;precise = false;},function(val) game.workspace.CurrentCamera.FieldOfView = val end)
+
+function TPCFrame(Player_CFrame) if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Player_CFrame end end
+function RTPCFrame(M_CF) if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then M_CF.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end end
+function PHP(Player_HP) if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then game.Players.LocalPlayer.Character.Humanoid.Health = Player_HP end end
