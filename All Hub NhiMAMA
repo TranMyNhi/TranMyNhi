@@ -13,4 +13,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/m
 Driving Empire
 loadstring(game:HttpGet('https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/Driving%20Empire'))()
 
+Sword Warior                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/SwordWariorOB"))()
+
 
