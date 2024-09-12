@@ -49,7 +49,7 @@ local b = w:CreateFolder("Tính Năng")
 
 b:DestroyGui()
 
-b:Button("Discord",function() setclipboard("workink.co/2GQ/LTD") end)
+b:Button("Discord",function() setclipboard("https://discord.gg/CXK8ZGgS") end)
 b:Button("Full Version",function() loadstring(game:HttpGet("https://pastebin.com/raw/GphZf9Xe", true))() end)
 b:Button("Rejoin",function() loadstring(game:HttpGet("https://pastebin.com/raw/mM7JBG5h", true))() end)
 b:Button("Reset",function() loadstring(game:HttpGet("https://pastebin.com/raw/EEY6SATj", true))() end)
