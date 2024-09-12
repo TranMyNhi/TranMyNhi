@@ -1,11 +1,3 @@
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame:FindFirstChild("Donate") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame.Donate:Destroy() end end
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame:FindFirstChild("NewBundle") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.MenuFrame.NewBundle:Destroy() end end
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("Invite") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.Invite:Destroy() end end
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("AutoF") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.AutoF:Destroy() end end
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("SlashClick") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.SlashClick:Destroy() end end
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("PlusFrame") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.PlusFrame:Destroy() end end
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainGui") then if game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame:FindFirstChild("Shift") then game.Players.LocalPlayer.PlayerGui.MainGui.MainFrame.Shift:Destroy() end end
-
 local mt = getrawmetatable(game) make_writeable(mt)
 local nc = mt.__namecall
 
