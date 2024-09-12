@@ -41,7 +41,7 @@ b:Label("God Mode is Always On",{TextSize = 20; TextColor = Color3.fromRGB(255,2
 
 b:Toggle("Giết Xung Quanh",function(val) getgenv().C = val C() end)
 
-b:Label("Made by ™Nhi",{TextSize = 22; TextColor = Color3.fromRGB(255,255,255); BgColor = Color3.fromRGB(38, 38, 38);})
+b:Label("Made by ™Nhi",{TextSize = 22; TextColor = Color3.fromRGB(204,102,255); BgColor = Color3.fromRGB(38, 38, 38);})
 
 local w = library:CreateWindow("Cá Nhân")
 
