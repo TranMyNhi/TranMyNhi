@@ -753,3 +753,11 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CarUpgrade"):FireServer(unpack(args))
 end
 end)
+  example:AddButton("Xoá Tiền",function() 
+while task.wait() do
+
+game:GetService("ReplicatedStorage").Remotes.Paint:FireServer("000Fiat",Color3.new(0.937255, 0.721569, 0.219608),"Paint")
+
+game:GetService("ReplicatedStorage").Remotes.Paint:FireServer("000Fiat",Color3.new(0.0627451, 0.164706, 0.862745),"Paint")
+end
+end)
