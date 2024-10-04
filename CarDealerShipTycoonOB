@@ -761,3 +761,11 @@ game:GetService("ReplicatedStorage").Remotes.Paint:FireServer("000Fiat",Color3.n
 game:GetService("ReplicatedStorage").Remotes.Paint:FireServer("000Fiat",Color3.new(0.0627451, 0.164706, 0.862745),"Paint")
 end
 end)
+  example:AddButton("Xoá Tiền",function()
+while task.wait() do
+game:GetService("ReplicatedStorage").Remotes.CarUpgrade:FireServer({["Car"] = "Fiat",["ItemName"] = "RWD",["Action"] = "Buy",["ItemType"] = "Drivetrain",["CarViewName"] = "000Fiat"})
+
+
+game:GetService("ReplicatedStorage").Remotes.CarUpgrade:FireServer({["Car"] = "Fiat",["ItemName"] = "AWD",["Action"] = "Buy",["ItemType"] = "Drivetrain",["CarViewName"] = "000Fiat"})
+end
+end)
