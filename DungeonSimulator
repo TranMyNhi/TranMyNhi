@@ -2,7 +2,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranM
 local example = library:CreateWindow({
   text = "💜❤️TrầnMỹNhi❤️💜"
 })
-  example:AddButton("INF DAME",function() 
+example:AddButton("INF DAME",function() 
 while wait() do
    game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.TrainStrength:InvokeServer(5)
 end
