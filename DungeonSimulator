@@ -1,7 +1,30 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU", true))()
 local example = library:CreateWindow({
-  text = "💜❤️TrầnMỹNhi❤️💜"
+  text = "Lê Tuấn Trúc"
 })
+  example:AddButton("INF DAME",function() 
+while wait() do
+   game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.TrainStrength:InvokeServer(5)
+end
+end)
+
   example:AddButton("50 Egg Pro",function()     game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.HatchEgg:InvokeServer("Glitched Egg",50)
+end
+end)
+
+example:AddButton("INF DAILY",function() 
+while wait() do
+   game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.RewardDaily:InvokeServer(1)
+
+game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.RewardDaily:InvokeServer(2)
+
+game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.RewardDaily:InvokeServer(3)
+
+end
+end)
+
+example:AddButton("INF X2 XP",function() 
+while wait() do
+   game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.UseShopBoost:InvokeServer("Xp Potion")
 end
 end)
