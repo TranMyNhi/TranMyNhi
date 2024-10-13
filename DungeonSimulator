@@ -2,4 +2,4 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranM
 local example = library:CreateWindow({
   text = "💜❤️TrầnMỹNhi❤️💜"
 })
-  example:AddButton("50 Egg Pro",function() 
+  example:AddButton("50 Egg Pro",function()     game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.HatchEgg:InvokeServer("Glitched Egg",50)
