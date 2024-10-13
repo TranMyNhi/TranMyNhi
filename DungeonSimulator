@@ -1,0 +1,4 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU", true))()
+local example = library:CreateWindow({
+  text = "💜❤️TrầnMỹNhi❤️💜"
+})
