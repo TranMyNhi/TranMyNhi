@@ -51,7 +51,7 @@ local AutoGift = false
 local FastOrder = false
 local FastNPC = false
 local TeleportNPC = false
-local NPCSpeed = 500
+local NPCSpeed = 200
 local AutoInteract = false
 local AutoBuyWorkers = false
 local AutoBlacklist = false
@@ -1278,7 +1278,7 @@ local TeleportNPCToggle = FarmTab:CreateToggle({
 })
 
 local FastNPCToggle = FarmTab:CreateToggle({
-   Name = "Change NPC Walkspeed",
+   Name = "Chọn Tốc Chạy NPC",
    CurrentValue = false,
    Flag = "FastNPC",
    Callback = function(Value)
@@ -1287,11 +1287,11 @@ local FastNPCToggle = FarmTab:CreateToggle({
 })
 
 local NPCSpeedSlider = FarmTab:CreateSlider({
-   Name = "NPC Walkspeed",
+   Name = "Tốc Chạy NPC",
    Range = {16, 300},
    Increment = 1,
    Suffix = "Walkspeed",
-   CurrentValue = 500,
+   CurrentValue = 200,
    Flag = "NPCSpeed",
    Callback = function(Value)
 		NPCSpeed = Value
