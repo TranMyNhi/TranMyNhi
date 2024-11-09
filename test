@@ -45,22 +45,22 @@ local Slots = {"57"}
 local FurnituresCooldowns = {}
 
 -- Settings Variables
-local FastWaiter = true
-local GoldFood = true
-local AutoGift = true
-local FastOrder = true
-local FastNPC = true
+local FastWaiter = false
+local GoldFood = false
+local AutoGift = false
+local FastOrder = false
+local FastNPC = false
 local TeleportNPC = false
-local NPCSpeed = 150
+local NPCSpeed = 500
 local AutoInteract = false
 local AutoBuyWorkers = false
-local AutoBlacklist = true
+local AutoBlacklist = false
 local AutoCloseRestaurant = false
 local AutoCloseEvery = 600
 local LastTimeClose = 0
 
 --// Force better customer
-local ForceCustomers = true
+local ForceCustomers = false
 local ForceVIP = false
 local ForcePirate = false
 local ForceYoutuber = false
@@ -73,9 +73,9 @@ local ForceAlien = false
 local ForcePrincess = false
 local ForceSuperHero = false
 
-local InstantCook = true
-local InstantEat = true
-local InstantWash = true
+local InstantCook = false
+local InstantEat = false
+local InstantWash = false
 
 local IS_DEV_MODE = true
 local PRINT_NETWORK = false
