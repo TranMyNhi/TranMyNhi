@@ -51,7 +51,7 @@ local AutoGift = false
 local FastOrder = false
 local FastNPC = false
 local TeleportNPC = false
-local NPCSpeed = 200
+local NPCSpeed = 100
 local AutoInteract = false
 local AutoBuyWorkers = false
 local AutoBlacklist = false
@@ -1069,13 +1069,13 @@ assert(Rayfield, "Oopps! Rayfield has not been loaded. Maybe try re-joining?")
 
 --// GET OUT OF HERE YOUR FVCKING LOSER, DON'T RENAME MY SCRIPT, YOU DON'T EVEN KNOW HOW TO PRINT HELLO WORLD YOUR FVCKING ASSHOLE
 local Window = Rayfield:CreateWindow({
-   Name = "💜❤️ TrầnMỹNhi❤️💜",
+   Name = "💜❤️TrầnMỹNhi❤️💜",
    LoadingTitle = "Nhimama™",
-   LoadingSubtitle = "Hack Vip Pro VN🇻🇳",
+   LoadingSubtitle = "Bản Quyền Việt Nam🇻🇳🌹",
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil,
-      FileName = "My Restaurant"
+      FileName = "MyRestaurant"
    }
 })
 
@@ -1084,9 +1084,9 @@ local Window = Rayfield:CreateWindow({
 -------------------------//
 local FarmTab = Window:CreateTab("Cày Siêu Tốc")
 
-local InstantSection = FarmTab:CreateSection("Cài Cấp Tốc")
+local InstantSection = FarmTab:CreateSection("Instant Options")
 local FastOrderToggle = FarmTab:CreateToggle({
-   Name = "Siêu Order",
+   Name = "Order Nhanh",
    CurrentValue = true,
    Flag = "FastOrder",
    Callback = function(Value)
@@ -1104,7 +1104,7 @@ local FastOrderToggle = FarmTab:CreateToggle({
 })
 
 local FastWaiterToggle = FarmTab:CreateToggle({
-   Name = "Siêu Waiter",
+   Name = "Nhân Viên Cấp Tốc",
    CurrentValue = false,
    Flag = "FastWaiter",
    Callback = function(Value)
@@ -1113,7 +1113,7 @@ local FastWaiterToggle = FarmTab:CreateToggle({
 })
 
 local InstantCookToggle = FarmTab:CreateToggle({
-	Name = "Siêu Cook",
+	Name = "Siêu Nấu",
 	CurrentValue = false,
 	Flag = "InstantCook",
 	Callback = function(Value) 
@@ -1141,7 +1141,7 @@ local InstantWashToggle = FarmTab:CreateToggle({
 
 local SettingsSection = FarmTab:CreateSection("Farm Options")
 local OptimizedModeToggle = FarmTab:CreateToggle({
-   Name = "Optimize Game",
+   Name = "Cài Đặt Game",
    CurrentValue = false,
    Flag = "OptimizedMode",
    Callback = function(Value)
@@ -1158,9 +1158,9 @@ local GoldFoodToggle = FarmTab:CreateToggle({
    end
 })
 
-FarmTab:CreateParagraph({ Title="Force Best Customer", Content = "Tùy chọn này sẽ buộc khách hàng tốt nhất cho mỗi bàn như:\nBàn bãi biển là Nhân viên cứu hộ, bàn UFO là Người ngoài hành tinh, […]\nĐiều này cực kỳ hiệu quả với Nhân viên cứu hộ/bàn Bãi biển ($150k cho mỗi nhân viên cứu hộ)"})
+FarmTab:CreateParagraph({ Title="Chọn khách hàng tốt nhất", Content = "Tùy chọn này sẽ Chọn khách hàng tốt nhất cho mỗi bàn, ví dụ như \Bàn bãi biển là Nhân viên cứu hộ, bàn UFO là Người ngoài hành tinh,Điều này cực kỳ hiệu quả với Bàn nhân viên cứu hộ/Beach ($150k mỗi nhân viên cứu hộ)"})
 local ForceCustomerToggle = FarmTab:CreateToggle({
-   Name = "Force Best Customer",
+   Name = "Chọn Khách Xịn",
    CurrentValue = false,
    Flag = "ForceCustomers",
    Callback = function(Value)
@@ -1267,9 +1267,9 @@ FarmTab:CreateToggle({
    end
 })
 
-local SettingsSection = FarmTab:CreateSection("NPCs Options")
+local SettingsSection = FarmTab:CreateSection("Cài Đặt NPC")
 local TeleportNPCToggle = FarmTab:CreateToggle({
-   Name = "NPC Teleport",
+   Name = "NPC Dịch Chuyển",
    CurrentValue = false,
    Flag = "TeleportNPC",
    Callback = function(Value)
@@ -1291,7 +1291,7 @@ local NPCSpeedSlider = FarmTab:CreateSlider({
    Range = {16, 300},
    Increment = 1,
    Suffix = "Walkspeed",
-   CurrentValue = 200,
+   CurrentValue = 100,
    Flag = "NPCSpeed",
    Callback = function(Value)
 		NPCSpeed = Value
@@ -1299,7 +1299,7 @@ local NPCSpeedSlider = FarmTab:CreateSlider({
 })
 
 
-local TeleportTab = Window:CreateTab("Teleport")
+local TeleportTab = Window:CreateTab("Dịch Chuyển")
 local StoreTeleportsSection = TeleportTab:CreateSection("Store")
 -- Store Teleports
 function TeleportToPosition(position)
@@ -1419,9 +1419,9 @@ AddTeleportToPlayerBakery(game.Players.LocalPlayer)
 -------------------------//
 
 local AutomationTab = Window:CreateTab("Automation")
-local FarmAutomationSection = AutomationTab:CreateSection("Farm")
+local FarmAutomationSection = AutomationTab:CreateSection("Cày Siêu Tốc")
 local AutoGiftToggle = AutomationTab:CreateToggle({
-   Name = "Tự Nhặt Quà Santa",
+   Name = "Tự Nhận Quà Santa",
    CurrentValue = false,
    Flag = "AutoGift",
    Callback = function(Value)
@@ -1543,7 +1543,7 @@ coroutine.wrap(function()
 end)()
 
 local AutoInteractToggle = AutomationTab:CreateToggle({
-	Name = "Tự Động Slot Machine/Wishing Well",
+	Name = "Auto Slot Machine/Wishing Well",
 	CurrentValue = false,
 	Flag = "AutoInteract",
 	Callback = function(Value) 
@@ -1593,7 +1593,7 @@ Library.Network.Fired("BakeryLevelUp"):Connect(function()
 end)
 
 local AutoBuyWorkersToggle = AutomationTab:CreateToggle({
-	Name = "Auto Buy Workers",
+	Name = "Tự Mua Nhân Viên",
 	CurrentValue = false,
 	Flag = "AutoBuyWorkers",
 	Callback = function(Value) 
@@ -1605,9 +1605,9 @@ local AutoBuyWorkersToggle = AutomationTab:CreateToggle({
 	end
 })
 
-local BlacklistSection = AutomationTab:CreateSection("Sách Đen") 
+local BlacklistSection = AutomationTab:CreateSection("Blacklist") 
 local AutomaticBlacklistToggle = AutomationTab:CreateToggle({
-   Name = "Tự Sách Đen",
+   Name = "Auto Blacklist",
    CurrentValue = false,
    Flag = "AutoBlacklist",
    Callback = function(Value)
@@ -1624,11 +1624,11 @@ local AutomaticBlacklistToggle = AutomationTab:CreateToggle({
    end
 })
 
-local AutoCloseSection = AutomationTab:CreateSection("Close and Open Restaurant")
-local _ = AutomationTab:CreateLabel("Useful if your Restaurant start to lag over time")
+local AutoCloseSection = AutomationTab:CreateSection("Đóng Và Mở Nhà Hàng")
+local _ = AutomationTab:CreateLabel("Dùng Để Giảm Lag Cho Máy Yếu")
 
 local AutoCloseTimeSlider = AutomationTab:CreateSlider({
-   Name = "Close and Open Every",
+   Name = "Đóng Và Mở",
    Range = {20, 3600},
    Increment = 10,
    Suffix = "Seconds",
@@ -2006,7 +2006,7 @@ PasteButton = LayoutTab:CreateButton({
 local webhookTab = Window:CreateTab("Webhook")
 local WebhookEnabled = false
 local WebhookURL = ""
-local WebhookUpdateTime = 2
+local WebhookUpdateTime = 20
 local WebhookLastTime = tick()
 local AlreadyCompletedChefCat = false
 
