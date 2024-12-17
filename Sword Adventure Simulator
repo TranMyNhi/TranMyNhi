@@ -1,0 +1,97 @@
+local player = game.Players.LocalPlayer
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 150)
+frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+frame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+frame.Parent = screenGui
+
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 300, 0, 30)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.Text = "Tạo Bởi: 'Nhi Mama™'Discord"
+titleLabel.TextSize = 14
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Parent = frame
+
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 100, 0, 50)
+toggleButton.Position = UDim2.new(0, 10, 0, 40)
+toggleButton.Text = "Start"
+toggleButton.TextSize = 16
+toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleButton.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+toggleButton.Parent = frame
+
+local speedLabel = Instance.new("TextLabel")
+speedLabel.Size = UDim2.new(0, 100, 0, 30)
+speedLabel.Position = UDim2.new(0, 120, 0, 40)
+speedLabel.Text = "Speed (s):"
+speedLabel.TextSize = 14
+speedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedLabel.BackgroundTransparency = 1
+speedLabel.Parent = frame
+
+local speedInput = Instance.new("TextBox")
+speedInput.Size = UDim2.new(0, 60, 0, 30)
+speedInput.Position = UDim2.new(0, 120, 0, 70)
+speedInput.Text = "2"
+speedInput.TextSize = 14
+speedInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedInput.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+speedInput.Parent = frame
+
+local running = false
+local remote = game:GetService("ReplicatedStorage").Events.Remotes.ServerRemotes.ClaimForeverPack
+local speed = tonumber(speedInput.Text) or 2
+
+local function claimForeverPack()
+    remote:FireServer()
+    print("Forever Pack claimed!")
+end
+
+toggleButton.MouseButton1Click:Connect(function()
+    running = not running
+
+    if running then
+        toggleButton.Text = "Dừng"
+        while running do
+            claimForeverPack()
+            wait(speed)
+        end
+    else
+        toggleButton.Text = "Mở"
+    end
+end)
+
+speedInput.FocusLost:Connect(function()
+    speed = tonumber(speedInput.Text) or 2
+end)
+
+local dragging = false
+local dragStart = nil
+local startPos = nil
+
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = frame.Position
+    end
+end)
+
+frame.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+frame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = false
+    end
+end)
