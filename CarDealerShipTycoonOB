@@ -74,7 +74,7 @@ spawn(function()
         if not workspace:FindFirstChild("justapart") then
           local new = Instance.new("Part",workspace)
           new.Name = "justapart"
-          new.Size = Vector3.new(20000,20,30000)
+          new.Size = Vector3.new(1000,20,1000)
           new.Anchored = true
           new.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1000,0)
       end
