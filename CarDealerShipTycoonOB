@@ -126,7 +126,7 @@ until game:IsLoaded() and game:GetService("Players").LocalPlayer:FindFirstChild(
             end
             end)
             warn("to")
-  wait(2)
+  wait(3)
 for i,v in pairs(workspace.Christmas2024.Houses:GetChildren()) do
             if v.ClassName == "Model" and v:GetAttribute("State") == "Ready" then
             print("check")
@@ -142,8 +142,8 @@ for i,v in pairs(workspace.Christmas2024.Houses:GetChildren()) do
             end
             end
             print("done")
-            wait(2)
-           local test = "Cookies Amount: "..game:GetService("Players").LocalPlayer.PlayerGui.Menu.Christmas2024.Currency.Amount.Text
+            wait(3)
+           local test = "Cookies Hiện Có: "..game:GetService("Players").LocalPlayer.PlayerGui.Menu.Christmas2024.Currency.Amount.Text
 print(test)
 queueonteleport(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/refs/heads/main/cdt%20cookies", true))
 game.Players.LocalPlayer:Kick(test)
