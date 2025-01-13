@@ -93,8 +93,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "ASUBABFTKey",
        SaveKey = false,
        GrabKeyFromSite = false,
-       Key = {"Nhilaso1"}
-       Key = {"Nhidapgai"} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhilaso1"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
