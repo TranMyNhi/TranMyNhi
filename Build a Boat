@@ -93,7 +93,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "ASUBABFTKey",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Nhilaso1"}-- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhilaso1"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
@@ -209,7 +209,7 @@ local connection
 local function enableAntiAFK()
     if not connection then
         Rayfield:Notify({
-            Title = "Anti-Afk | Mở",
+            Title = "Anti-Afk | ON",
             Content = "Sẽ Không Bị Văng Khi Treo Quá 20 Phút",
             Duration = 6.5,
             Image = 124144713366592,
@@ -228,7 +228,7 @@ local function disableAntiAFK()
         connection:Disconnect()
         connection = nil
         Rayfield:Notify({
-            Title = "Anti-Afk | Tắt",
+            Title = "Anti-Afk | OFF",
             Content = "AFK Quá 20 Phút Có Thể Văng",
             Duration = 6.5,
             Image = 124144713366592,
