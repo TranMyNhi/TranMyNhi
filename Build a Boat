@@ -93,8 +93,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "ASUBABFTKey",
        SaveKey = false,
        GrabKeyFromSite = false,
-       Key = {"Nhilaso1"} 
-       Key = {"Nhidepgai"}-- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhilaso1"}-- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
@@ -163,7 +162,7 @@ local yjdtjf = Global:CreateButton({
 
 local qzdqzd = Global:CreateDivider()
 
-Section = Credit:CreateSection("Chủ")
+Section = Credit:CreateSection("owner")
 
 local Labeld = Credit:CreateLabel("Chủ: @Mukino_machiru-Trần Mỹ Nhi", 93981953300699, Color3.fromRGB(204, 153, 255), true)
 
