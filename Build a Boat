@@ -91,9 +91,9 @@ local Window = Rayfield:CreateWindow({
        Subtitle = "Trần Mỹ Nhi",
        Note = "Hãy Vào Discord Để Lấy Mật Khẩu",
        FileName = "ASUBABFTKey",
-       SaveKey = false,
+       SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Nhilaso1"} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhixinhgainhatvn"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
@@ -544,11 +544,11 @@ while true do
     GoldPerHour = (totalGoldGained / clockTime) * 3600
 
     FStats:Set({
-        Title = "Stats",
-        Content = "Elapsed time: " .. Ftime .. "\n" ..
-                  "GoldBlock Gained: " .. totalGoldBlock .. "\n" ..
-                  "Gold Gained: " .. totalGoldGained .. "\n" ..
-                  "Gold per hour: " .. math.floor(GoldPerHour),
+        Title = "Điểm Số",
+        Content = "Thời gian đã trôi qua:   " .. Ftime .. "\n" ..
+                  "GoldBlock Đã Nhận: " .. totalGoldBlock .. "\n" ..
+                  "Gold Đã Nhận: " .. totalGoldGained .. "\n" ..
+                  "Gold 1 Giờ: " .. math.floor(GoldPerHour),
     })
 
     lastGoldValue = FinalGold
@@ -615,12 +615,12 @@ function SendAUTOFARMInfo(Ftime, totalGoldBlock, totalGoldGained, GoldPerHour)
                 ["value"] = tostring(math.floor(GoldPerHour)) or 0
             },
             {
-                ["name"] = "Total Gold:",
+                ["name"] = "Tất Cả Gold:",
                 ["value"] = game:GetService("Players").LocalPlayer.Data.Gold.Value or 0
             },
         },
         ["footer"] = {
-            ["text"] = "Script by @thereal_asu"
+            ["text"] = "Script by @Mukino_Machiru"
         },
         ["thumbnail_url"] = "https://tr.rbxcdn.com/180DAY-5cc07c05652006d448479ae66212782d/768/432/Image/Webp/noFilter"
     }
@@ -647,7 +647,7 @@ SendMessageEMBED("webhook đã được tìm thấy và xóa, tui sẽ không đ
 local InputWebHook = Global:CreateInput({
     Name = "Link Discord:",
     CurrentValue = "",
-    PlaceholderText = "URL",
+    PlaceholderText = "Liên Kết",
     RemoveTextAfterFocusLost = false,
     Flag = "Input1",
     Callback = function(Text)
@@ -656,7 +656,7 @@ local InputWebHook = Global:CreateInput({
 })
 
 local InputInterval = Global:CreateInput({
-    Name = "Time between messages:",
+    Name = "Thời Gian Gửi Tin Nhắn:",
     CurrentValue = "1800",
     PlaceholderText = "Seconds",
     RemoveTextAfterFocusLost = false,
@@ -1230,8 +1230,8 @@ local Input = ImageLoader:CreateInput({
                 else
                     ImageLoaderFile:Set("Method: URL | Status: Error", 110690411966110, Color3.fromRGB(255, 66, 41), false)
                     Rayfield:Notify({
-                        Title = "Error ",
-                        Content = "Could not Fetch data",
+                        Title = "Lỗi",
+                        Content = "Không thể lấy dữ liệu",
                         Duration = 6.5,
                         Image = 124144713366592,
                     })
@@ -1250,7 +1250,7 @@ local Input = ImageLoader:CreateInput({
                         ImageLoaderFile:Set("Method: URL | Status: Error", 110690411966110, Color3.fromRGB(255, 66, 41), false)
                         Rayfield:Notify({
                             Title = "Lỗi",
-                            Content = "The API may be overloaded OR Url not supported , there's an alternative and a easy fix tutorial in the Discord server",
+                            Content = "API có thể bị quá tải HOẶC Url không được hỗ trợ, có một giải pháp thay thế và hướng dẫn sửa lỗi dễ dàng trên máy chủ Discord",
                             Duration = 6.5,
                             Image = 124144713366592,
                         })
@@ -1270,16 +1270,16 @@ local Input = ImageLoader:CreateInput({
                     USEURL = true
                     ImageLoaderFile:Set("Method: URL | Status: Fetched | You can enable preview", 110690411966110, Color3.fromRGB(133, 230, 138), false) -- how the fk
                     Rayfield:Notify({
-                        Title = "Success!",
-                        Content = "Your URL has been converted and is ready to use",
+                        Title = "Thành Công!",
+                        Content = "URL của bạn đã được chuyển đổi và sẵn sàng để sử dụng",
                         Duration = 6.5,
                         Image = 124144713366592,
                     })
                     --[[
                     ImageLoaderFile:Set("Method: URL | Status: Error", 110690411966110, Color3.fromRGB(255, 66, 41), false)
                     Rayfield:Notify({
-                        Title = "Error",
-                        Content = "Failed to decode the server response. The url may not be supported or valid",
+                        Title = "Lỗi",
+                        Content = "Không giải mã được phản hồi của máy chủ. URL có thể không được hỗ trợ hoặc không hợp lệ",
                         Duration = 6.5,
                         Image = 124144713366592,
                     })
@@ -1289,7 +1289,7 @@ local Input = ImageLoader:CreateInput({
                 ImageLoaderFile:Set("Method: URL | Status: Error", 110690411966110, Color3.fromRGB(255, 66, 41), false)
                 Rayfield:Notify({
                     Title = "Lỗi",
-                    Content = "The API may be overloaded OR Url not supported , there's an alternative and a easy fix tutorial in the Discord server",
+                    Content = "API có thể bị quá tải HOẶC Url không được hỗ trợ, có một giải pháp thay thế và hướng dẫn sửa lỗi dễ dàng trên máy chủ Discord",
                     Duration = 6.5,
                     Image = 124144713366592,
                 })
@@ -1301,7 +1301,7 @@ local Input = ImageLoader:CreateInput({
                 ImageLoaderFile:Set("Method: File | Status: Success | You can enable preview", 81435876451920, Color3.fromRGB(133, 230, 138), false)
                 Rayfield:Notify({
                     Title = "Thành công!",
-                    Content = "file: " .. fileName .. " found!",
+                    Content = "file: " .. fileName .. " đã tìm thấy!",
                     Duration = 6.5,
                     Image = 124144713366592,
                 })
@@ -1309,8 +1309,8 @@ local Input = ImageLoader:CreateInput({
                 FileImage = nil
                 ImageLoaderFile:Set("Method: File | Status: Error", 81435876451920, Color3.fromRGB(255, 66, 41), false)
                 Rayfield:Notify({
-                    Title = "Error | File not found",
-                    Content = "Make sure the file " .. fileName .. " exists or the URL is valid, do not put '.txt' in the TextBox",
+                    Title = "Lỗi | Không tìm thấy tập tin",
+                    Content = "Đảm bảo tệp " .. fileName .. " tồn tại hoặc URL hợp lệ, không đặt '.txt' trong TextBox",
                     Duration = 6.5,
                     Image = 124144713366592,
                 })
@@ -1617,16 +1617,16 @@ if blocksFolder then
         TBLOCK = #parts
     else
             Rayfield:Notify({
-                Title = "Error",
-                Content = "Folder not found, try rejoin",
+                Title = "Lỗi",
+                Content = "Không tìm thấy thư mục, hãy thử tham gia lại",
                 Duration = 6.5,
                 Image = 124144713366592,
              })
     end
 else
         Rayfield:Notify({
-            Title = "Error",
-            Content = "Folder not found, try rejoin",
+            Title = "Lỗi",
+            Content = "Không tìm thấy thư mục, hãy thử tham gia lại",
             Duration = 6.5,
             Image = 124144713366592,
          })
@@ -1642,7 +1642,7 @@ end
     Callback = function()
         getgenv().ImgLoaderStat = false
         Rayfield:Notify({
-            Title = "Abortion request",
+            Title = "Abortion requested",
             Content = "the next task will not be applied, note that this button is only useful during the task where blocks are loaded",
             Duration = 6.5,
             Image = 124144713366592,
@@ -1650,7 +1650,7 @@ end
     end,
  })
 
-local Label = ImageLoader:CreateLabel("Building speed will also depend on your ping. You can crash if your wifi speed is too slow.", 134637165939940, Color3.fromRGB(204, 156, 0), true)
+local Label = ImageLoader:CreateLabel("Tốc độ xây dựng cũng sẽ phụ thuộc vào ping của bạn. Bạn có thể bị lag nếu tốc độ wifi của bạn quá chậm.", 134637165939940, Color3.fromRGB(204, 156, 0), true)
 
 local Label = ImageLoader:CreateLabel("the image may not load if many blocks have already been placed, I have to fix this", 134637165939940, Color3.fromRGB(204, 156, 0), true)
 
@@ -1668,7 +1668,7 @@ function ImgStats()
         local FI = math.max(timeRemaining, 0)
         if not BlockLoaded then
         ImgStatsP:Set({
-            Title = "Information",
+            Title = "Thông Tin",
             Content = "Blocks Loaded: "..BLKLD.."/"..TBLOCK..
                       "\nFinish in: " .. math.floor(FI) .. "s"
         })
@@ -1729,8 +1729,8 @@ local initimgfilesbool = false
 end
 
 --AUTO BUILD
-local Label = AutoBuild:CreateLabel("Check the Information tab to use this feature", 134637165939940, Color3.fromRGB(204, 156, 0), true)
-local Label = AutoBuild:CreateLabel("THIS FEATURE IS IN WIP - it's not working right now", 134637165939940, Color3.fromRGB(204, 31, 0), true)
+local Label = AutoBuild:CreateLabel("Kiểm tra tab Thông tin để sử dụng tính năng này", 134637165939940, Color3.fromRGB(204, 156, 0), true)
+local Label = AutoBuild:CreateLabel("TÍNH NĂNG NÀY ĐANG TRONG QUÁ TRÌNH PHÁT TRIỂN - hiện tại nó không hoạt động", 134637165939940, Color3.fromRGB(204, 31, 0), true)
 
 local Divider = AutoBuild:CreateDivider()
 
@@ -1811,7 +1811,7 @@ Section = AutoBuild:CreateSection("Auto Build")
  })
 ]]
 
- local Paragraph = BlockNeeded:CreateParagraph({Title = "Important", Content = "Preview mode must be enabled to calculate the number of blocks required"})
+ local Paragraph = BlockNeeded:CreateParagraph({Title = "Quan Trọng", Content = "Preview mode must be enabled to calculate the number of blocks required-Phải bật chế độ xem trước để tính toán số khối cần thiết"})
  local Divider = BlockNeeded:CreateDivider()
 Section = BlockNeeded:CreateSection("Image Loader")
  local LblBlockNeeded = BlockNeeded:CreateLabel("No block found", 72272740678757, Color3.fromRGB(255, 255, 255), true)
@@ -1851,49 +1851,49 @@ Section = BlockNeeded:CreateSection("Auto Build")
 Section = Miscellaneous:CreateSection("Teleportation")
 
 local Button = Miscellaneous:CreateButton({
-    Name = "White",
+    Name = "Trắng",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-49.8510132, -9.7000021, -520.37085, -1, 0, 0, 0, 1, 0, 0, 0, -1))
     end,
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Black",
+    Name = "Đen",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-503.82843, -9.7000021, -69.433342, 0, 0, -1, 0, 1, 0, 1, 0, 0))
     end,
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Red",
+    Name = "Đỏ",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(396.697418, -9.7000021, -64.7801361, 0, 0, 1, 0, 1, -0, -1, 0, 0))
     end,
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Blue",
+    Name = "Xanh",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(396.697418, -9.7000021, 300.219849, 0, 0, 1, 0, 1, -0, -1, 0, 0))
     end,
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Magenta",
+    Name = "Tím",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(396.697418, -9.7000021, 647.219849, 0, 0, 1, 0, 1, -0, -1, 0, 0))
     end,
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Yellow",
+    Name = "Vàng",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-503.82843, -9.7000021, 640.56665, 0, 0, -1, 0, 1, 0, 1, 0, 0))
     end,
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Green",
+    Name = "Xanh Lá",
     Callback = function()
         game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-503.82843, -9.7000021, 293.56665, 0, 0, -1, 0, 1, 0, 1, 0, 0))
     end,
@@ -1918,7 +1918,7 @@ local Button = Miscellaneous:CreateButton({
  })
 
 local Button = Miscellaneous:CreateButton({
-    Name = "Force Share Mode",
+    Name = "Force Share Mode-Chế độ chia sẻ bắt buộc",
     Callback = function()
         local args = {
             [1] = "ShareBlocks",
@@ -1926,8 +1926,8 @@ local Button = Miscellaneous:CreateButton({
         }
         workspace.SettingFunction:InvokeServer(unpack(args))
         Rayfield:Notify({
-            Title = "Share Mode",
-            Content = "you can use leader's blocks now",
+            Title = "Share Mode-Chế độ chia sẻ",
+            Content = "you can use leader's blocks now-bây giờ bạn có thể sử dụng khối của người dẫn đầu",
             Duration = 6.5,
             Image = 124144713366592,
         })
@@ -1935,7 +1935,7 @@ local Button = Miscellaneous:CreateButton({
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "disable Share Mode",
+    Name = "disable Share Mode-Vô Hiệu Hóa Chế Độ Chia Sẻ",
     Callback = function()
         local args = {
             [1] = "ShareBlocks",
@@ -1943,8 +1943,8 @@ local Button = Miscellaneous:CreateButton({
         }
         workspace.SettingFunction:InvokeServer(unpack(args))
         Rayfield:Notify({
-            Title = "Share Mode",
-            Content = "Share Mode is disabled",
+            Title = "🟢Share Mode-Chế độ chia sẻ🟢",
+            Content = "🔴Share Mode is disabled-Chế độ chia sẻ đã bị vô hiệu hóa🔴",
             Duration = 6.5,
             Image = 124144713366592,
         })
@@ -1952,7 +1952,7 @@ local Button = Miscellaneous:CreateButton({
  })
  
  local Button = Miscellaneous:CreateButton({
-    Name = "Color all blocks",
+    Name = "Tô màu tất cả các khối",
     Callback = function()
         local playerteam = player.Team.Name
         local blocktoget = game:GetService("Teams"):FindFirstChild(playerteam).TeamLeader.Value
@@ -1985,7 +1985,7 @@ local Button = Miscellaneous:CreateButton({
 })
 
 local Toggle = Miscellaneous:CreateToggle({
-    Name = "Loop Color all blocks",
+    Name = "Vòng lặp Tô màu tất cả các khối",
     CurrentValue = false,
     Flag = "Toggle1",
     Callback = function(Value)
@@ -2024,7 +2024,7 @@ end
     end,
  })
 
- local FStats = Miscellaneous:CreateParagraph({Title = "Info", Content = "The button above will colors all the player's blocks with random colors (if sharing mode enable, it will color the team leader's blocks, it also works when you are the leader), if it doesn't stop, use the paint tool, it will stop the script"})
+ local FStats = Miscellaneous:CreateParagraph({Title = "Thông Tin", Content = "Nút ở trên sẽ tô màu ngẫu nhiên cho tất cả các khối của người chơi (nếu bật chế độ chia sẻ, nó sẽ tô màu cho các khối của đội trưởng, nó cũng hoạt động khi bạn là đội trưởng), nếu nó không dừng lại, hãy sử dụng"})
 
  local function removeLock()
     local Teams = {"BlackZone", "CamoZone", "MagentaZone", "New YellerZone", "Really blueZone", "Really redZone", "WhiteZone"}
@@ -2080,15 +2080,15 @@ local Toggle = Miscellaneous:CreateToggle({
         counterIsoMODE = Value
         if counterIsoMODE then
             Rayfield:Notify({
-                Title = "Counter Isolation Mode",
-                Content = "you will reappear where you died",
+                Title = "Chế độ cô lập đối trọng",
+                Content = "bạn sẽ xuất hiện trở lại nơi bạn đã chết",
                 Duration = 6.5,
                 Image = 124144713366592,
              })
             else
                 Rayfield:Notify({
-                    Title = "Counter Isolation Mode",
-                    Content = "you will no longer reappear where you died",
+                    Title = "Chế độ cô lập đối trọng",
+                    Content = "bạn sẽ không còn xuất hiện trở lại nơi bạn đã chết nữa",
                     Duration = 6.5,
                     Image = 124144713366592,
                  })
@@ -2101,8 +2101,8 @@ local Button = Miscellaneous:CreateButton({
     Callback = function()
         workspace:FindFirstChild(LPTEAM2()).QuestNum.Value = 0
         Rayfield:Notify({
-            Title = "Blocks restriction",
-            Content = "the restriction zone is disabled",
+            Title = "Khối hạn chế",
+            Content = "vùng hạn chế đã bị vô hiệu hóa",
             Duration = 6.5,
             Image = 124144713366592,
         })
@@ -2213,7 +2213,7 @@ Section = Miscellaneous:CreateSection("Spoofer")
  })
 
  local Button = Miscellaneous:CreateButton({
-    Name = "Spoof speed",
+    Name = "Tốc Độ Giả",
     Callback = function()
         local itcihmsoeoesoes = workspace.Blocks:FindFirstChild(Nplayer)
         if itcihmsoeoesoes then
