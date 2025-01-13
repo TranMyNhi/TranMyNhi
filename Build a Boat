@@ -88,10 +88,10 @@ local Window = Rayfield:CreateWindow({
     KeySystem = true,
     KeySettings = {
        Title = "discord.gg/3eyRTcsn",
-       Subtitle = "Nhập Mật Khẩu",
+       Subtitle = "Trần Mỹ Nhi",
        Note = "Hãy Vào Discord Để Lấy Mật Khẩu",
        FileName = "ASUBABFTKey",
-       SaveKey = true,
+       SaveKey = false,
        GrabKeyFromSite = false,
        Key = {"Nhilaso1"} -- yes there is a keysystem but my script is not obfuscated lol
     }
