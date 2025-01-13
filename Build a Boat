@@ -68,7 +68,7 @@ local Window = Rayfield:CreateWindow({
     Icon = 85108798400826,
     LoadingTitle = "Build A Boat For Treasure",
     LoadingSubtitle = "Made With ❤️ by Trần Mỹ Nhi",
-    Theme = "BlackBlue",
+    Theme = "Terenity",
  
     DisableRayfieldPrompts = true,
     DisableBuildWarnings = true,
@@ -93,7 +93,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "ASUBABFTKey",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Nhidepgai"} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhidepgai"}-- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
