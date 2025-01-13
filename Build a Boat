@@ -64,9 +64,9 @@ local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (f
 local RunService = game:GetService("RunService")
 
 local Window = Rayfield:CreateWindow({
-    Name = "Build A Boat For Treasure",
+    Name = "Build A Boat For Treasure🇻🇳",
     Icon = 85108798400826,
-    LoadingTitle = "Build A Boat For Treasure",
+    LoadingTitle = "Build A Boat For Treasure🇻🇳",
     LoadingSubtitle = "Made With ❤️ by Trần Mỹ Nhi",
     Theme = "BlackBlue",
  
@@ -89,11 +89,11 @@ local Window = Rayfield:CreateWindow({
     KeySettings = {
        Title = "discord.gg/3eyRTcsn",
        Subtitle = "Trần Mỹ Nhi",
-       Note = "Hãy Vào Discord Để Lấy Mật Khẩu",
+       Ghii Chú= "Hãy Vào Discord Để Lấy Mật Khẩu",
        FileName = "ASUBABFTKey",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Nhixinhgainhatvn"} -- yes there is a keysystem but my script is not obfuscated lol
+       Mật Khẩu = {"Nhixinhgainhatvn"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
