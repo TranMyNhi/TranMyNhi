@@ -67,7 +67,7 @@ local Window = Rayfield:CreateWindow({
     Name = "Build A Boat For Treasure",
     Icon = 85108798400826,
     LoadingTitle = "Build A Boat For Treasure",
-    LoadingSubtitle = "Made With ❤️ by @mukino_machiru",
+    LoadingSubtitle = "Made With ❤️ by Trần Mỹ Nhi",
     Theme = "DarkBlue",
  
     DisableRayfieldPrompts = true,
@@ -81,26 +81,27 @@ local Window = Rayfield:CreateWindow({
  
     Discord = {
        Enabled = true,
-       Invite = "MdtGaG7vdx",
+       Invite = "3eyRTcsn",
        RememberJoins = true
     },
  
     KeySystem = true,
     KeySettings = {
-       Title = "discord.gg/uGhnBu89SM",
-       Subtitle = "Key System",
-       Note = "Key available in discord, link copied to clipboard",
+       Title = "discord.gg/3eyRTcsn",
+       Subtitle = "Nhập Mật Khẩu",
+       Note = "Hãy Vào Discord Để Lấy Mật Khẩu",
        FileName = "ASUBABFTKey",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Nhidepgai"} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhidepgai"}
+       Key = {Yeunhi} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
-local Global = Window:CreateTab("Farm", 125428076789049)
+local Global = Window:CreateTab("Cày Tiền", 125428076789049)
 local ImageLoader = Window:CreateTab("Tải Ảnh", 91865122737183)
 local AutoBuild = Window:CreateTab("Tự Build", 128207976113050)
-local BlockNeeded = Window:CreateTab("Block Needed", 138460602231983)
+local BlockNeeded = Window:CreateTab("Cần Block", 138460602231983)
 local Miscellaneous = Window:CreateTab("Chức Năng Cá Nhân", 90305619538335)
 local Information = Window:CreateTab("Mô Tả", 84130531909418)
 local Credit = Window:CreateTab("Tác Giả", 103654977021797)
@@ -111,7 +112,7 @@ Section = Information:CreateSection("Discord")
 local Button = Credit:CreateButton({
     Name = "Tham Gia Discord",
     Callback = function()
-        setclipboard("https://discord.gg/zrAB2m5gvz")
+        setclipboard("https://discord.gg/3eyRTcsn")
         Rayfield:Notify({
             Title = "Sao Chép!",
             Content = "Sao Chép Thành Công",
@@ -162,16 +163,16 @@ local yjdtjf = Global:CreateButton({
 
 local qzdqzd = Global:CreateDivider()
 
-Section = Credit:CreateSection("Owner")
+Section = Credit:CreateSection("Chủ")
 
-local Labeld = Credit:CreateLabel("Owner: @mukino_machiru", 93981953300699, Color3.fromRGB(255, 255, 255), true)
+local Labeld = Credit:CreateLabel("Owner: @Mukino_machiru", 93981953300699, Color3.fromRGB(255, 255, 255), true)
 
-local Paragraph = Credit:CreateParagraph({Title = "About this script", Content = "This script is one of my projects that I'm taking time to make, I'm leaving it open source to allow people to check if this script is trusted, but also to let people learn the different techniques used in this script to do specific things. Please don't be a bad “skid” and credit me if you use this script to create your own script. It's ok to copy and paste my work for your script or improve my script to your own style, to suggest different versions of it, but please respect me, respect my work and have fun."})
+local Paragraph = Credit:CreateParagraph({Title = "Thông Báo", Content = "HUB Có Vấn Đề Hoặc Lỗi Thì Hãy Nhắn Cho Tôi Để Sửa Chữa Nhanh Nhất Trừ Thông Báo Cho Thằng Tú"})
 
  local aButton = Information:CreateButton({
     Name = "Tham Gia Discord",
     Callback = function()
-        setclipboard("https://discord.gg/zrAB2m5gvz")
+        setclipboard("https://discord.gg/3eyRTcsn")
         Rayfield:Notify({
             Title = "Copy!",
             Content = "Copy Thành Công",
@@ -181,24 +182,24 @@ local Paragraph = Credit:CreateParagraph({Title = "About this script", Content =
     end,
  })
 
-Section = Information:CreateSection("Auto Farm")
+Section = Information:CreateSection("Cày Tiền")
 local Paragraph = Information:CreateParagraph({Title = "Information", Content = "let me know if you've ever seen an auto farm more powerful than this one in terms of gold per hour, you can use a webhook to follow the auto farm stats when you're not in front of your screen.\n\n - With no boost: 20K/Giờ\n - With x1.25: 25K/Giờ\n - With x2: 40K/Giờ\n - With Both: 50k/Giờ"})
 Section = Information:CreateSection("Tải Ảnh")
-local Paragraph = Information:CreateParagraph({Title = "Requirement", Content = "Paste the image URL in the textbox and let the server convert the image, the server can't access certain images (it's not a coding problem) OR you can convert the image yourself: (more images are supported) Images are created from files that contain special data (RGB), to have these files or to create your own files from an image that you have chosen you must join the discord, you need an external script (open source) that converts the image into a file suitable for this script to be used, a tutorial is in the Discord Server.\n\n - Build Speed: You can choose the speed at which the image is built. If you have a slow internet connection, set the speed to low. Do not set it to max for large images\n\n- Preview: Displays a preview of the image, making it easier to use modifiers or to see how the image will look. It is also required to build the image.\n\n- Change Speed: Stop the current process by opening your inventory and checking if no more blocks are being placed. Change the speed and press 'Load Image' again. It should automatically resume from where it stopped.\n\n- Optimize Mode: Allows even the weakest PCs or those without a good connection to load images."})
+local Paragraph = Information:CreateParagraph({Title = "Yêu cầu", Content = "Paste the image URL in the textbox and let the server convert the image, the server can't access certain images (it's not a coding problem) OR you can convert the image yourself: (more images are supported) Images are created from files that contain special data (RGB), to have these files or to create your own files from an image that you have chosen you must join the discord, you need an external script (open source) that converts the image into a file suitable for this script to be used, a tutorial is in the Discord Server.\n\n - Build Speed: You can choose the speed at which the image is built. If you have a slow internet connection, set the speed to low. Do not set it to max for large images\n\n- Preview: Displays a preview of the image, making it easier to use modifiers or to see how the image will look. It is also required to build the image.\n\n- Change Speed: Stop the current process by opening your inventory and checking if no more blocks are being placed. Change the speed and press 'Load Image' again. It should automatically resume from where it stopped.\n\n- Optimize Mode: Allows even the weakest PCs or those without a good connection to load images."})
 local Button = Information:CreateButton({
     Name = "copy the list of working sites",
     Callback = function()
         setclipboard("https://www.pythonanywhere.com/whitelist/")
         Rayfield:Notify({
-            Title = "Copied!",
-            Content = "past the link in your browser to see which sites work",
+            Title = "Copy!",
+            Content = "Dùng Link Trên Google Hoặc File Có Sẵn Trên Máy",
             Duration = 6.5,
             Image = 124144713366592,
          })
     end,
  })
 Section = Information:CreateSection("Auto Build")
-local Paragraph = Information:CreateParagraph({Title = "Information - [AUTO BUILD IS IN WORK IN PROGRESS]", Content = "this feature does not require any external requirement, if you save a build with a name that already existed, it will overwrite it. You can download and shares files in the Discord Server.\n\n - Safe Mode: prevents crashes during loading if you have a poor internet connection, this toggle slows down build speed.\n\n - Preview: displays a preview of the build."})
+local Paragraph = Information:CreateParagraph({Title = "Thông Tin- [XÂY DỰNG TỰ ĐỘNG ĐANG ĐƯỢC TIẾN HÀNH]", Content = "Tính năng này không yêu cầu bất kỳ yêu cầu bên ngoài nào, nếu bạn lưu bản dựng với tên đã tồn tại, nó sẽ ghi đè lên.\n\n - Bạn có thể tải xuống và chia sẻ tệp trong Máy chủ Discord.\n\n - An toàn: ngăn chặn sự cố trong khi tải nếu bạn có kết nối internet kém, nút chuyển đổi này sẽ làm chậm tốc độ xây dựng.\n\n - Xem trước: hiển thị bản xem trước của bản dựng."})
 
 local player = game.Players.LocalPlayer
 local Nplayer = game.Players.LocalPlayer.Name
@@ -210,7 +211,7 @@ local function enableAntiAFK()
     if not connection then
         Rayfield:Notify({
             Title = "Anti-Afk | ON",
-            Content = "you won't get kicked after 20 minutes of inactivity",
+            Content = "Sẽ Không Bị Văng Khi Treo Quá 20 Phút",
             Duration = 6.5,
             Image = 124144713366592,
          })
@@ -229,7 +230,7 @@ local function disableAntiAFK()
         connection = nil
         Rayfield:Notify({
             Title = "Anti-Afk | OFF",
-            Content = "you will be kicked after 20 minutes of inactivity",
+            Content = "AFK Quá 20 Phút Có Thể Văng",
             Duration = 6.5,
             Image = 124144713366592,
          })
@@ -264,19 +265,19 @@ if getgenv().afk6464 == true then
 end
 
 local Button = Global:CreateButton({
-    Name = "Load Infinite Yield",
+    Name = "Tải Infinite Yield",
     Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end,
 })
 
 local Button = Global:CreateButton({
-    Name = "Tp tool",
+    Name = "Nút Dịch Chuyển",
     Callback = function()
         mouse = game.Players.LocalPlayer:GetMouse()
         tool = Instance.new("Tool")
         tool.RequiresHandle = false
-        tool.Name = "Dịch Chuyển"
+        tool.Name = "Dịch Chuyển♥"
         tool.ToolTip = "Equip + click = tp"
         tool.Activated:connect(function()
         local pos = mouse.Hit+Vector3.new(0,2.5,0)
@@ -360,9 +361,9 @@ local Button = Global:CreateButton({ -- From IY by IY devs and NoobSploit
 
 local Silent = false
 
-Section = Global:CreateSection("Auto Farm - The most powerful one")
+Section = Global:CreateSection("Cày Tiền - Người mạnh nhất sever")
 local AutoFarm1 = Global:CreateToggle({
-    Name = "Auto Farm",
+    Name = "Cày Tiền",
     CurrentValue = false,
     Flag = "",
     Callback = function(Value)
@@ -493,7 +494,7 @@ local Toggle = Global:CreateToggle({
     end,
  })
 
-local FStats = Global:CreateParagraph({Title = "Stats", Content = "Elapsed time: -".."\n".."GoldBlock Gained: -".."\n".."Gold Gained: -".."\n".."\n".."Gold per hour: -"})
+local FStats = Global:CreateParagraph({Title = "Điểm Số", Content = "Thời gian đã cày: -".."\n".."GoldBlock Đã Nhận: -".."\n".."Gold Đã Nhận: -".."\n".."\n".."Gold 1 Giờ: -"})
 
 local clockTime = 0
 local running = false
@@ -562,7 +563,7 @@ GoldPerHour = 0
 function SendMessageEMBED(url, embed)
     local http = game:GetService("HttpService")
     local headers = {
-        ["Content-Type"] = "application/json"
+        ["Đặt Link Vào Đây"] = "application/json"
     }
     local data = {
         ["embeds"] = {
@@ -594,24 +595,24 @@ local interval = 1800
 
 function SendAUTOFARMInfo(Ftime, totalGoldBlock, totalGoldGained, GoldPerHour)
     local embed = {
-        ["title"] = "BABFT | Auto Farm",
-        ["description"] = "Stats",
+        ["title"] = "Build A Boat",
+        ["description"] = "Điểm Số",
         ["color"] = 16777215,
         ["fields"] = {
             {
-                ["name"] = "Time Elapsed",
+                ["name"] = "Thời Gian Đã Cày",
                 ["value"] = Ftime or 0
             },
             {
-                ["name"] = "GoldBlock Gained:",
+                ["name"] = "GoldBlock Đã Nhận:",
                 ["value"] = tostring(totalGoldBlock) or 0
             },
             {
-                ["name"] = "Gold Gained:",
+                ["name"] = "Gold Đã Nhận:",
                 ["value"] = tostring(totalGoldGained) or 0
             },
             {
-                ["name"] = "Gold per hour:",
+                ["name"] = "Gold 1 Giờ:",
                 ["value"] = tostring(math.floor(GoldPerHour)) or 0
             },
             {
@@ -634,10 +635,10 @@ end
 --[[
 local embed2 = { -- Hello, this webhook is just for me to know how many people execute this script, everything is anonymous
     ["title"] = "Build A Boat For Treasure",
-    ["description"] = "Script Executed!",
+    ["description"] = "Đã Chạy Hub!",
     ["color"] = math.random(1, 16777215),
     ["footer"] = {
-        ["text"] = "Script by @thereal_asu"
+        ["text"] = "Script by @Trần Mỹ Nhi"
     },
     ["thumbnail_url"] = "https://tr.rbxcdn.com/180DAY-5cc07c05652006d448479ae66212782d/768/432/Image/Webp/noFilter"
 }
@@ -645,7 +646,7 @@ SendMessageEMBED("the webhook got found and removed, i won't put a new one lol, 
 ]]
 
 local InputWebHook = Global:CreateInput({
-    Name = "Discord Webhook URL:",
+    Name = "Link Discord:",
     CurrentValue = "",
     PlaceholderText = "URL",
     RemoveTextAfterFocusLost = false,
@@ -1249,7 +1250,7 @@ local Input = ImageLoader:CreateInput({
                     if result.error then
                         ImageLoaderFile:Set("Method: URL | Status: Error", 110690411966110, Color3.fromRGB(255, 66, 41), false)
                         Rayfield:Notify({
-                            Title = "Error",
+                            Title = "Lỗi",
                             Content = "The API may be overloaded OR Url not supported , there's an alternative and a easy fix tutorial in the Discord server",
                             Duration = 6.5,
                             Image = 124144713366592,
@@ -1259,8 +1260,8 @@ local Input = ImageLoader:CreateInput({
                         TempData = response
                         ImageLoaderFile:Set("Method: URL | Status: Fetched | You can enable preview", 110690411966110, Color3.fromRGB(133, 230, 138), false)
                         Rayfield:Notify({
-                            Title = "Success!",
-                            Content = "Your URL has been converted and is ready to use",
+                            Title = "Thành Công!",
+                            Content = "URL của bạn đã được chuyển đổi và sẵn sàng để sử dụng",
                             Duration = 6.5,
                             Image = 124144713366592,
                         })
@@ -1288,7 +1289,7 @@ local Input = ImageLoader:CreateInput({
             else
                 ImageLoaderFile:Set("Method: URL | Status: Error", 110690411966110, Color3.fromRGB(255, 66, 41), false)
                 Rayfield:Notify({
-                    Title = "Error",
+                    Title = "Lỗi",
                     Content = "The API may be overloaded OR Url not supported , there's an alternative and a easy fix tutorial in the Discord server",
                     Duration = 6.5,
                     Image = 124144713366592,
@@ -1300,7 +1301,7 @@ local Input = ImageLoader:CreateInput({
                 FileImage = fileName
                 ImageLoaderFile:Set("Method: File | Status: Success | You can enable preview", 81435876451920, Color3.fromRGB(133, 230, 138), false)
                 Rayfield:Notify({
-                    Title = "Success!",
+                    Title = "Thành công!",
                     Content = "file: " .. fileName .. " found!",
                     Duration = 6.5,
                     Image = 124144713366592,
@@ -2257,9 +2258,9 @@ coroutine.resume(ImgStats2)
 end
 
 zdzddz = Miscellaneous:CreateButton({
-    Name = "Halloween [maybe need an anti-kick]",
+    Name = "Halloween [Bạn Cần Mở anti-kick]",
     Callback = function()
-        TeleportService:Teleport(1930665568, game.Players.LocalPlayer) -- WARNING: YOU WILL GET KICKED WHEN YOU JOIN IT, need to try with a client-sided anti kick
+        TeleportService:Teleport(1930665568, game.Players.LocalPlayer) -- CẢNH BÁO: BẠN SẼ BỊ KICK KHI THAM GIA, cần thử với một lệnh chống Kick từ phía Thiết Bị Của Bạn
     end,
  })
 
@@ -2278,6 +2279,6 @@ zdzddz = Miscellaneous:CreateButton({
 
 @Mukino_Machiru | Build A Boat For Treasure
 
-discord server: https://discord.gg/zrAB2m5gvz
+discord server: https://discord.gg/3eyRTcsn
 ]]
 Init()
