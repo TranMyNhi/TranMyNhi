@@ -68,7 +68,7 @@ local Window = Rayfield:CreateWindow({
     Icon = 85108798400826,
     LoadingTitle = "Build A Boat For Treasure",
     LoadingSubtitle = "Made With ❤️ by Trần Mỹ Nhi",
-    Theme = "Terenity",
+    Theme = "BlackBlue",
  
     DisableRayfieldPrompts = true,
     DisableBuildWarnings = true,
@@ -91,9 +91,10 @@ local Window = Rayfield:CreateWindow({
        Subtitle = "Nhập Mật Khẩu",
        Note = "Hãy Vào Discord Để Lấy Mật Khẩu",
        FileName = "ASUBABFTKey",
-       SaveKey = true,
+       SaveKey = false,
        GrabKeyFromSite = false,
-       Key = {"Nhidepgai"}-- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhilaso1"}
+       Key = {"Nhidapgai"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
@@ -164,7 +165,7 @@ local qzdqzd = Global:CreateDivider()
 
 Section = Credit:CreateSection("Chủ")
 
-local Labeld = Credit:CreateLabel("Owner: @Mukino_machiru", 93981953300699, Color3.fromRGB(255, 255, 255), true)
+local Labeld = Credit:CreateLabel("Chủ: @Mukino_machiru-Trần Mỹ Nhi", 93981953300699, Color3.fromRGB(204, 153, 255), true)
 
 local Paragraph = Credit:CreateParagraph({Title = "Thông Báo", Content = "HUB Có Vấn Đề Hoặc Lỗi Thì Hãy Nhắn Cho Tôi Để Sửa Chữa Nhanh Nhất Trừ Thông Báo Cho Thằng Tú"})
 
@@ -182,11 +183,11 @@ local Paragraph = Credit:CreateParagraph({Title = "Thông Báo", Content = "HUB 
  })
 
 Section = Information:CreateSection("Auto Farm")
-local Paragraph = Information:CreateParagraph({Title = "Information", Content = "let me know if you've ever seen an auto farm more powerful than this one in terms of gold per hour, you can use a webhook to follow the auto farm stats when you're not in front of your screen.\n\n - With no boost: 20K/Giờ\n - With x1.25: 25K/Giờ\n - With x2: 40K/Giờ\n - With Both: 50k/Giờ"})
+local Paragraph = Information:CreateParagraph({Title = "Thông Báo!!!", Content = "hãy cho tôi biết nếu bạn từng thấy một cày tự động nào xịn hơn cày tiền này về tiền vàng mỗi giờ, bạn có thể sử dụng webhook để theo dõi số liệu thống kê về cày tự động khi bạn không ngồi trước màn hình 😘.\n\n - Không Tăng: 20K/Giờ\n - Tăng x1.25: 25K/Giờ\n - Tăng x2: 40K/Giờ\n - Gamepass: 50k/Giờ"})
 Section = Information:CreateSection("Tải Ảnh")
-local Paragraph = Information:CreateParagraph({Title = "Yêu cầu", Content = "Paste the image URL in the textbox and let the server convert the image, the server can't access certain images (it's not a coding problem) OR you can convert the image yourself: (more images are supported) Images are created from files that contain special data (RGB), to have these files or to create your own files from an image that you have chosen you must join the discord, you need an external script (open source) that converts the image into a file suitable for this script to be used, a tutorial is in the Discord Server.\n\n - Build Speed: You can choose the speed at which the image is built. If you have a slow internet connection, set the speed to low. Do not set it to max for large images\n\n- Preview: Displays a preview of the image, making it easier to use modifiers or to see how the image will look. It is also required to build the image.\n\n- Change Speed: Stop the current process by opening your inventory and checking if no more blocks are being placed. Change the speed and press 'Load Image' again. It should automatically resume from where it stopped.\n\n- Optimize Mode: Allows even the weakest PCs or those without a good connection to load images."})
+local Paragraph = Information:CreateParagraph({Title = "Yêu cầu", Content = "Dán URL hình ảnh vào hộp văn bản và để máy chủ chuyển đổi hình ảnh, máy chủ không thể truy cập một số hình ảnh nhất định (không phải là vấn đề về mã hóa) HOẶC bạn có thể tự chuyển đổi hình ảnh: (sẽ cung cấp thêm hình ảnh)Hình ảnh được tạo từ các tệp chứa dữ liệu đặc biệt (RGB), để có các tệp này hoặc để tạo tệp của riêng bạn từ hình ảnh mà bạn đã chọn, bạn phải tham gia discord, bạn cần một tập lệnh bên ngoài.\n\n - Tốc độ xây dựng: Bạn có thể chọn tốc độ mà hình ảnh được xây dựng. Nếu bạn có kết nối internet chậm, hãy đặt tốc độ ở mức thấp. Không đặt ở mức tối đa đối với hình ảnh lớn\n\n- Xem trước: Hiển thị bản xem trước của hình ảnh, giúp sử dụng các trình sửa đổi dễ dàng hơn hoặc xem hình ảnh sẽ trông như thế nào. Nó cũng cần thiết để xây dựng hình ảnh.\n\n- Thay đổi tốc độ: Dừng quá trình hiện tại bằng cách mở kho đồ của bạn và kiểm tra xem không còn khối nào được đặt nữa. Thay đổi tốc độ và nhấn 'Tải hình ảnh' một lần nữa. Nó sẽ tự động tiếp tục từ.\n\n- Chế độ tối ưu hóa: Cho phép ngay cả những máy tính yếu nhất hoặc những máy tính không có kết nối tốt cũng có thể tải hình ảnh."})
 local Button = Information:CreateButton({
-    Name = "copy the list of working sites",
+    Name = "sao chép danh sách các trang web đang hoạt động",
     Callback = function()
         setclipboard("https://www.pythonanywhere.com/whitelist/")
         Rayfield:Notify({
@@ -209,7 +210,7 @@ local connection
 local function enableAntiAFK()
     if not connection then
         Rayfield:Notify({
-            Title = "Anti-Afk | ON",
+            Title = "Anti-Afk | Mở",
             Content = "Sẽ Không Bị Văng Khi Treo Quá 20 Phút",
             Duration = 6.5,
             Image = 124144713366592,
@@ -228,7 +229,7 @@ local function disableAntiAFK()
         connection:Disconnect()
         connection = nil
         Rayfield:Notify({
-            Title = "Anti-Afk | OFF",
+            Title = "Anti-Afk | Tắt",
             Content = "AFK Quá 20 Phút Có Thể Văng",
             Duration = 6.5,
             Image = 124144713366592,
