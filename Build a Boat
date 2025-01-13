@@ -363,7 +363,7 @@ local Silent = false
 
 Section = Global:CreateSection("Cày Tiền - Người mạnh nhất sever")
 local AutoFarm1 = Global:CreateToggle({
-    Name = "Cày Tiền",
+    Name = "Auto Farm",
     CurrentValue = false,
     Flag = "",
     Callback = function(Value)
