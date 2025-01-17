@@ -562,7 +562,7 @@ GoldPerHour = 0
 function SendMessageEMBED(url, embed)
     local http = game:GetService("HttpService")
     local headers = {
-        ["Content-Here"] = "application/json"
+        ["Content-Type"] = "application/json"
     }
     local data = {
         ["embeds"] = {
