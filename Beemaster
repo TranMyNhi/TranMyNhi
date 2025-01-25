@@ -85,7 +85,7 @@ end)
 Menus:CreateButton("Mở Nâng Cấp", function()
 game:GetService("Players").LocalPlayer.PlayerGui.Upgrades.Enabled = true
 end)
-Menus:CreateButton("Open StaffShop", function()
+Menus:CreateButton("Mở Cửa Hàng", function()
 game:GetService("Players").LocalPlayer.PlayerGui.StaffShop.Enabled = true
 end)
 
@@ -95,7 +95,7 @@ end)
 Menus:CreateButton("Mở Hoá Cầu Vồng", function()
 game:GetService("Players").LocalPlayer.PlayerGui.Rainbow.Enabled = true
 end)
-Menus:CreateButton("Mở kết hợp bee", function()
+Menus:CreateButton("Mở kết hợp item", function()
 game:GetService("Players").LocalPlayer.PlayerGui.Combine.Enabled = true
 end)
 Menus:CreateButton("Mở Index", function()
