@@ -1,0 +1,117 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Lib = Library:NewWindow("💜❤️TrầnMỹNhi❤️💜")
+local OrbCollectionSection = Lib:NewSection("Hệ Thống Tự Nhặt")
+local Menus = Lib:NewSection("Chức Năng")
+local PlayerTweaks = Lib:NewSection("Cá Nhân") -- New section for sliders
+
+
+OrbCollectionSection:CreateButton("Tự Nhặt", function()
+    local player = game.Players.LocalPlayer
+    local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+
+    if not humanoidRootPart then
+        player.CharacterAdded:Wait()
+        humanoidRootPart = player.Character:WaitForChild("HumanoidRootPart")
+    end
+
+    local orbsFolder = game.Workspace:FindFirstChild("9J'b,G3eoC#3") and game.Workspace["9J'b,G3eoC#3"]:FindFirstChild("Orbs")
+
+    if orbsFolder then
+        -- Function to collect all items in the Orbs folder
+        local function collectOrbs()
+            local playerCFrame = humanoidRootPart.CFrame
+            for _, orb in ipairs(orbsFolder:GetChildren()) do
+                if orb:IsA("BasePart") or orb:IsA("Model") then
+                    if orb:IsA("Model") and orb.PrimaryPart then
+                        orb:SetPrimaryPartCFrame(playerCFrame)
+                    elseif orb:IsA("BasePart") then
+                        orb:PivotTo(playerCFrame)
+                    end
+                end
+            end
+        end
+
+        -- Run the collection function every 0.5 seconds
+        while task.wait(0.5) do
+            collectOrbs()
+        end
+    end
+end)
+
+
+OrbCollectionSection:CreateButton("Tự Cage (Nhấn Mở Manully)", function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local cagesFolder = game.Workspace["9J'b,G3eoC#3"].Cages
+
+local function teleportAndClick(cage)
+    if cage:IsA("Model") then
+        local primaryPart = cage:FindFirstChild("Cage") -- Assuming "Cage" is the main part for teleport
+        if primaryPart then
+            character:SetPrimaryPartCFrame(primaryPart.CFrame)
+            print("Teleported to cage: " .. cage.Name)
+
+            wait(1)
+
+            local clickDetector = cage:FindFirstChild("ClickDetector")
+            if clickDetector then
+                fireclickdetector(clickDetector) -- Simulates clicking the ClickDetector
+                print("Clicked on cage: " .. cage.Name)
+            else
+                print("No ClickDetector found in cage: " .. cage.Name)
+            end
+        else
+            print("No 'Cage' part found in model: " .. cage.Name)
+        end
+    end
+end
+
+for _, cage in ipairs(cagesFolder:GetChildren()) do
+    teleportAndClick(cage)
+
+    -- Wait until the cage is deleted from the folder
+    while cage.Parent == cagesFolder do
+        wait(0.5) -- Check every 0.5 seconds if the cage has been removed
+    end
+
+    print("Cage " .. cage.Name .. " has been removed. Proceeding to the next cage...")
+end
+
+game:GetService("Players").LocalPlayer.PlayerGui.Main.Enabled = false
+
+end)
+
+Menus:CreateButton("Mở Nâng Cấp", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Upgrades.Enabled = true
+end)
+Menus:CreateButton("Open StaffShop", function()
+game:GetService("Players").LocalPlayer.PlayerGui.StaffShop.Enabled = true
+end)
+
+Menus:CreateButton("Mở Hoá Vàng", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Shiny.Enabled = true
+end)
+Menus:CreateButton("Mở Hoá Cầu Vồng", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Rainbow.Enabled = true
+end)
+Menus:CreateButton("Mở kết hợp bee", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Combine.Enabled = true
+end)
+Menus:CreateButton("Mở Index", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Index.Enabled = true
+end)
+
+PlayerTweaks:CreateSlider("Tốc Độ", 16, 100, 16, true, function(value)
+    local player = game.Players.LocalPlayer
+    if player and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+        player.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = value
+    end
+end)
+
+PlayerTweaks:CreateSlider("Nhảy Cao", 50, 300, 100, true, function(value)
+    local player = game.Players.LocalPlayer
+    if player and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+        player.Character:FindFirstChildOfClass("Humanoid").JumpPower = value
+    end
+end)
