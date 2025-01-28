@@ -980,7 +980,7 @@ local function HYEUQ_fake_script() -- SimMinChat.LocalScript
 	
 	task.spawn(function()
 		
-		local msg = "Minecraft chat simulator loaded successfully, by hahaxio7777(DC),Ver:1.3"
+		local msg = "Minecraft chat simulator loaded successfully, by 💜❤️TrầnMỹNhi❤️💜,Ver:1.0"
 		
 		local nmsg = script.Parent.MsgTemplate:Clone()
 		nmsg.Parent = script.Parent.Msgs
