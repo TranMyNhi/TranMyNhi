@@ -1,0 +1,1040 @@
+-- Instances:
+
+local SimMinChat = Instance.new("ScreenGui")
+local Fonts = Instance.new("ImageLabel")
+local Template = Instance.new("ImageLabel")
+local ChatInput = Instance.new("Frame")
+local Input = Instance.new("ImageLabel")
+local IptChar = Instance.new("ScrollingFrame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Ipt = Instance.new("TextLabel")
+local Input_2 = Instance.new("ImageLabel")
+local Template2 = Instance.new("TextLabel")
+local Msgs = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local MsgTemplate = Instance.new("Frame")
+local Input_3 = Instance.new("ImageLabel")
+local EbUpper = Instance.new("TextLabel")
+local TemplateBtn = Instance.new("ImageButton")
+
+--Properties:
+
+SimMinChat.Name = "SimMinChat"
+SimMinChat.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+SimMinChat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SimMinChat.ResetOnSpawn = false
+
+Fonts.Name = "Fonts"
+Fonts.Parent = SimMinChat
+Fonts.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Fonts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Fonts.BorderSizePixel = 0
+Fonts.Position = UDim2.new(0.223227665, 0, 0.118320614, 0)
+Fonts.Size = UDim2.new(0, 687, 0, 667)
+Fonts.Visible = false
+Fonts.Image = "rbxassetid://3108589584"
+
+Template.Name = "Template"
+Template.Parent = SimMinChat
+Template.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Template.BackgroundTransparency = 1.000
+Template.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Template.BorderSizePixel = 0
+Template.Position = UDim2.new(0.0061995117, 0, 0.161968529, 0)
+Template.Size = UDim2.new(0, 16, 0, 16)
+Template.Visible = false
+Template.Image = "rbxassetid://3108589584"
+Template.ImageRectOffset = Vector2.new(0, 16)
+Template.ImageRectSize = Vector2.new(16, 16)
+Template.ScaleType = Enum.ScaleType.Fit
+
+ChatInput.Name = "ChatInput"
+ChatInput.Parent = SimMinChat
+ChatInput.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ChatInput.BackgroundTransparency = 0.500
+ChatInput.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ChatInput.BorderSizePixel = 0
+ChatInput.Position = UDim2.new(0, 0, 0.966921091, 0)
+ChatInput.Size = UDim2.new(1.00957859, -10, 0, 26)
+ChatInput.Visible = false
+ChatInput.ZIndex = 7
+
+Input.Name = "Input"
+Input.Parent = ChatInput
+Input.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Input.BackgroundTransparency = 1.000
+Input.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Input.BorderSizePixel = 0
+Input.Position = UDim2.new(0, 6, 0, 5)
+Input.Size = UDim2.new(0, 16, 0, 16)
+Input.Image = "rbxassetid://3108589584"
+Input.ImageRectOffset = Vector2.new(0, 16)
+Input.ImageRectSize = Vector2.new(16, 16)
+Input.ScaleType = Enum.ScaleType.Fit
+
+IptChar.Name = "IptChar"
+IptChar.Parent = ChatInput
+IptChar.Active = true
+IptChar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IptChar.BackgroundTransparency = 0.700
+IptChar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+IptChar.BorderSizePixel = 0
+IptChar.Position = UDim2.new(0.685110331, 0, -11.3846149, 0)
+IptChar.Size = UDim2.new(0.305309564, 0, 10.9615383, 0)
+IptChar.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+IptChar.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+
+UIGridLayout.Parent = IptChar
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 20, 0, 20)
+
+Ipt.Name = "Ipt"
+Ipt.Parent = ChatInput
+Ipt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ipt.BackgroundTransparency = 1.000
+Ipt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ipt.BorderSizePixel = 0
+Ipt.Position = UDim2.new(0.763509572, 0, -12.5, 0)
+Ipt.Size = UDim2.new(0, 232, 0, 29)
+Ipt.Font = Enum.Font.SourceSans
+Ipt.Text = ""
+Ipt.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ipt.TextSize = 14.000
+
+Input_2.Name = "Input"
+Input_2.Parent = Ipt
+Input_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Input_2.BackgroundTransparency = 1.000
+Input_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Input_2.BorderSizePixel = 0
+Input_2.Position = UDim2.new(0, 6, 0, 5)
+Input_2.Size = UDim2.new(0, 16, 0, 16)
+Input_2.Image = "rbxassetid://3108589584"
+Input_2.ImageRectOffset = Vector2.new(0, 16)
+Input_2.ImageRectSize = Vector2.new(16, 16)
+Input_2.ScaleType = Enum.ScaleType.Fit
+
+Template2.Name = "Template2"
+Template2.Parent = SimMinChat
+Template2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Template2.BackgroundTransparency = 1.000
+Template2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Template2.BorderSizePixel = 0
+Template2.Position = UDim2.new(0.0229885057, 0, 0.959287524, 0)
+Template2.Size = UDim2.new(0, 16, 0, 16)
+Template2.Visible = false
+Template2.Font = Enum.Font.SourceSansBold
+Template2.Text = "A"
+Template2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Template2.TextScaled = true
+Template2.TextSize = 14.000
+Template2.TextWrapped = true
+
+Msgs.Name = "Msgs"
+Msgs.Parent = SimMinChat
+Msgs.Active = true
+Msgs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Msgs.BackgroundTransparency = 1.000
+Msgs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Msgs.BorderSizePixel = 0
+Msgs.Position = UDim2.new(0, 0, 0.497455478, 0)
+Msgs.Size = UDim2.new(0, 742, 0, 350)
+Msgs.Visible = false
+Msgs.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+Msgs.CanvasSize = UDim2.new(0, 0, 0, 0)
+Msgs.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+
+UIListLayout.Parent = Msgs
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+MsgTemplate.Name = "MsgTemplate"
+MsgTemplate.Parent = SimMinChat
+MsgTemplate.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MsgTemplate.BackgroundTransparency = 0.500
+MsgTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MsgTemplate.BorderSizePixel = 0
+MsgTemplate.Position = UDim2.new(0, 0, -0.000739310111, 0)
+MsgTemplate.Size = UDim2.new(0.995000005, 100, 0, 26)
+MsgTemplate.Visible = false
+
+Input_3.Name = "Input"
+Input_3.Parent = MsgTemplate
+Input_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Input_3.BackgroundTransparency = 1.000
+Input_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Input_3.BorderSizePixel = 0
+Input_3.Position = UDim2.new(0, 6, 0, 5)
+Input_3.Size = UDim2.new(0, 16, 0, 16)
+Input_3.Image = "rbxassetid://3108589584"
+Input_3.ImageRectOffset = Vector2.new(0, 16)
+Input_3.ImageRectSize = Vector2.new(16, 16)
+Input_3.ScaleType = Enum.ScaleType.Fit
+
+EbUpper.Name = "EbUpper"
+EbUpper.Parent = SimMinChat
+EbUpper.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+EbUpper.BorderColor3 = Color3.fromRGB(0, 0, 0)
+EbUpper.BorderSizePixel = 0
+EbUpper.Position = UDim2.new(0, 0, 0.337150127, 0)
+EbUpper.Size = UDim2.new(0, 140, 0, 24)
+EbUpper.Visible = false
+EbUpper.Font = Enum.Font.SourceSansBold
+EbUpper.Text = "Enable uppercase"
+EbUpper.TextColor3 = Color3.fromRGB(0, 0, 0)
+EbUpper.TextScaled = true
+EbUpper.TextSize = 14.000
+EbUpper.TextWrapped = true
+
+TemplateBtn.Name = "TemplateBtn"
+TemplateBtn.Parent = SimMinChat
+TemplateBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TemplateBtn.BackgroundTransparency = 0.600
+TemplateBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TemplateBtn.BorderSizePixel = 0
+TemplateBtn.Position = UDim2.new(0.507302821, 0, 0.519083977, 0)
+TemplateBtn.Size = UDim2.new(0, 20, 0, 20)
+TemplateBtn.Visible = false
+TemplateBtn.Image = "rbxassetid://3108589584"
+TemplateBtn.ImageRectOffset = Vector2.new(0, 16)
+TemplateBtn.ImageRectSize = Vector2.new(16, 16)
+TemplateBtn.ScaleType = Enum.ScaleType.Fit
+
+MsgTemplate.AutomaticSize = Enum.AutomaticSize.Y
+Msgs.AutomaticCanvasSize = Enum.AutomaticSize.Y
+IptChar.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+-- Scripts:
+
+local function HYEUQ_fake_script() -- SimMinChat.LocalScript 
+	local script = Instance.new('LocalScript', SimMinChat)
+
+	local FontMap = {
+		[" "] = Vector2.new(0,0),["😀"] = Vector2.new(1,0),["😃"] = Vector2.new(2,0),["❤️"] = Vector2.new(3,0),["🔶"] = Vector2.new(4,0),
+		["🔷"] = Vector2.new(5,0),["♣"] = Vector2.new(6,0),["♠️"] = Vector2.new(7,0),["●"] = Vector2.new(8,0),["◘"] = Vector2.new(9,0),["○"] = Vector2.new(10,0),
+		["◈"] = Vector2.new(10,0),["♂"] = Vector2.new(11,0),["♀"] = Vector2.new(12,0),["♪"] = Vector2.new(13,0),["♬"] = Vector2.new(14,0),["🎆"] = Vector2.new(15,0),
+		["▶"] = Vector2.new(0,1),["◀"] = Vector2.new(1,1),["⇅"] = Vector2.new(2,1),["‼️"] = Vector2.new(3,1),["¶"] = Vector2.new(4,1),["§"] = Vector2.new(5,1),
+		["▬"] = Vector2.new(6,1),["⇳"] = Vector2.new(7,1),["↑"] = Vector2.new(8,1),["⇣"] = Vector2.new(9,1),["→"] = Vector2.new(10,1),["←"] = Vector2.new(11,1),
+		["└"] = Vector2.new(12,1),["↔"] = Vector2.new(13,1),["▲"] = Vector2.new(14,1),["▼"] = Vector2.new(15,1),["!"] = Vector2.new(1,2),[`"`] = Vector2.new(2,2),
+		["#"] = Vector2.new(3,2),["$"] = Vector2.new(4,2),["%"] = Vector2.new(5,2),["&"] = Vector2.new(6,2),["'"] = Vector2.new(7,2),["("] = Vector2.new(8,2),
+		[")"] = Vector2.new(9,2),["*"] = Vector2.new(10,2),["+"] = Vector2.new(11,2),[","] = Vector2.new(12,2),["-"] = Vector2.new(13,2),["."] = Vector2.new(14,2),
+		["/"] = Vector2.new(15,2),["0"] = Vector2.new(0,3),["1"] = Vector2.new(1,3),["2"] = Vector2.new(2,3),["3"] = Vector2.new(3,3),["4"] = Vector2.new(4,3),
+		["5"] = Vector3.new(5,3),["6"] = Vector2.new(6,3),["7"] = Vector2.new(7,3),["8"] = Vector2.new(8,3),["9"] = Vector2.new(9,3),[":"] = Vector2.new(10,3),
+		["<"] = Vector2.new(12,3),["="] = Vector2.new(13,3),[">"] = Vector2.new(14,3),["?"] = Vector2.new(15,3),["@"] = Vector2.new(0,4),
+		["A"] = Vector2.new(1,4),["B"] = Vector2.new(2,4),["C"] = Vector2.new(3,4),["D"] = Vector2.new(4,4),["E"] = Vector2.new(5,4),["F"] = Vector2.new(6,4),
+		["G"] = Vector2.new(7,4),["H"] = Vector2.new(8,4),["I"] = Vector2.new(9,4),["J"] = Vector2.new(10,4),["K"] = Vector2.new(11,4),["L"] = Vector2.new(12,4),
+		["M"] = Vector2.new(13,4),["N"] = Vector2.new(14,4),["O"] = Vector2.new(15,4),["P"] = Vector2.new(0,5),["Q"] = Vector2.new(1,5),["R"] = Vector2.new(2,5),
+		["S"] = Vector2.new(3,5),["T"] = Vector2.new(4,5),["U"] = Vector2.new(5,5),["V"] = Vector2.new(6,5),["W"] = Vector2.new(7,5),["X"] = Vector2.new(8,5),
+		["Y"] = Vector2.new(9,5),["Z"] = Vector2.new(10,5),["["] = Vector2.new(11,5),["\\"] = Vector2.new(12,5),["]"] = Vector2.new(13,5),["^"] = Vector2.new(14,5),
+		["_"] = Vector2.new(15,5),["a"] = Vector2.new(1,6),["b"] = Vector2.new(2,6),["c"] = Vector2.new(3,6),["d"] = Vector2.new(4,6),["e"] = Vector2.new(5,6),["f"] = Vector2.new(6,6),
+		["g"] = Vector2.new(7,6),["h"] = Vector2.new(8,6),["i"] = Vector2.new(9,6),["j"] = Vector2.new(10,6),["k"] = Vector2.new(11,6),["l"] = Vector2.new(12,6),
+		["m"] = Vector2.new(13,6),["n"] = Vector2.new(14,6),["o"] = Vector2.new(15,6),["p"] = Vector2.new(0,7),["q"] = Vector2.new(1,7),["r"] = Vector2.new(2,7),
+		["s"] = Vector2.new(3,7),["t"] = Vector2.new(4,7),["u"] = Vector2.new(5,7),["v"] = Vector2.new(6,7),["w"] = Vector2.new(7,7),["x"] = Vector2.new(8,7),
+		["y"] = Vector2.new(9,7),["z"] = Vector2.new(10,7),["{"] = Vector2.new(11,7),[";"] = Vector2.new(12,7),["}"] = Vector2.new(13,7),["~"] = Vector2.new(14,7),
+		["▵"] = Vector2.new(15,7),["Ç"] = Vector2.new(0,8),["ü"] = Vector2.new(1,8),["é"] = Vector2.new(2,8),["â"] = Vector2.new(3,8),["ä"] = Vector2.new(4,8),
+		["à"] = Vector2.new(5,8),["å"] = Vector2.new(6,8),["ʢ"] = Vector2.new(7,8),["ê"] = Vector2.new(8,8),["ë"] = Vector2.new(9,8),["è"] = Vector2.new(10,8),
+		["ï"] = Vector2.new(11,8),["î"] = Vector2.new(12,8),["ì"] = Vector2.new(13,8),["Ä"] = Vector2.new(14,8),["Å"] = Vector2.new(15,8),["È"] = Vector2.new(0,9),
+		["æ"] = Vector3.new(1,9),["Æ"] = Vector3.new(2,9),["ô"] = Vector2.new(3,9),["ö"] = Vector2.new(4,9),["ò"] = Vector2.new(5,9),["û"] = Vector2.new(6,9),
+		["ù"] = Vector2.new(7,9),["ÿ"] = Vector2.new(8,9),["Ü"] = Vector2.new(10,9),["₣"] = Vector2.new(11,9),["€"] = Vector2.new(12,9),["¥"] = Vector2.new(13,9),
+		["₧"] = Vector2.new(14,9),["á"] = Vector2.new(0,10),["í"] = Vector2.new(1,10),["ó"] = Vector2.new(2,10),["ú"] = Vector2.new(3,10),["ñ"] = Vector2.new(4,10),
+		["Ñ"] = Vector2.new(5,10),["¿"] = Vector2.new(8,10),["½"] = Vector2.new(11,10),["¼"] = Vector2.new(12,10),
+		["𝑖"] = Vector2.new(13,10),["《"] = Vector2.new(14,10),["》"] = Vector2.new(15,10),["▨"] = Vector2.new(0,11),["▩"] = Vector2.new(1,11),["┃"] = Vector2.new(3,11),["│"] = Vector2.new(3,11),
+		["┫"] = Vector2.new(4,11),["┤"] = Vector2.new(4,11),["╡"] = Vector2.new(5,11),["╢"] = Vector2.new(6,11),["╖"] = Vector2.new(7,11),["╕"] = Vector2.new(8,11),
+		["╣"] = Vector2.new(9,11),["║"] = Vector2.new(10,11),["╗"] = Vector2.new(11,11),["╝"] = Vector2.new(12,11),["╜"] = Vector2.new(13,11),["╛"] = Vector2.new(14,11),
+		["┖"] = Vector2.new(0,12),["┸"] = Vector2.new(1,12),["┰"] = Vector2.new(2,12),["┠"] = Vector2.new(3,12),["─"] = Vector2.new(4,12),["╂"] = Vector2.new(5,12),
+		["╞"] = Vector2.new(6,12),["╟"] = Vector2.new(7,12),["╚"] = Vector2.new(8,12),["╔"] = Vector2.new(9,12),["╩"] = Vector2.new(10,12),["╦"] = Vector2.new(11,12),
+		["╠"] = Vector2.new(12,12),["═"] = Vector2.new(13,12),["╬"] = Vector2.new(14,12),["╧"] = Vector2.new(15,12),["╨"] = Vector2.new(0,13),
+		["╤"] = Vector2.new(1,13),["╥"] = Vector2.new(2,13),["╙"] = Vector2.new(3,13),["╘"] = Vector2.new(4,13),["╒"] = Vector2.new(5,13),
+		["╓"] = Vector2.new(6,13),["╫"] = Vector2.new(7,13),["╪"] = Vector2.new(8,13),["┘"] = Vector2.new(9,13),["┌"] = Vector2.new(10,13),
+		["■"] = Vector2.new(11,13),["█"] = Vector2.new(11,13),["▄"] = Vector2.new(12,13),["▌"] = Vector2.new(13,13),["▐"] = Vector2.new(14,13),
+		["▀"] = Vector2.new(15,13),["α"] = Vector2.new(0,14),["β"] = Vector2.new(1,14),["π"] = Vector2.new(3,14),["∑"] = Vector2.new(4,14),["∊"] = Vector2.new(14,14),
+		["Ø"] = Vector2.new(9,14),["Ω"] = Vector2.new(10,14),["±"] = Vector2.new(1,15),["≥"] = Vector2.new(2,15),["≤"] = Vector2.new(3,15),
+		["÷"] = Vector2.new(6,15),["≈"] = Vector2.new(7,15),["°"] = Vector2.new(8,15),["·"] = Vector2.new(9,15),["√"] = Vector2.new(11,15),["�"] = Vector2.new(15,15)
+	}
+	
+	local AllFontMapChars = {}
+	
+	for key, value in pairs(FontMap) do
+		if type(key) == "string" and not tonumber(key) then
+			AllFontMapChars[key] = value
+		end
+	end
+	
+	local oley4 = {".",",","i",";",":"}
+	local oley6 = {"!","'","l"}
+	local oley9 = {"f","t",`"`,"I"}
+	local oley11 = {"u","-","+"}
+	local oley18 = {"*"}
+	
+	local ptxt = script.Parent.ChatInput.Input
+	local pchar = ">"
+	local inputtexts = {}
+	local View = {}
+	local userinput = game:GetService("UserInputService")
+	local inping = false
+	local inputtxtsStr = ""
+	local msgservice = game:GetService("TextChatService")
+	local HWlkSpd = nil
+	local HJpower = nil
+	local PCamMax,PCamMin
+	local AtoSize = false -- Deprecated
+	local _Ipt = nil
+	local nmsgtxt = nil
+	local upper = false
+	local chatHistory = {}
+	local selectChatHistory = 1
+	
+	local function stringToTable(str)
+		local charTable = {}
+		for char in str:gmatch(".") do
+			table.insert(charTable, char)
+		end
+		return charTable
+	end
+	
+	local function utf8sub(s, i, j)
+		i = utf8.offset(s, i)
+		j = utf8.offset(s, j + 1)
+		if not i or not j then
+			return ""
+		end
+		return string.sub(s, i, j - 1)
+	end
+	
+	local function StringToMapImageVector(char)
+		if FontMap[char] then
+			if FontMap[char] ~= nil then
+				local Vector = Vector2.new(FontMap[char].X * 16,FontMap[char].Y * 16)
+				
+				if Vector then
+					return Vector
+				end
+			end
+		else
+			return nil
+		end
+	end
+	
+	local function MakeTextInInput(char,IsIpt)
+		
+		if _Ipt then
+			_Ipt:Destroy()
+		end
+		
+		local txt = script.Parent.Template:Clone()
+		txt.Parent = script.Parent.ChatInput
+		local vet = StringToMapImageVector(tostring(char))
+		if vet == nil then
+			txt:Destroy()
+			txt = script.Parent.Template2:Clone()
+			txt.Parent = script.Parent.ChatInput
+			txt.Text = char or "�"
+			txt.Visible = true
+			txt.Position = ptxt.Position + UDim2.new(0,16,0,0)
+		end
+		if vet ~= nil then
+			txt.ImageRectOffset = vet
+			txt.Visible = true
+			txt.Position = ptxt.Position
+			txt.Position = ptxt.Position + UDim2.new(0,12,0,0)
+		end
+		
+		if table.find(oley4,pchar) then
+			txt.Position = ptxt.Position + UDim2.new(0,4,0,0)
+		end
+		
+		if table.find(oley6,pchar) then
+			txt.Position = ptxt.Position + UDim2.new(0,6,0,0)
+		end
+		
+		if table.find(oley9,pchar) then
+			txt.Position = ptxt.Position + UDim2.new(0,9,0,0)
+		end
+		
+		if table.find(oley11,pchar) then
+			txt.Position = ptxt.Position + UDim2.new(0,11,0,0)
+		end
+		
+		if table.find(oley18,pchar) then
+			txt.Position = ptxt.Position + UDim2.new(0,18,0,0)
+		end
+		
+		if IsIpt then
+			if IsIpt == true then
+				txt.Name = "_Ipt"
+				_Ipt = txt
+				return
+			end
+		end
+		
+		ptxt = txt
+		pchar = char
+		table.insert(inputtexts,txt)
+		inputtxtsStr = inputtxtsStr .. char
+		MakeTextInInput("_",true)
+		
+	end
+	
+	local function StringToMsg(Str,TargetUIObj,Color,pt,pc,rtpt)
+		--print("MakeMsg:" .. tostring(Str))
+		--print("#=" .. tostring(#Str))
+		local ptxtinUI = TargetUIObj.Input
+		local pcharinUI = ">"
+		
+		if pt then
+			ptxtinUI = pt
+		end
+		
+		if pc then
+			pcharinUI = pc
+		end
+		
+		local nowY = nil
+		nowY = TargetUIObj.Input.Position.Y.Offset
+		string.gsub(Str,"[%c]", "")
+		
+		Str = string.gsub(Str,"&lt;","<")
+		Str = string.gsub(Str,"&gt;",">")
+		
+		local msgstr = stringToTable(Str)
+		
+		for i = 1,#Str do
+			local txt = script.Parent.Template:Clone()
+			
+			local firsttxt = TargetUIObj.Input
+			
+			local vet = StringToMapImageVector(tostring(utf8sub(Str,i,i)))
+			if vet == nil then
+				txt:Destroy()
+				txt = script.Parent.Template2:Clone()
+				txt.Parent = script.Parent.ChatInput
+				txt.Text = utf8sub(Str,i,i) or "�"
+				txt.Visible = true
+				txt.Position = ptxtinUI.Position + UDim2.new(0,12,0,0)
+				if Color then
+					txt.TextColor3 = Color
+				end
+				--print(tostring(i) .. ":")
+				--print(utf8sub(Str,i,i))
+				
+			end
+			if vet ~= nil then
+				txt.ImageRectOffset = vet
+				txt.Visible = true
+				txt.Position = ptxtinUI.Position
+				txt.Position = ptxtinUI.Position + UDim2.new(0,12,0,0)
+			end
+			txt.Parent = TargetUIObj
+			if table.find(oley4,pcharinUI) then
+				txt.Position = ptxtinUI.Position + UDim2.new(0,4,0,0)
+			end
+	
+			if table.find(oley6,pcharinUI) then
+				txt.Position = ptxtinUI.Position + UDim2.new(0,6,0,0)
+			end
+	
+			if table.find(oley9,pcharinUI) then
+				txt.Position = ptxtinUI.Position + UDim2.new(0,9,0,0)
+			end
+	
+			if table.find(oley11,pcharinUI) then
+				txt.Position = ptxtinUI.Position + UDim2.new(0,11,0,0)
+			end
+	
+			if table.find(oley18,pcharinUI) then
+				txt.Position = ptxtinUI.Position + UDim2.new(0,18,0,0)
+			end
+			
+			if txt.Position.X.Offset >= TargetUIObj.Size.X.Offset + 400 then
+				nowY += 20
+				txt.Position = UDim2.new(0,5,0,nowY)
+			end
+			
+			if Color and txt:IsA("ImageLabel") then
+				txt.ImageColor3 = Color
+			end
+			
+			ptxtinUI = txt
+			pcharinUI = utf8sub(Str,i,i)
+			
+		end
+		
+		nmsgtxt = TargetUIObj
+		
+		if rtpt then
+			if rtpt == true then
+				return ptxtinUI,pcharinUI
+			end
+		end
+	end
+	
+	--�=17
+	--AB,ab=12
+	
+	local specialKeyMapping = {
+		[Enum.KeyCode.LeftBracket] = "[",
+		[Enum.KeyCode.RightBracket] = "]",
+		[Enum.KeyCode.Semicolon] = ";",
+		[Enum.KeyCode.Quote] = "'",
+		[Enum.KeyCode.Comma] = ",",
+		[Enum.KeyCode.Period] = ".",
+		[Enum.KeyCode.Slash] = "/",
+		[Enum.KeyCode.BackSlash] = "\\",
+		[Enum.KeyCode.Minus] = "-",
+		[Enum.KeyCode.Equals] = "=",
+		[Enum.KeyCode.Tilde] = "`"
+	}
+	
+	local shiftSpecialCharacters = {
+		[Enum.KeyCode.One] = "!",
+		[Enum.KeyCode.Two] = "@",
+		[Enum.KeyCode.Three] = "#",
+		[Enum.KeyCode.Four] = "$",
+		[Enum.KeyCode.Five] = "%",
+		[Enum.KeyCode.Six] = "^",
+		[Enum.KeyCode.Seven] = "&",
+		[Enum.KeyCode.Eight] = "*",
+		[Enum.KeyCode.Nine] = "(",
+		[Enum.KeyCode.Zero] = ")",
+		[Enum.KeyCode.Minus] = "_",
+		[Enum.KeyCode.Equals] = "+",
+		[Enum.KeyCode.LeftBracket] = "{",
+		[Enum.KeyCode.RightBracket] = "}",
+		[Enum.KeyCode.BackSlash] = "|",
+		[Enum.KeyCode.Semicolon] = ":",
+		[Enum.KeyCode.Quote] = "\"",
+		[Enum.KeyCode.Comma] = "<",
+		[Enum.KeyCode.Period] = ">",
+		[Enum.KeyCode.Slash] = "?",
+		[Enum.KeyCode.Tilde] = "~"
+	}
+	
+	local numberKeyMapping = {
+		[Enum.KeyCode.Zero] = "0",
+		[Enum.KeyCode.One] = "1",
+		[Enum.KeyCode.Two] = "2",
+		[Enum.KeyCode.Three] = "3",
+		[Enum.KeyCode.Four] = "4",
+		[Enum.KeyCode.Five] = "5",
+		[Enum.KeyCode.Six] = "6",
+		[Enum.KeyCode.Seven] = "7",
+		[Enum.KeyCode.Eight] = "8",
+		[Enum.KeyCode.Nine] = "9"
+	}
+	
+	local keyPadMapping = {
+		[Enum.KeyCode.KeypadZero] = "0",
+		[Enum.KeyCode.KeypadOne] = "1",
+		[Enum.KeyCode.KeypadTwo] = "2",
+		[Enum.KeyCode.KeypadThree] = "3",
+		[Enum.KeyCode.KeypadFour] = "4",
+		[Enum.KeyCode.KeypadFive] = "5",
+		[Enum.KeyCode.KeypadSix] = "6",
+		[Enum.KeyCode.KeypadSeven] = "7",
+		[Enum.KeyCode.KeypadEight] = "8",
+		[Enum.KeyCode.KeypadNine] = "9",
+		[Enum.KeyCode.KeypadPeriod] = ".",
+		[Enum.KeyCode.KeypadMultiply] = "*",
+		[Enum.KeyCode.KeypadDivide] = "/",
+		[Enum.KeyCode.KeypadPlus] = "+",
+		[Enum.KeyCode.KeypadMinus] = "-",
+		[Enum.KeyCode.KeypadEquals] = "="
+	}
+	
+	for key,Value in pairs(AllFontMapChars) do
+		local nt = script.Parent.TemplateBtn:Clone()
+		nt.Parent = script.Parent.ChatInput.IptChar
+		nt.ImageRectOffset = StringToMapImageVector(key)
+		nt.Visible = true
+		nt.MouseButton1Click:Connect(function()
+			MakeTextInInput(key)
+		end)
+	end
+	
+	script.Parent.ChatInput.Input.ImageRectOffset = StringToMapImageVector(">")
+	
+	userinput.InputBegan:Connect(function(input,pro)
+		
+		if input.KeyCode == Enum.KeyCode.CapsLock then
+			if upper == true then
+				upper = false
+				script.Parent.EbUpper.BackgroundColor3 = Color3.fromRGB(255,0,0)
+			else
+				upper = true
+				script.Parent.EbUpper.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			end
+		end
+		
+		if input.KeyCode == Enum.KeyCode.Slash then
+			if inping == false then
+				inping = true
+				script.Parent.ChatInput.Visible = true
+				script.Parent.Msgs.Visible = true
+				script.Parent.EbUpper.Visible = true
+				HWlkSpd = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+				HJpower = game.Players.LocalPlayer.Character.Humanoid.JumpPower
+				PCamMax,PCamMin = game.Players.LocalPlayer.CameraMaxZoomDistance,game.Players.LocalPlayer.CameraMinZoomDistance
+				game.Players.LocalPlayer.CameraMaxZoomDistance,game.Players.LocalPlayer.CameraMinZoomDistance = 30,30
+				
+				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+				game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = true
+					end
+				end
+				script.Parent.Msgs.CanvasPosition = Vector2.new(math.huge,math.huge)
+	
+			end
+		end
+		
+		
+		if inping == false then
+			return
+		end
+		
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			local key = input.KeyCode
+	
+			if userinput:IsKeyDown(Enum.KeyCode.LeftShift) or userinput:IsKeyDown(Enum.KeyCode.RightShift) then
+				if shiftSpecialCharacters[key] then
+					MakeTextInInput(shiftSpecialCharacters[key])
+					wait(0.5)
+					while userinput:IsKeyDown(key) do
+						wait(0.01)
+						MakeTextInInput(shiftSpecialCharacters[key])
+					end
+					return
+				end
+			end
+	
+	
+			if key.Value >= Enum.KeyCode.A.Value and key.Value <= Enum.KeyCode.Z.Value then
+				local isShiftDown = userinput:IsKeyDown(Enum.KeyCode.LeftShift) or userinput:IsKeyDown(Enum.KeyCode.RightShift) or upper == true
+				if isShiftDown then
+					MakeTextInInput(key.Name)
+					wait(0.5)
+					while userinput:IsKeyDown(key) do
+						wait(0.01)
+						MakeTextInInput(key.Name)
+					end
+				else
+					MakeTextInInput(key.Name:lower())
+					wait(0.5)
+					while userinput:IsKeyDown(key) do
+						wait(0.01)
+						MakeTextInInput(key.Name:lower())
+					end
+				end
+			elseif key.Value >= Enum.KeyCode.Zero.Value and key.Value <= Enum.KeyCode.Nine.Value then
+				MakeTextInInput(tostring(numberKeyMapping[key]))
+				wait(0.5)
+				while userinput:IsKeyDown(key) do
+					wait(0.01)
+					MakeTextInInput(tostring(numberKeyMapping[key]))
+				end
+			end
+			
+			if keyPadMapping[key] then
+				MakeTextInInput(keyPadMapping[key])
+				wait(0.5)
+				while userinput:IsKeyDown(key) do
+					wait(0.01)
+					MakeTextInInput(keyPadMapping[key])
+				end
+			end
+			
+			if specialKeyMapping[key] then
+				MakeTextInInput(specialKeyMapping[key])
+				wait(0.5)
+				while userinput:IsKeyDown(key) do
+					wait(0.01)
+					MakeTextInInput(specialKeyMapping[key])
+				end
+			end
+	
+			if input.KeyCode == Enum.KeyCode.Up then
+				print("up")
+					selectChatHistory = selectChatHistory - 1
+					if selectChatHistory <= 0 then
+						selectChatHistory = #chatHistory
+					end
+					
+					while #inputtexts > 0 do
+					if #inputtexts > 0 then
+						inputtexts[#inputtexts]:Destroy()
+						table.remove(inputtexts,#inputtexts)
+						inputtxtsStr = utf8sub(inputtxtsStr,1,#inputtxtsStr - 1)
+						ptxt = inputtexts[#inputtexts]
+						pchar = utf8sub(inputtxtsStr,#inputtxtsStr,#inputtxtsStr)
+	
+						if _Ipt then
+							_Ipt:Destroy()
+						end
+	
+						if #inputtexts == 0 then
+							pchar = ">"
+							ptxt = script.Parent.ChatInput.Input
+						end
+	
+						MakeTextInInput("_",true)
+					end
+					end
+					
+				for i = 1,#chatHistory[selectChatHistory] do
+					if utf8sub(chatHistory[selectChatHistory],i,i) ~= "" then
+						MakeTextInInput(utf8sub(chatHistory[selectChatHistory],i,i))
+					end
+				end
+			end
+			
+			if input.KeyCode == Enum.KeyCode.Down then
+				print("up")
+				selectChatHistory = selectChatHistory + 1
+				if selectChatHistory > #chatHistory then
+					selectChatHistory = 1
+				end
+	
+				while #inputtexts > 0 do
+					if #inputtexts > 0 then
+						inputtexts[#inputtexts]:Destroy()
+						table.remove(inputtexts,#inputtexts)
+						inputtxtsStr = utf8sub(inputtxtsStr,1,#inputtxtsStr - 1)
+						ptxt = inputtexts[#inputtexts]
+						pchar = utf8sub(inputtxtsStr,#inputtxtsStr,#inputtxtsStr)
+	
+						if _Ipt then
+							_Ipt:Destroy()
+						end
+	
+						if #inputtexts == 0 then
+							pchar = ">"
+							ptxt = script.Parent.ChatInput.Input
+						end
+	
+						MakeTextInInput("_",true)
+					end
+				end
+	
+				for i = 1,#chatHistory[selectChatHistory] do
+					if utf8sub(chatHistory[selectChatHistory],i,i) ~= "" then
+						MakeTextInInput(utf8sub(chatHistory[selectChatHistory],i,i))
+					end
+				end
+			end
+			
+			
+			if input.KeyCode == Enum.KeyCode.Space then
+				MakeTextInInput(" ")
+				
+				wait(0.5)
+				while userinput:IsKeyDown(key) do
+					wait(0.01)
+					MakeTextInInput(" ")
+				end
+			end
+			
+			if input.KeyCode == Enum.KeyCode.Backspace then
+				
+				if #inputtexts > 0 then
+					inputtexts[#inputtexts]:Destroy()
+					table.remove(inputtexts,#inputtexts)
+					inputtxtsStr = utf8sub(inputtxtsStr,1,#inputtxtsStr - 1)
+					ptxt = inputtexts[#inputtexts]
+					pchar = utf8sub(inputtxtsStr,#inputtxtsStr,#inputtxtsStr)
+					
+					
+					if _Ipt then
+						_Ipt:Destroy()
+					end
+					
+					if #inputtexts == 0 then
+						pchar = ">"
+						ptxt = script.Parent.ChatInput.Input
+					end
+					
+					MakeTextInInput("_",true)
+				end
+				
+				wait(0.5)
+				while userinput:IsKeyDown(key) do
+					wait(0.01)
+					if #inputtexts > 0 then
+						inputtexts[#inputtexts]:Destroy()
+						table.remove(inputtexts,#inputtexts)
+						inputtxtsStr = utf8sub(inputtxtsStr,1,#inputtxtsStr - 1)
+						ptxt = inputtexts[#inputtexts]
+						pchar = utf8sub(inputtxtsStr,#inputtxtsStr,#inputtxtsStr)
+	
+						if _Ipt then
+							_Ipt:Destroy()
+						end
+	
+						if #inputtexts == 0 then
+							pchar = ">"
+							ptxt = script.Parent.ChatInput.Input
+						end
+	
+						MakeTextInInput("_",true)
+					end
+				end
+			end
+			
+			if input.KeyCode == Enum.KeyCode.Return or input.KeyCode == Enum.KeyCode.KeypadEnter then			
+				local sendtxt = inputtxtsStr
+				
+				
+				
+				for i, item in pairs(inputtexts) do
+					item:Destroy()
+				end
+				
+				inputtexts = {}
+				inputtxtsStr = ""
+				ptxt = ">"
+				ptxt = script.Parent.ChatInput.Input
+				inping = false
+				script.Parent.ChatInput.Visible = false
+				script.Parent.Msgs.Visible = false
+				script.Parent.EbUpper.Visible = false
+				
+				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = HWlkSpd or game.StarterPlayer.CharacterWalkSpeed
+				game.Players.LocalPlayer.Character.Humanoid.JumpPower = HJpower or game.StarterPlayer.CharacterJumpPower
+				game.Players.LocalPlayer.CameraMaxZoomDistance,game.Players.LocalPlayer.CameraMinZoomDistance = PCamMax,PCamMin
+				
+				if sendtxt == "" then
+					return
+				end
+				table.insert(chatHistory,sendtxt)
+				game.TextChatService.TextChannels.RBXGeneral:SendAsync(tostring(sendtxt) or " ")
+				wait()
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = false
+					end
+				end
+				
+				selectChatHistory = #chatHistory + 1
+			end
+		end
+	end)
+	
+	msgservice.MessageReceived:Connect(function(msg)
+		
+		if msg.Text == "" then
+			return
+		end
+		
+		local nmsg = script.Parent.MsgTemplate:Clone()
+		nmsg.Parent = script.Parent.Msgs
+		
+		if msg.TextSource then
+			wait(0.5)
+			local plr = game.Players:FindFirstChild(msg.TextSource.Name)
+			local clr = Color3.fromRGB(255,255,255)
+			
+			if plr then
+				if plr:IsA("Player") then
+					clr = plr.TeamColor.Color
+				end
+			end
+			
+			local pt,pc = StringToMsg(msg.TextSource.Name,nmsg,clr,nil,nil,true)
+			wait()
+			StringToMsg(`: {msg.Text}`,nmsg,nil,pt,pc,nil)
+		else
+			wait(0.5)
+			if inping == false then
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = false
+					end
+				end
+			end
+			StringToMsg(`<System>{string.gsub(msg.Text, "<.-?>", "")}`,nmsg,Color3.fromRGB(255, 255, 0))
+			
+		end
+		
+		
+		
+		nmsg.Visible = true
+		nmsg.Input.Visible = false
+		if AtoSize == true then
+			script.Parent.Msgs.CanvasPosition = Vector2.new(math.huge,math.huge)
+		end
+		table.insert(View,nmsgtxt)
+		wait()
+		for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+			if item:IsA("Frame") then
+				
+				if table.find(View,item) then
+					
+				else
+				
+				end
+			end
+		end
+		
+		script.Parent.Msgs.Visible = true
+		local tttttt = nmsgtxt
+		
+		wait(5)
+		if inping == false then
+			tttttt.Visible = false
+			if tttttt == nmsgtxt then
+				script.Parent.Msgs.Visible = false
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = false
+					end
+				end
+				
+				for i, item in pairs(View) do
+					if item == tttttt then
+						table.remove(View,i)
+					end
+				end
+			end
+		end
+	end)
+	
+	game.Players.PlayerAdded:Connect(function(plr)
+	
+		local nmsg = script.Parent.MsgTemplate:Clone()
+		nmsg.Parent = script.Parent.Msgs
+	
+		StringToMsg(plr.Name .. "joined the game.",nmsg, Color3.fromRGB(255, 255, 0))
+	
+		nmsg.Visible = true
+		nmsg.Input.Visible = false
+		if AtoSize == true then
+			script.Parent.Msgs.CanvasPosition = Vector2.new(math.huge,math.huge)
+		end
+		wait()
+		nmsgtxt.Visible = true
+		script.Parent.Msgs.Visible = true
+		local tttttt = nmsgtxt
+		wait(5)
+		if inping == false then
+			nmsgtxt.Visible = false
+			if tttttt == nmsgtxt then
+				script.Parent.Msgs.Visible = false
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = false
+					end
+				end
+			end
+		end
+	
+	end)
+	
+	game.Players.PlayerRemoving:Connect(function(plr)
+	
+		local nmsg = script.Parent.MsgTemplate:Clone()
+		nmsg.Parent = script.Parent.Msgs
+	
+		StringToMsg(plr.Name .. "left the game.",nmsg, Color3.fromRGB(255, 255, 0))
+	
+		nmsg.Visible = true
+		nmsg.Input.Visible = false
+		if AtoSize == true then
+			script.Parent.Msgs.CanvasPosition = Vector2.new(math.huge,math.huge)
+		end
+		wait()
+		nmsgtxt.Visible = true
+		script.Parent.Msgs.Visible = true
+		local tttttt = nmsgtxt
+		wait(5)
+		if inping == false then
+			nmsgtxt.Visible = false
+			if tttttt == nmsgtxt then
+				script.Parent.Msgs.Visible = false
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = false
+					end
+				end
+			end
+		end
+	
+	end)
+	
+	MakeTextInInput("_",true)
+	
+	task.spawn(function()
+		while true do
+			wait(0.3)
+			if _Ipt == nil then
+				return
+			end
+			
+			if _Ipt then
+				if _Ipt.Visible == false then
+					_Ipt.Visible = true
+				else
+					_Ipt.Visible = false
+				end
+			end
+		end
+	end)
+	
+	task.spawn(function()
+		
+		local msg = "Minecraft chat simulator loaded successfully, by hahaxio7777(DC),Ver:1.3"
+		
+		local nmsg = script.Parent.MsgTemplate:Clone()
+		nmsg.Parent = script.Parent.Msgs
+	
+		if msg.TextSource then
+			StringToMsg(`<{msg.TextSource.Name or "[System]"}>{msg}`,nmsg)
+		else
+			StringToMsg(`<System>{string.gsub(msg, "<.-?>", "")}`,nmsg,Color3.fromRGB(255, 255, 0))
+		end
+	
+	
+		nmsg.Visible = true
+		nmsg.Input.Visible = false
+		if AtoSize == true then
+			script.Parent.Msgs.CanvasPosition = Vector2.new(math.huge,math.huge)
+		end
+		wait()
+		nmsgtxt.Visible = true
+		script.Parent.Msgs.Visible = true
+		local tttttt = nmsgtxt
+		wait(5)
+		if inping == false then
+			tttttt.Visible = false
+			if tttttt == nmsgtxt then
+				script.Parent.Msgs.Visible = false
+				for i, item in ipairs(script.Parent.Msgs:GetChildren()) do
+					if item:IsA("Frame") then
+						item.Visible = false
+					end
+				end
+			end
+		end
+	end)
+	
+	StringToMsg("Insert character",script.Parent.ChatInput.Ipt,Color3.fromRGB(0, 85, 0))
+	script.Parent.ChatInput.Ipt.Input.Visible = false
+	
+	script.Parent.ChatInput.Ipt:GetPropertyChangedSignal("Visible"):Connect(function()
+		if script.Parent.ChatInput.Ipt.Visible == false then
+			script.Parent.ChatInput.Ipt.Visible = true
+		end
+	end)
+	
+	local StarterGui = game:GetService("StarterGui")
+	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+	
+	task.spawn(function()
+		while true do
+			wait(0.5)
+			local StarterGui = game:GetService("StarterGui")
+			StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+		end
+	end)
+	
+	
+end
+coroutine.wrap(HYEUQ_fake_script)()
