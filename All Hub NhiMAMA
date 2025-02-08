@@ -15,4 +15,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/m
 
 Sword Warior                loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/SwordWariorOB"))()
 
+Fising
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/refs/heads/main/fishing", true))()
 
