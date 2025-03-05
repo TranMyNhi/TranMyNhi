@@ -1,0 +1,119 @@
+print("TranMyNhi")
+warn("Anti afk running")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+warn("Anti afk ran")
+game:GetService("VirtualUser"):CaptureController()
+game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU"))()
+local example = library:CreateWindow({
+  text = "💜❤️TrầnMỹNhi❤️💜"
+})
+example:AddToggle("Tự Cày[Đóng Băng🧊]", function(state)
+getfenv().auto = (state and true or false)
+if game.Players.LocalPlayer:GetAttribute("InCustomSeat") == true then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = getfenv().auto
+    end
+end)
+example:AddToggle("Tự Nâng Plot", function(state)
+getfenv().buttons = (state and true or false)
+local function plot()
+    local plot = nil
+    for i,v in pairs(workspace.Plots:GetDescendants()) do
+        if v.Name == "TextLabel" and v.Text == game.Players.LocalPlayer.Name then
+            plot = v.Parent.Parent.Parent
+        end
+    end
+    return plot
+    end
+while getfenv().buttons do
+task.wait()
+for i,v in pairs(plot().Buttons:GetDescendants()) do
+    if v.Name == "Touch" then
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v,0)
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v,1)
+task.wait()
+    end
+end
+end
+end)
+
+local example = library:CreateWindow({
+    text = "Race🏁"
+  })
+  example:AddBox("Tốc Độ Tùy Chỉnh", function(object, focus)
+    if focus then
+   getfenv().speed = tonumber(object.Text)
+    end
+end)
+  example:AddToggle("Auto Race🏁", function(state)
+ getfenv().race = (state and true or false)
+while getfenv().race do
+    wait()
+    local function checker(check)
+        local test = nil
+        for i,v in pairs(check:GetDescendants()) do
+        if v.ClassName == "Part" and v.Transparency == 0 or v.ClassName == "MeshPart" and v.Transparency == 0 or v.ClassName == "Decal" and v.Transparency ~= 1 then
+            test = true
+        end
+        end
+        print(test)
+        return test
+        end
+if game:GetService("Players").LocalPlayer.PlayerGui.RaceGui.Top.RaceInfo.Visible == true and tonumber(game:GetService("Players").LocalPlayer.PlayerGui.RaceGui.Top.RaceInfo.Bottom.Time.Text:split("sec")[1]) ~= nil and tonumber(game:GetService("Players").LocalPlayer.PlayerGui.RaceGui.Top.RaceInfo.Bottom.Time.Text:split("sec")[1]) > 0 then
+local car = nil
+for i,v in pairs(workspace.Cars:GetChildren()) do
+    if v.ClassName == "Model" and v:GetAttribute("Owner") == game.Players.LocalPlayer.Name then
+car = v
+end
+end
+local primary = car.PrimaryPart
+if workspace.RaceProps:FindFirstChild("Checkpoints") then
+    print("Checkpoints")
+for i=1,#workspace.RaceProps:WaitForChild("Checkpoints"):GetChildren() do
+	pcall(function()
+	if checker(workspace.RaceProps.Checkpoints[tostring(i)]) then
+		print(#workspace.RaceProps:WaitForChild("Checkpoints"):GetChildren())
+    local speed = getfenv().speed or 300
+local plr = game.Players.LocalPlayer
+local dist = (primary.Position-workspace.RaceProps.Checkpoints[tostring(i)].WorldPivot.Position).magnitude
+local TweenService = game:GetService("TweenService")
+local TweenInfoToUse = TweenInfo.new(dist/speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+
+local TweenValue = Instance.new("CFrameValue")
+TweenValue.Value = car:GetPrimaryPartCFrame()
+
+TweenValue.Changed:Connect(function()
+car:PivotTo(TweenValue.Value)
+end)
+local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=workspace.RaceProps.Checkpoints[tostring(i)].WorldPivot+Vector3.new(0,10,0)})
+OnTween:Play()
+OnTween.Completed:Wait()
+end
+end)
+end
+for i,v in pairs(workspace.RaceProps:WaitForChild("Checkpoints"):GetChildren()) do
+if tonumber(v.Name) > #workspace.RaceProps:WaitForChild("Checkpoints"):GetChildren() and checker(v) then
+	local speed = getfenv().speed or 300
+	local plr = game.Players.LocalPlayer
+	local dist = (primary.Position-v.WorldPivot.Position).magnitude
+	local TweenService = game:GetService("TweenService")
+	local TweenInfoToUse = TweenInfo.new(dist/speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+
+	local TweenValue = Instance.new("CFrameValue")
+	TweenValue.Value = car:GetPrimaryPartCFrame()
+
+	TweenValue.Changed:Connect(function()
+	car:PivotTo(TweenValue.Value)
+	end)
+	local OnTween = TweenService:Create(TweenValue, TweenInfoToUse, {Value=v.WorldPivot+Vector3.new(0,10,0)})
+	OnTween:Play()
+	OnTween.Completed:Wait()
+end
+end
+elseif game:GetService("Players").LocalPlayer.PlayerGui.RaceGui.Top.RaceInfo.Visible == false then
+   game:GetService("Players").LocalPlayer.PlayerGui.RaceGui.Top.RaceInfo.Bottom.Time.Text = 0
+end
+end
+end
+end)
