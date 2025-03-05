@@ -81,7 +81,7 @@ local function WSDES_fake_script() -- TextButton.LocalScript
 		frame:TweenPosition(UDim2.new(0,500,2,0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,5)
 		task.wait(3)
 	frame.Parent:Destroy() 
-	             loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/DealerShipTycoonB"))()
+	             loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/DealerShipTycoonOB"))()
         end)
 
 end
