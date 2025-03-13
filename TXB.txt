@@ -204,7 +204,7 @@ _G.stuck = _G.stuck+1
     end
     elseif game.Players.LocalPlayer.Character.Humanoid.SeatPart == nil then
           game:GetService("ReplicatedStorage").Vehicles.GetNearestSpot:InvokeServer(game:GetService("Players").LocalPlayer.variables.carId.Value)
-        wait(0.5)
+        wait(0.1)
         game:GetService("ReplicatedStorage").Vehicles.EnterVehicleEvent:InvokeServer()
     end
     end)
