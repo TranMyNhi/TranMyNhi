@@ -172,8 +172,8 @@ _G.stuck = _G.stuck+1
     part:Destroy()
     testvalue = 1
     task.wait(0.009)
-    elseif workspace:Raycast(waypoint.Position, Vector3.new(0, 1000, 0),raycastParams) ~= nil then
-      print(workspace:Raycast(waypoint.Position, Vector3.new(0, 1000, 0),raycastParams))
+    elseif workspace:Raycast(waypoint.Position, Vector3.new(0, 2000, 0),raycastParams) ~= nil then
+      print(workspace:Raycast(waypoint.Position, Vector3.new(0, 2000, 0),raycastParams))
       part:Destroy()
       testvalue = 1
     end
