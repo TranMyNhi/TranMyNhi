@@ -65,7 +65,7 @@ local RunService = game:GetService("RunService")
 
 local Window = Rayfield:CreateWindow({
     Name = "Build A Boat For Treasure🇻🇳",
-    Icon = 18808159889,
+    Icon = 126129907362827,
     LoadingTitle = "Build A Boat For Treasure🇻🇳",
     LoadingSubtitle = "Made With ❤️ by Trần Mỹ Nhi",
     Theme = "BlackBlue",
