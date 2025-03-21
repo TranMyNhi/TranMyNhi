@@ -65,7 +65,7 @@ local RunService = game:GetService("RunService")
 
 local Window = Rayfield:CreateWindow({
     Name = "Build A Boat For Treasure🇻🇳",
-    Icon = 85108798400826,
+    Icon = 18808159889,
     LoadingTitle = "Build A Boat For Treasure🇻🇳",
     LoadingSubtitle = "Made With ❤️ by Trần Mỹ Nhi",
     Theme = "BlackBlue",
@@ -91,9 +91,9 @@ local Window = Rayfield:CreateWindow({
        Subtitle = "Trần Mỹ Nhi",
        Note = "Hãy Vào Discord Để Lấy Mật Khẩu",
        FileName = "ASUBABFTKey",
-       SaveKey = true,
+       SaveKey = false,
        GrabKeyFromSite = false,
-       Key = {"Nhixinhgainhatvn"} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"Nhihocgioi"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
