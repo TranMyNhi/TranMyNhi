@@ -170,38 +170,19 @@ end)
 until not game.Players.LocalPlayer:FindFirstChild("PlayerScripts")
 
 end)
-    example:AddToggle("Auto BattlePoints/Shelby", function(state)
+    example:AddToggle("Đập Đá Nè", function(state)
      getfenv().autobattle = (state and true or false)
      local chr = game.Players.LocalPlayer.Character
-
-     local tpb = chr.HumanoidRootPart.CFrame
-     while getfenv().autobattle do
-     task.wait(1) 
-pcall(function()
-      local chr = game.Players.LocalPlayer.Character
-      local car = chr.Humanoid.SeatPart.Parent.Parent
-    for i,v in pairs(workspace.Collectibles:GetDescendants()) do
-    if v.Name == "Part" and v.BillboardGui.Enabled then
-        local chr = game.Players.LocalPlayer.Character
-        if chr.Humanoid.SeatPart == nil then
-            chr.HumanoidRootPart.CFrame = v.CFrame
-        elseif chr.Humanoid.SeatPart ~= nil then
-        local car = chr.Humanoid.SeatPart.Parent.Parent
-    car:PivotTo(v.CFrame)
-        end
-    wait(0.1)
-    end
-    end
-    local chr = game.Players.LocalPlayer.Character
-    if chr.Humanoid.SeatPart == nil then
-        chr.HumanoidRootPart.CFrame = tpb
-    elseif chr.Humanoid.SeatPart ~= nil then
-    local car = chr.Humanoid.SeatPart.Parent.Parent
-car:PivotTo(tpb)
-    end
+getgenv().Farm = true -- set to "false" to stop
+while getgenv().Farm do
+local T = workspace.Collectibles.Wrenches2025:GetChildren()
+for i = 1, #T do
+A.Character:PivotTo(T[i]:GetPivot())
+task.wait()
+end
+task.wait()
+end
 end)
-    end
-    end)
     example:AddToggle("Auto Extinguish Fire", function(state)
         getfenv().fireman = (state and true or false)
         workspace.Gravity = 196
