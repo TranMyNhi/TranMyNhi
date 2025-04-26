@@ -940,7 +940,6 @@ local example = library:CreateWindow({
     })
     example:AddToggle("Auto Farm", function(state)
       getfenv().auto = (state and true or false)
-      wait(1)
 getgenv().Farm = false -- set to "false" to stop
 local A = game.Players.LocalPlayer
 
