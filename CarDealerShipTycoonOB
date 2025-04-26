@@ -934,3 +934,22 @@ end
         print("Minimum reward money: "..getfenv().smaller)
         print("Maximum reward money: "..getfenv().bigger)
         end
+
+local example = library:CreateWindow({
+      text = "💜❤️TrầnMỹNhi❤️💜"
+    })
+    example:AddToggle("Auto Farm", function(state)
+      getfenv().auto = (state and true or false)
+      wait(1)
+getgenv().Farm = false -- set to "false" to stop
+local A = game.Players.LocalPlayer
+
+while getgenv().Farm do
+local T = workspace.Collectibles.Wrenches2025:GetChildren()
+for i = 1, #T do
+A.Character:PivotTo(T[i]:GetPivot())
+task.wait()
+end
+task.wait()
+end
+end)
