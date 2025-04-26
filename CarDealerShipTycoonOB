@@ -172,9 +172,6 @@ until not game.Players.LocalPlayer:FindFirstChild("PlayerScripts")
 end)
     example:AddToggle("Đập Đá Nè", function(state)
      getfenv().autobattle = (state and true or false)
-     local chr = game.Players.LocalPlayer.Character
-getgenv().Farm = true -- set to "false" to stop
-while getgenv().Farm do
 local T = workspace.Collectibles.Wrenches2025:GetChildren()
 for i = 1, #T do
 A.Character:PivotTo(T[i]:GetPivot())
