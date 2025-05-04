@@ -45,7 +45,7 @@ local starman
 local miniman
 local maxman
 getfenv().grav = workspace.Gravity
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/ui%20libs2", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranMyNhi/TranMyNhi/main/MENU"))()
 local example = library:CreateWindow({
   text = "💜❤️Trần Mỹ Nhi❤️💜"
 })
@@ -143,6 +143,19 @@ game:GetService("ReplicatedStorage").Remotes.TaskController.ActionGameDataReplic
     end
     end
     end)
+example:AddToggle("Tự Nhặt Kut",function(state)
+    getgenv().Event = (state and true or false)
+
+   local A = game.Players.LocalPlayer
+
+while getgenv().Farm do
+local T = workspace.Collectibles.Wrenches2025:GetChildren()
+for i = 1, #T do
+A.Character:PivotTo(T[i]:GetPivot())
+task.wait()
+end
+task.wait()
+end
 example:AddToggle("Auto Sell Cars",function(state)
     getfenv().Customer = (state and true or false)
     while getfenv().Customer do
