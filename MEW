@@ -1,0 +1,108 @@
+-- Verifică dacă merge
+if not pcall(function()
+makefolder("NorepinefrinaTest")
+writefile("NorepinefrinaTest/a.txt", "norepinefrina.com")
+if readfile("NorepinefrinaTest/a.txt") ~= "norepinefrina.com" then
+getgenv().FileSystem = false
+end
+delfolder("NorepinefrinaTest")
+end) then getgenv().FileSystem = false end
+
+-- CDT Upcoming Collectors. RCE, Remote Code Execution
+getgenv().CDT_CollectorRemote = function()
+local T = workspace.Collectibles.Wrenches2025:GetChildren()
+for i = 1, #T do
+game.Players.LocalPlayer.Character:PivotTo(T[i]:GetPivot())
+task.wait()
+end
+game.ReplicatedStorage.Remotes.Services.KitsRemotes.Open:InvokeServer("Deluxe", "Wrenches")
+end
+
+-- Setări
+-- getgenv().FastLoading = FastLoading or 0
+getgenv().FileSystem = (FileSystem == nil or FileSystem) and true or nil
+-- getgenv().AutoSave = (AutoSave == nil or AutoSave) and true or nil
+
+
+-- Status UI
+local StatusHui = (gethui and gethui()) or game.CoreGui
+
+-- StatusGui
+local StatusGui = Instance.new("ScreenGui")
+StatusGui.Name = "Noradrenaline Status"
+StatusGui.ScreenInsets = 1 -- DeviceSafeInsets
+StatusGui.ResetOnSpawn = false
+StatusGui.ClipToDeviceSafeArea = false
+StatusGui.DisplayOrder = math.huge
+StatusGui.Parent = StatusHui
+
+-- StatusBackground
+local StatusBackground = Instance.new("Frame")
+StatusBackground.Name = "StatusBackground"
+StatusBackground.ClipsDescendants = true
+StatusBackground.BorderSizePixel = 0
+StatusBackground.BackgroundTransparency = 0.2
+StatusBackground.BackgroundColor3 = Color3.fromHex("0c0415")
+StatusBackground.Size = UDim2.new(1, 0, 0, 80)
+StatusBackground.Parent = StatusGui
+
+local C = Instance.new("UICorner")
+C.CornerRadius = UDim.new(0, 6)
+C.Parent = StatusBackground
+
+-- StatusTitlu
+local StatusTitlu = Instance.new("TextLabel")
+StatusTitlu.Name = "StatusTitlu"
+StatusTitlu.Text = "Noradrenaline\n<font color='#d6afff' size='28'>Status UI</font>"
+StatusTitlu.Font = 37
+StatusTitlu.TextSize = 34
+StatusTitlu.RichText = true
+StatusTitlu.BackgroundTransparency = 1
+StatusTitlu.TextColor3 = Color3.fromHex("9430ff")
+StatusTitlu.Size = UDim2.new(0, 140, 0, 70)
+StatusTitlu.Position = UDim2.new(0, 5, 0, 5)
+StatusTitlu.Parent = StatusBackground
+
+-- StatusText
+local StatusText = Instance.new("TextLabel")
+StatusText.Name = "StatusText"
+StatusText.Text = "・Hi there! This message will disappear once Noradrenaline successfully loads. However, not every executor supports my script.. i can't really do anything about this\n<font color='#d6afff'>・Noradrenaline — made on Android for Android</font>"
+StatusText.Font = 37
+StatusText.TextSize = 22
+StatusText.TextXAlignment = 0 -- Left
+StatusText.TextYAlignment = 0 -- Top
+StatusText.RichText = true
+StatusText.TextWrapped = true
+StatusText.BackgroundTransparency = 1
+StatusText.TextColor3 = Color3.fromHex("9430ff")
+StatusText.Size = UDim2.new(1, -260, 0, 70)
+StatusText.Position = UDim2.new(0, 150, 0, 5)
+StatusText.Parent = StatusBackground
+
+-- StatusSetari
+local StatusSetari = Instance.new("TextLabel")
+StatusSetari.Name = "StatusSetari"
+StatusSetari.Text = "FastLoading: <font color='#d6afff'>" .. tostring(FastLoading) .. "</font>\nFileSystem: <font color='#d6afff'>" .. tostring(FileSystem) .. "</font>\nAutoSave: <font color='#d6afff'>" .. tostring(AutoSave) .. "</font>"
+StatusSetari.Font = 37
+StatusSetari.TextSize = 20
+StatusSetari.TextXAlignment = 0 -- Left
+StatusSetari.RichText = true
+StatusSetari.TextWrapped = true
+StatusSetari.BackgroundTransparency = 1
+StatusSetari.TextColor3 = Color3.fromHex("9430ff")
+StatusSetari.Size = UDim2.new(0, 100, 0, 70)
+StatusSetari.Position = UDim2.new(1, -105, 0, 5)
+StatusSetari.Parent = StatusBackground
+
+
+-- Mesaje (RCE)
+getgenv().MAIN_Mesaje = [[Not every feature is saveable via the <font color='#9430ff'>Configuration System</font>! (ALPHA) Force it with: <font color='#9430ff'>getgenv().AutoSave = true/false</font>]]
+
+
+loadstring(game:HttpGet("https://gitlab.com/norepinefrina/Loader/-/raw/main/Sursa"))()
+
+
+task.wait(0.2)
+game.TweenService:Create(StatusBackground, TweenInfo.new(0.2), {Position = UDim2.new(0, 0, 0, -80)}):Play()
+task.wait(0.2)
+StatusGui:Destroy()
