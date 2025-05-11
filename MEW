@@ -66,7 +66,7 @@ StatusTitlu.Parent = StatusBackground
 -- StatusText
 local StatusText = Instance.new("TextLabel")
 StatusText.Name = "StatusText"
-StatusText.Text = "・Hi there! This message will disappear once Noradrenaline successfully loads. However, not every executor supports my script.. i can't really do anything about this\n<font color='#d6afff'>・Noradrenaline — made on Android for Android</font>"
+StatusText.Text = "・Eos Donate Cho Nhi Mama Thì Có Cái Củ Cặc Ấy Mà Dùng\n<font color='#d6afff'>・Noradrenaline — made on Android for Android</font>"
 StatusText.Font = 37
 StatusText.TextSize = 22
 StatusText.TextXAlignment = 0 -- Left
