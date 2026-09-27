@@ -6,7 +6,7 @@ game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
 
 local games = {
-    [{1554960397}] = "https://raw.githubusercontent.com/F347-FB/Roblox/main/Projects/Car-Dealership-Tycoon.lua", -- CDT
+    [{1554960397}] = "https://github.com/TranMyNhi/TranMyNhi/blob/main/Tele", -- CDT
 }
 
 for ids, url in next, games do
@@ -17,9 +17,9 @@ for ids, url in next, games do
         break
     end
 end
-setclipboard("https://t.me/moonteam10")
+setclipboard("https://www.facebook.com/share/19PdfNgB3e/")
 game.StarterGui:SetCore("SendNotification", {
-Title = "Moon Team",
-Text = "There will be an update of this script in my telegram channel",
+Title = "Nhi Lồn To",
+Text = "Đụ Giá Rẻ ,700K 1 Xuất Trong,
 Duration = 10,
 })
